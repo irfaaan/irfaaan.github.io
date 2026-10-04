@@ -327,7 +327,7 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
 </section>
 
 <section id="projects" class="reveal">
-  <div class="sec-head"><div class="cmd">$ ls ~/projects --deployed</div><h2>missions</h2></div>
+  <div class="sec-head"><div class="cmd">$ ls ~/projects --deployed</div><h2>projects</h2></div>
   <div class="proj-grid">
     <div class="card"><h3>🛒 Mall of Karor</h3><p>Online superstore system — ordering, COD, rider flow, admin panel. Full-stack build from spec to deploy.</p><div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Blade</span></div></div>
     <div class="card"><h3>🎪 Event Platform</h3><p>Event & venue management system for Nafisol — bookings, venues, admin workflows.</p><div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span></div></div>
@@ -467,16 +467,20 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
     return null;
   }
 
+  const JOKES=[
+    'Why do programmers prefer dark mode? Because light attracts bugs! 🐛',
+    'There are only 10 kinds of people: those who understand binary and those who don\'t. 😎',
+    'A SQL query walks into a bar, sees two tables and asks… "Mind if I JOIN you?" 🍻',
+    'Why did the developer go broke? He used up all his cache. 💸',
+    'Debugging: being the detective in a crime movie where you are also the murderer. 🔍'
+  ];
   const CMDS={
-    help:'<span class="ok">commands:</span> about · skills · projects · experience · contact · whoami · date · hack · sudo · clear',
+    help:'<span class="ok">commands:</span> about · contact · whoami · joke · coffee · matrix · sudo · clear',
     about:'Laravel developer, ~2 yrs. I ship backends, admin panels, APIs & real-time apps.',
-    skills:'Laravel · PHP · Vue.js · Inertia.js · Node.js · Python · WebSockets · MySQL · PostgreSQL · Linux · Git · Docker',
-    projects:'🛒 Mall of Karor · 🎪 Event Platform (Nafisol) · ⚙️ Admin panels (Alright Tech) · 🤖 AlfaBot',
-    experience:'~2 years full-stack — backend systems, admin panels, event platform, e-commerce flows.',
     contact:'📧 muhammadirfan421@gmail.com · 🐙 github.com/irfaaan · 💼 linkedin.com/in/irf4n',
-    whoami:'guest — future insider 😉',
-    date:new Date().toString(),
-    hack:'<span class="warn">[!] nice try. firewall intact 😏</span>',
+    whoami:'guest — but with great taste in portfolios 😉',
+    coffee:'☕ brewing… just kidding. I run on code and curiosity.',
+    matrix:'Wake up, Neo… the Matrix has you. Follow the white rabbit. 🐇',
     sudo:'<span class="err">permission denied: guest is not in the sudoers file 😏</span>'
   };
   print('<span class="ok">connected to '+HOST+'</span>');
@@ -489,6 +493,7 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
     if(e.key!=='Enter')return;
     const raw=cmd.value.trim(),c=raw.toLowerCase();
     print(P+raw.replace(/</g,'&lt;'));
+    if(c==='joke'){cmd.value='';print(JOKES[Math.floor(Math.random()*JOKES.length)]);return;}
     if(c==='clear'){out.innerHTML='';}
     else if(CMDS[c]){print(CMDS[c]);}
     else if(c){print('<span class="err">command not found: '+c.replace(/</g,'&lt')+' — try "help"</span>');}
