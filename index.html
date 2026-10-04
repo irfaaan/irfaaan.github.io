@@ -97,8 +97,17 @@ nav.scrolled{border-bottom-color:var(--border);background:rgba(8,8,13,.85)}
 .hstat span{font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
 /* hero visual */
 .hero-visual{position:relative;display:flex;justify-content:center}
-.clock-showcase{position:relative;display:flex;flex-direction:column;align-items:center}
-.greek-clock{width:320px;height:320px;filter:drop-shadow(0 18px 50px rgba(212,175,55,.28))}
+.clock-showcase{position:relative;display:flex;flex-direction:column;align-items:center;transition:transform .3s ease;transform-style:preserve-3d}
+.zodiac-wrap{position:relative;width:410px;height:410px;display:flex;align-items:center;justify-content:center}
+.halo{position:absolute;width:470px;height:470px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.20),transparent 65%);animation:halo 6s ease-in-out infinite;pointer-events:none}
+@keyframes halo{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.07)}}
+.zodiac-ring{position:absolute;inset:0;width:100%;height:100%;animation:zspin 180s linear infinite}
+@keyframes zspin{to{transform:rotate(360deg)}}
+.zglyph{font-size:22px;fill:#f4dc96;text-anchor:middle;dominant-baseline:central}
+.zdot{fill:#e8c76a;opacity:.8}
+.mote{position:absolute;border-radius:50%;background:radial-gradient(circle,#ffedb0,#c9962e);filter:blur(.6px);opacity:0;animation:mote 8s ease-in-out infinite;pointer-events:none;z-index:3}
+@keyframes mote{0%{transform:translateY(24px) scale(.7);opacity:0}35%{opacity:.95}100%{transform:translateY(-80px) scale(1);opacity:0}}
+.greek-clock{width:320px;height:320px;position:relative;z-index:2;filter:drop-shadow(0 18px 50px rgba(212,175,55,.28))}
 .clock-svg{width:100%;height:100%}
 .key{fill:none;stroke:#4a2f0c;stroke-width:3;stroke-linecap:square}
 .tick{stroke:#8a744d;stroke-width:1.5;stroke-linecap:round}
@@ -115,7 +124,7 @@ nav.scrolled{border-bottom-color:var(--border);background:rgba(8,8,13,.85)}
   border:2px solid #4a2f0c;
   box-shadow:0 0 34px rgba(212,175,55,.45),inset 0 0 14px rgba(0,0,0,.4)}
 @keyframes swing{0%,100%{transform:rotate(13deg)}50%{transform:rotate(-13deg)}}
-@media(max-width:900px){.greek-clock{width:250px;height:250px}.pendulum-wrap{height:140px}.pendulum{height:100px}}
+@media(max-width:900px){.greek-clock{width:250px;height:250px}.pendulum-wrap{height:140px}.pendulum{height:100px}.zodiac-wrap{width:320px;height:320px}.halo{width:370px;height:370px}}
 .float-chip{position:absolute;background:rgba(13,13,21,.9);border:1px solid var(--border2);border-radius:14px;
   padding:12px 18px;font-size:13px;font-weight:600;backdrop-filter:blur(10px);box-shadow:0 14px 40px rgba(0,0,0,.5);
   display:flex;align-items:center;gap:9px;animation:floaty 5s ease-in-out infinite}
@@ -264,6 +273,20 @@ footer{border-top:1px solid var(--border);padding:38px 0;position:relative;z-ind
   </div>
   <div class="hero-visual reveal d1">
     <div class="clock-showcase">
+      <div class="zodiac-wrap">
+        <div class="halo"></div>
+        <svg class="zodiac-ring" viewBox="0 0 400 400">
+          <defs>
+            <linearGradient id="zbronze" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f4dc96"/><stop offset=".5" stop-color="#8a5a17"/><stop offset="1" stop-color="#e8c76a"/>
+            </linearGradient>
+          </defs>
+          <circle cx="200" cy="200" r="190" fill="none" stroke="url(#zbronze)" stroke-width="9" opacity=".92"/>
+          <circle cx="200" cy="200" r="183" fill="none" stroke="#4a2f0c" stroke-width="1.5"/>
+          <circle cx="200" cy="200" r="197" fill="none" stroke="#4a2f0c" stroke-width="1.5"/>
+          <g id="zodiac"></g>
+          <g id="stardust"></g>
+        </svg>
       <div class="greek-clock">
         <svg class="clock-svg" viewBox="0 0 320 320">
           <defs>
@@ -289,6 +312,7 @@ footer{border-top:1px solid var(--border);padding:38px 0;position:relative;z-ind
           <circle cx="160" cy="160" r="9" fill="url(#bronze)" stroke="#3d2708" stroke-width="2"/>
           <text x="160" y="210" text-anchor="middle" class="brand">IRFAN</text>
         </svg>
+      </div>
       </div>
       <div class="pendulum-wrap"><div class="pendulum"><div class="bob"></div></div></div>
       <div class="float-chip fc1"><span class="e">⚡</span>Fast APIs</div>
@@ -500,6 +524,64 @@ document.getElementById('yr').textContent=new Date().getFullYear();
       hr.style.transform='rotate('+(h*30)+'deg)';
     }
     setInterval(tick,50);tick();
+  }
+})();
+
+/* celestial astrolabe ring + golden motes + 3d tilt */
+(function(){
+  const svgNS='http://www.w3.org/2000/svg';
+
+  /* zodiac ring */
+  const z=document.getElementById('zodiac');
+  if(z){
+    const ZG=['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
+    ZG.forEach(function(g,i){
+      const a=(i*30-90)*Math.PI/180;
+      const t=document.createElementNS(svgNS,'text');
+      t.setAttribute('x',(200+190*Math.cos(a)).toFixed(1));
+      t.setAttribute('y',(200+190*Math.sin(a)).toFixed(1));
+      t.setAttribute('class','zglyph');t.textContent=g;
+      z.appendChild(t);
+    });
+    const sd=document.getElementById('stardust');
+    for(let i=0;i<24;i++){
+      const a=(i*15-82.5)*Math.PI/180;
+      const c=document.createElementNS(svgNS,'circle');
+      c.setAttribute('cx',(200+190*Math.cos(a)).toFixed(1));
+      c.setAttribute('cy',(200+190*Math.sin(a)).toFixed(1));
+      c.setAttribute('r',i%2?'1.6':'2.4');c.setAttribute('class','zdot');
+      sd.appendChild(c);
+    }
+  }
+
+  /* golden motes */
+  const wrap=document.querySelector('.zodiac-wrap');
+  if(wrap){
+    for(let i=0;i<12;i++){
+      const s=document.createElement('span');
+      s.className='mote';
+      const sz=(3+Math.random()*4).toFixed(1);
+      s.style.width=sz+'px';s.style.height=sz+'px';
+      s.style.left=(8+Math.random()*84)+'%';
+      s.style.top=(15+Math.random()*70)+'%';
+      s.style.animationDelay=(Math.random()*8).toFixed(1)+'s';
+      s.style.animationDuration=(6+Math.random()*5).toFixed(1)+'s';
+      wrap.appendChild(s);
+    }
+  }
+
+  /* 3d tilt on desktop */
+  const showcase=document.querySelector('.clock-showcase');
+  const hero=document.querySelector('.hero');
+  if(showcase&&hero&&window.matchMedia('(pointer:fine)').matches){
+    hero.style.perspective='1200px';
+    hero.addEventListener('mousemove',function(e){
+      const r=showcase.getBoundingClientRect();
+      const x=(e.clientX-r.left-r.width/2)/r.width;
+      const y=(e.clientY-r.top-r.height/2)/r.height;
+      showcase.style.transform='rotateY('+(x*10).toFixed(2)+'deg) rotateX('+(-y*10).toFixed(2)+'deg)';
+    });
+    hero.addEventListener('mouseleave',function(){showcase.style.transform='rotateY(0deg) rotateX(0deg)';});
   }
 })();
 </script>
