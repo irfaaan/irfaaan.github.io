@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>irfaaan:~$ — Muhammad Irfan | Laravel Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <meta name="description" content="Muhammad Irfan — Full-stack Laravel Developer. Laravel, Vue.js, Inertia.js, Node.js, Python, WebSockets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -193,10 +196,103 @@ footer .g{color:var(--green)}
 .hp-bar{height:14px;border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-bottom:14px;background:#000}
 .hp-fill{height:100%;width:0;background:repeating-linear-gradient(45deg,var(--green),var(--green) 8px,#00b33c 8px,#00b33c 16px);transition:width .15s}
 .hp-status{color:var(--green);font-size:14px;margin-bottom:10px;min-height:20px}
+
+/* ================= ULTRA PRO v4 ================= */
+:root{--font-d:'Space Grotesk',sans-serif;--font-m:'JetBrains Mono',monospace}
+body{font-family:var(--font-m);
+  background:radial-gradient(1100px 550px at 85% -5%,rgba(0,255,65,.07),transparent 60%),
+             radial-gradient(900px 500px at 8% 25%,rgba(0,229,255,.06),transparent 60%),var(--bg)}
+.orb{position:fixed;border-radius:50%;filter:blur(120px);opacity:.15;pointer-events:none;z-index:0}
+.orb1{width:520px;height:520px;background:#00ff41;top:-160px;right:-140px;animation:drift 15s ease-in-out infinite alternate}
+.orb2{width:440px;height:440px;background:#00e5ff;bottom:-180px;left:-150px;animation:drift 19s ease-in-out infinite alternate-reverse}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-70px,60px) scale(1.12)}}
+nav{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:rgba(2,5,3,.72);border-bottom:1px solid rgba(0,255,65,.14)}
+.logo{font-size:19px;text-shadow:0 0 16px rgba(0,255,65,.65)}
+.hero .badge{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(0,255,65,.35);
+  padding:8px 18px;border-radius:100px;font-size:11px;letter-spacing:3px;color:var(--green);
+  background:rgba(0,255,65,.06);margin-bottom:28px;box-shadow:0 0 20px rgba(0,255,65,.12)}
+.hero .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green);
+  box-shadow:0 0 12px var(--green);animation:blinkdot 1.6s infinite}
+@keyframes blinkdot{0%,100%{opacity:1}50%{opacity:.2}}
+.glitch{font-family:var(--font-d);font-size:clamp(46px,9vw,104px);font-weight:700;letter-spacing:-2px;
+  line-height:1.02;background:linear-gradient(100deg,#fff 5%,var(--green) 45%,var(--cyan) 95%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;
+  filter:drop-shadow(0 0 28px rgba(0,255,65,.35))}
+.hero .sub{font-size:14px;letter-spacing:5px}
+.hero .desc{font-size:15.5px;line-height:1.85;color:#aebbb1;max-width:660px}
+.scroll-hint{margin-top:44px;color:var(--green);opacity:.7;animation:bob 2s ease-in-out infinite;font-size:13px;letter-spacing:2px}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.btn{background:linear-gradient(135deg,#00ff41,#00c853);color:#02120a;border:none;border-radius:10px;
+  padding:15px 32px;font-weight:800;letter-spacing:1px;overflow:hidden;
+  box-shadow:0 8px 30px rgba(0,255,65,.28);transition:transform .25s,box-shadow .25s}
+.btn:hover{background:linear-gradient(135deg,#00ff41,#00c853);color:#02120a;transform:translateY(-3px);
+  box-shadow:0 14px 40px rgba(0,255,65,.5)}
+.btn::after{content:'';position:absolute;top:0;left:-90%;width:45%;height:100%;transform:skewX(-20deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transition:left .55s}
+.btn:hover::after{left:140%}
+.btn.alt{background:rgba(0,255,65,.05);color:var(--green);border:1px solid rgba(0,255,65,.4);box-shadow:none}
+.stat{background:rgba(255,255,255,.03);border:1px solid rgba(0,255,65,.16);border-radius:16px;
+  padding:24px 36px;min-width:150px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  transition:transform .3s,border-color .3s,box-shadow .3s}
+.stat:hover{transform:translateY(-5px);border-color:rgba(0,255,65,.5);box-shadow:0 14px 36px rgba(0,0,0,.4)}
+.stat .num{font-family:var(--font-d);font-size:36px;font-weight:700;
+  background:linear-gradient(180deg,#fff,var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{font-size:10.5px;letter-spacing:2.5px}
+.sec-head{margin-bottom:32px}
+h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1px;font-weight:700;text-shadow:none;
+  background:linear-gradient(90deg,#fff,var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}
+.term{border:1px solid rgba(0,255,65,.28);border-radius:16px;background:rgba(2,9,5,.85);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 44px rgba(0,255,65,.08)}
+.term-bar{background:rgba(0,255,65,.05);padding:13px 18px}
+#iterm-cmd{caret-color:var(--green);font-size:15px}
+.skill-card{background:rgba(255,255,255,.028);border:1px solid rgba(0,255,65,.15);border-radius:18px;
+  padding:28px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:transform .3s,border-color .3s,box-shadow .3s}
+.skill-card:hover{transform:translateY(-6px);border-color:rgba(0,255,65,.5);
+  box-shadow:0 18px 48px rgba(0,0,0,.45),0 0 32px rgba(0,255,65,.1)}
+.skill-card h3{font-family:var(--font-d);font-size:19px;color:#fff;letter-spacing:.5px}
+.track{height:9px;background:rgba(0,255,65,.09);box-shadow:inset 0 1px 4px rgba(0,0,0,.65)}
+.fill{background:linear-gradient(90deg,#00c853,var(--green) 55%,var(--cyan));border-radius:6px;
+  box-shadow:0 0 14px rgba(0,255,65,.7);position:relative;transition:width 1.4s cubic-bezier(.22,1,.36,1)}
+.fill::after{content:'';position:absolute;inset:0;border-radius:6px;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);
+  background-size:220% 100%;animation:shimmer 2.4s linear infinite}
+@keyframes shimmer{from{background-position:220% 0}to{background-position:-220% 0}}
+.bar .row span:last-child{color:var(--green);font-weight:700}
+.p-card{background:rgba(255,255,255,.028);border:1px solid rgba(0,255,65,.15);border-radius:18px;
+  padding:32px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  position:relative;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.p-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--green),var(--cyan),transparent);opacity:0;transition:opacity .35s}
+.p-card:hover{transform:translateY(-7px);border-color:rgba(0,255,65,.5);
+  box-shadow:0 22px 55px rgba(0,0,0,.5),0 0 36px rgba(0,255,65,.13)}
+.p-card:hover::before{opacity:1}
+.p-card h3{font-family:var(--font-d);font-size:23px}
+.tag{border-radius:100px;background:rgba(0,255,65,.09);letter-spacing:.5px}
+.c-card{background:rgba(255,255,255,.028);border:1px solid rgba(0,255,65,.15);border-radius:18px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:transform .3s,border-color .3s,box-shadow .3s}
+.c-card:hover{transform:translateY(-6px) scale(1.02);border-color:var(--green);box-shadow:0 0 38px rgba(0,255,65,.22)}
+.hack-popup-box{background:rgba(3,11,6,.94);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border:1px solid rgba(0,255,65,.42);border-radius:20px;
+  box-shadow:0 34px 100px rgba(0,0,0,.7),0 0 70px rgba(0,255,65,.16);
+  animation:popupin .38s cubic-bezier(.22,1,.36,1)}
+@keyframes popupin{from{transform:scale(.9) translateY(16px);opacity:0}to{transform:none;opacity:1}}
+.hp-title{font-family:var(--font-d);font-size:21px;letter-spacing:1px}
+.digit{width:60px;height:70px;font-size:32px;border-radius:14px;background:rgba(0,255,65,.05);
+  border:1px solid rgba(0,255,65,.32);transition:border-color .25s,box-shadow .25s,transform .2s}
+.digit:focus{border-color:var(--green);box-shadow:0 0 20px rgba(0,255,65,.5);transform:scale(1.07);outline:none}
+.boot{border:1px solid rgba(0,255,65,.22);border-radius:12px;box-shadow:0 0 34px rgba(0,255,65,.09)}
+::-webkit-scrollbar{width:9px}
+::-webkit-scrollbar-track{background:#020403}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--green-dim),var(--green));border-radius:6px}
+::selection{background:rgba(0,255,65,.85);color:#02120a}
 </style>
 </head>
 <body>
 <canvas id="matrix"></canvas>
+<div class="orb orb1"></div><div class="orb orb2"></div>
 <div class="scanlines"></div>
 <div class="vignette"></div>
 
@@ -219,6 +315,7 @@ footer .g{color:var(--green)}
 </nav>
 
 <header class="hero" id="top">
+  <div class="badge"><span class="dot"></span>AVAILABLE FOR WORK</div>
   <div class="prompt-line" id="typed-prompt"></div>
   <h1 class="glitch">MUHAMMAD IRFAN</h1>
   <div class="sub">// Clearance Protocol: ACTIVE 🔒</div>
@@ -477,6 +574,7 @@ footer .g{color:var(--green)}
       title.innerHTML='🔓 <b style="color:var(--green)">'+secName+'</b> UNLOCKED';
       content.innerHTML=html;
       content.scrollTop=0;
+      content.querySelectorAll('.fill').forEach((f,i)=>{setTimeout(()=>{f.style.width=f.dataset.w+'%'},160+i*140);});
       close.style.display='inline-block';close.textContent='✕ CLOSE';
       close.onclick=closePopup;
     }
