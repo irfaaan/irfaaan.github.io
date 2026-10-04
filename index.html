@@ -179,15 +179,19 @@ footer .g{color:var(--green)}
   font-size:12px;font-weight:700;letter-spacing:2px;margin-left:14px;white-space:nowrap}
 .clear-badge.up{animation:gpulse .9s}
 @keyframes gpulse{0%{box-shadow:0 0 0 rgba(255,176,0,0)}50%{box-shadow:0 0 20px rgba(255,176,0,.9)}100%{box-shadow:0 0 0 rgba(255,176,0,0)}}
-.locked .sec-content{display:none}
-.lock-panel{display:none;text-align:center;padding:64px 20px;border:1px dashed var(--border);
-  border-radius:8px;background:rgba(0,0,0,.45)}
-.locked .lock-panel{display:block}
-.lock-panel .big{font-size:46px;margin-bottom:12px}
-.lock-panel .cls{color:var(--red);letter-spacing:4px;font-weight:700}
-.lock-panel .lv{color:var(--amber);font-weight:800;letter-spacing:2px;margin:10px 0 6px}
-.lock-panel .sub{color:var(--muted);font-size:13px}
-.lock-panel .sub b{color:var(--green)}
+.classified{display:none!important}
+/* ---------- UNLOCK POPUP ---------- */
+.hack-popup{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
+.hack-popup.show{display:flex;animation:fadein .25s}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.hack-popup-box{border:1px solid var(--green);background:#020604;padding:34px 38px;max-width:440px;width:100%;
+  text-align:center;box-shadow:0 0 40px rgba(0,255,65,.25);border-radius:6px}
+.hp-title{color:var(--amber);letter-spacing:3px;font-weight:800;margin-bottom:18px}
+.hp-bar{height:14px;border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-bottom:14px;background:#000}
+.hp-fill{height:100%;width:0;background:repeating-linear-gradient(45deg,var(--green),var(--green) 8px,#00b33c 8px,#00b33c 16px);transition:width .15s}
+.hp-status{color:var(--green);font-size:14px;margin-bottom:10px;min-height:20px}
+.hp-unlocked{color:#fff;font-size:18px;margin:12px 0 18px;letter-spacing:1px}
+.hp-unlocked b{color:var(--green)}
 </style>
 </head>
 <body>
@@ -221,7 +225,6 @@ footer .g{color:var(--green)}
      Infiltrate the mainframe to decrypt the full portfolio.</p>
   <div class="btn-row">
     <a class="btn" href="#iterm" id="start-mission-btn">./start_mission</a>
-    <button class="btn alt" id="view-all-btn">recruiter? view_all</button>
   </div>
   <div class="stats">
     <div class="stat"><div class="num" data-count="2">0</div><div class="lbl">years_experience</div></div>
@@ -232,7 +235,7 @@ footer .g{color:var(--green)}
   <div class="scroll-hint">▼ scroll to decrypt ▼</div>
 </header>
 
-<section id="about" class="reveal" data-level="1">
+<section id="about" class="reveal classified">
   <div class="sec-head"><div class="cmd">$ cat about.txt</div><h2>whoami</h2></div>
   <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">irfaaan@dev: ~/about</span></div>
   <div class="term-body">
@@ -242,7 +245,7 @@ footer .g{color:var(--green)}
   </div></div>
 </section>
 
-<section id="skills" class="reveal" data-level="2">
+<section id="skills" class="reveal classified">
   <div class="sec-head"><div class="cmd">$ ./scan_skills --deep</div><h2>arsenal</h2></div>
   <div class="skill-grid">
     <div class="skill-cat"><h3>backend</h3>
@@ -272,7 +275,7 @@ footer .g{color:var(--green)}
   </div>
 </section>
 
-<section id="projects" class="reveal" data-level="3">
+<section id="projects" class="reveal classified">
   <div class="sec-head"><div class="cmd">$ ls ~/projects --deployed</div><h2>missions</h2></div>
   <div class="proj-grid">
     <div class="card"><h3>🛒 Mall of Karor</h3><p>Online superstore system — ordering, COD, rider flow, admin panel. Full-stack build from spec to deploy.</p><div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Blade</span></div></div>
@@ -293,7 +296,7 @@ footer .g{color:var(--green)}
   </div></div>
 </section>
 
-<section id="game" class="reveal">
+<section id="game" class="reveal classified">
   <div class="sec-head"><div class="cmd">$ ./vault_decoder --target=VAULT-07</div><h2>vault_decoder</h2></div>
   <div class="game-wrap">
     <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">vault_decoder.exe</span></div>
@@ -313,7 +316,7 @@ footer .g{color:var(--green)}
   </div>
 </section>
 
-<section id="contact" class="reveal" data-level="4">
+<section id="contact" class="reveal classified">
   <div class="sec-head"><div class="cmd">$ ./open_channel --secure</div><h2>contact</h2></div>
   <div class="contact-grid">
     <a class="c-card" href="mailto:muhammadirfan421@gmail.com"><div class="icon">📧</div><h3>email</h3><p>muhammadirfan421@gmail.com</p></a>
@@ -328,6 +331,17 @@ footer .g{color:var(--green)}
   <div><span class="g">irfaaan:~$</span> © 2026 Muhammad Irfan — all systems operational_</div>
   <div style="margin-top:6px">built with 💚, caffeine & clean code · no firewalls were harmed</div>
 </footer>
+
+<!-- unlock popup -->
+<div class="hack-popup" id="hack-popup">
+  <div class="hack-popup-box">
+    <div class="hp-title">SECURE DECRYPTION</div>
+    <div class="hp-bar"><div class="hp-fill" id="hp-fill"></div></div>
+    <div class="hp-status" id="hp-status"></div>
+    <div class="hp-unlocked" id="hp-unlocked"></div>
+    <button class="btn" id="hp-view" style="display:none">▶ VIEW</button>
+  </div>
+</div>
 
 <script>
 /* ===== MATRIX RAIN ===== */
@@ -414,23 +428,44 @@ footer .g{color:var(--green)}
     window.__clearance=n;
     const b=document.getElementById('clear-badge');
     if(b){b.textContent='LVL '+n;b.classList.remove('up');void b.offsetWidth;b.classList.add('up');}
-    document.querySelectorAll('section[data-level]').forEach(s=>{
-      if(+s.dataset.level<=n)s.classList.remove('locked');
-    });
   }
   window.__setClearance=setClearance;
-  window.__unlockAll=function(){
-    setClearance(4);
-    print('<span class="ok">[+] recruiter mode: ALL sections decrypted. enjoy the tour ☕</span>');
-  };
 
-  function grantLevel(n,sec){
+  function revealSection(id){const s=document.getElementById(id);if(s)s.classList.remove('classified');}
+
+  function showUnlockPopup(secId,secName,sub){
+    const pop=document.getElementById('hack-popup');
+    const fill=document.getElementById('hp-fill');
+    const status=document.getElementById('hp-status');
+    const unl=document.getElementById('hp-unlocked');
+    const view=document.getElementById('hp-view');
+    pop.classList.add('show');
+    unl.innerHTML='';view.style.display='none';fill.style.width='0%';
+    status.textContent='[+] decrypting '+secId+'.sys ...';
+    let p=0;
+    const iv=setInterval(()=>{
+      p+=Math.floor(Math.random()*16)+7;
+      if(p>=100){p=100;clearInterval(iv);finish();}
+      fill.style.width=p+'%';
+      status.textContent='[+] decrypting '+secId+'.sys ... '+p+'%';
+    },150);
+    function finish(){
+      revealSection(secId);
+      status.innerHTML='<span class="ok">[+] ACCESS GRANTED</span>';
+      unl.innerHTML='🔓 <b>'+secName+'</b> UNLOCKED'+(sub?'<br><span style="color:var(--muted);font-size:13px">'+sub+'</span>':'');
+      view.style.display='inline-block';
+      view.onclick=()=>{pop.classList.remove('show');const s=document.getElementById(secId);if(s)s.scrollIntoView({behavior:'smooth'});};
+    }
+  }
+
+  function grantLevel(n,secId,secName){
     setClearance(n);
     print('<span class="ok">[+] ═══════════════════════</span>');
     print('<span class="ok">[+]&nbsp;&nbsp;CLEARANCE LEVEL '+n+' GRANTED</span>');
-    if(sec)print('<span class="ok">[+]&nbsp;&nbsp;'+sec+' decrypted — scroll up to view 👆</span>');
     print('<span class="ok">[+] ═══════════════════════</span>');
+    if(secId)showUnlockPopup(secId,secName||secId.toUpperCase());
   }
+  window.__grantLevel=grantLevel;
 
   function targetBox(){
     print('┌─ TARGET ────────────────────────┐');
@@ -476,7 +511,7 @@ footer .g{color:var(--green)}
     if(raw.trim().toLowerCase()==='override'){
       hacking=true;cmd.disabled=true;
       print('[*] override accepted ......... <span class="ok">ROOT</span>');await sleep(500);
-      grantLevel(1,'ABOUT');
+      grantLevel(1,'about','ABOUT');
       hacking=false;cmd.disabled=false;cmd.focus();
     }else{
       print('<span class="err">[!] access denied.</span> <span class="warn">the word is \'override\':</span>');
@@ -486,7 +521,7 @@ footer .g{color:var(--green)}
   async function askQuiz(raw){
     if(raw.trim().toLowerCase()==='static'){
       print('[*] correct. <span class="ok">the vault respects knowledge.</span>');await sleep(400);
-      grantLevel(2,'SKILLS');
+      grantLevel(2,'skills','SKILLS');
     }else{
       print('<span class="err">[!] wrong.</span> <span class="warn">hint: did you ever type "new DB()"? think :: vs -></span>');
       print('> answer:');
@@ -496,7 +531,7 @@ footer .g{color:var(--green)}
   async function askMagic(raw){
     if(raw.trim().toLowerCase()==='hire'){
       print('[*] ...the developer smiles.');await sleep(500);
-      grantLevel(4,'CONTACT');
+      grantLevel(4,'contact','CONTACT');
       print('<span class="ok">★ ALL MISSIONS COMPLETE — welcome, insider ★</span>');
     }else{
       print('<span class="warn">[!] not quite. hint: what do you want to DO with this dev? (4 letters)</span>');
@@ -520,6 +555,8 @@ footer .g{color:var(--green)}
       print('<span class="ok">> ═══ MISSION 3: THE VAULT DECODER ═══</span>');
       print('> crack the 4-digit vault code in the VAULT DECODER below.');
       print('> 10 attempts. play fair with logic... or cheat: type <b>breach</b> 😏');
+      const g=document.getElementById('game');
+      if(g&&g.classList.contains('classified'))showUnlockPopup('game','VAULT DECODER','new tool available');
     }else if(c===3){
       print('<span class="ok">> ═══ MISSION 4: FINAL HANDSHAKE ═══</span>');
       print('> the developer is watching this terminal right now.');
@@ -585,28 +622,16 @@ footer .g{color:var(--green)}
     if(c==='breach'){cmd.value='';if((window.__clearance||0)===0)missionBreach();else quickBreach();return;}
     if(c==='mission'){cmd.value='';missionBrief();return;}
     if(c==='status'){cmd.value='';showStatus();return;}
+    if(c==='recruiter'){cmd.value='';['about','skills','game','projects','contact'].forEach(revealSection);setClearance(4);print('<span class="ok">[+] recruiter clearance verified — ALL sectors decrypted. welcome 🤝</span>');return;}
     if(c==='clear'){out.innerHTML='';}
     else if(CMDS[c]){print(CMDS[c]);}
     else if(c){print('<span class="err">command not found: '+c.replace(/</g,'&lt')+' — try "help"</span>');}
     cmd.value='';
   });
 
-  /* lock panels for classified sections */
-  document.querySelectorAll('section[data-level]').forEach(s=>{
-    s.classList.add('locked');
-    const head=s.querySelector('.sec-head');
-    const panel=document.createElement('div');
-    panel.className='lock-panel';
-    panel.innerHTML='<div class="big">🔒</div><div class="cls">[CLASSIFIED]</div>'+
-      '<div class="lv">CLEARANCE LEVEL '+s.dataset.level+' REQUIRED</div>'+
-      '<div class="sub">complete <b>mission '+s.dataset.level+'</b> in the terminal to decrypt ↓</div>';
-    head.after(panel);
-    const content=document.createElement('div');
-    content.className='sec-content';
-    let n=panel.nextSibling;
-    while(n){const nx=n.nextSibling;content.appendChild(n);n=nx;}
-    s.appendChild(content);
-  });
+  /* popup backdrop dismiss */
+  const hpop=document.getElementById('hack-popup');
+  if(hpop)hpop.addEventListener('click',e=>{if(e.target===hpop)hpop.classList.remove('show');});
 
   /* hero buttons */
   const smb=document.getElementById('start-mission-btn');
@@ -618,8 +643,6 @@ footer .g{color:var(--green)}
       inp.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true}));
     },800);
   });
-  const vab=document.getElementById('view-all-btn');
-  if(vab)vab.addEventListener('click',()=>{if(window.__unlockAll)window.__unlockAll();});
 })();
 
 /* ===== BREACH GAME ===== */
@@ -649,7 +672,7 @@ footer .g{color:var(--green)}
     if(g.join('')===code.join('')){
       const cl=window.__clearance||0;
       if(cl===2){
-        window.__setClearance(3);
+        window.__grantLevel(3,'projects','PROJECTS');
         gprint('> 🎉 VAULT CRACKED!','hit');
         gprint('> [+] CLEARANCE LEVEL 3 GRANTED — PROJECTS decrypted! scroll up 👆','info');
       }else if(cl>2){
