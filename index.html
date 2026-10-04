@@ -177,25 +177,6 @@ footer .g{color:var(--green)}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
 .reveal.on{opacity:1;transform:none}
 
-/* ---------- CLEARANCE PROTOCOL ---------- */
-.clear-badge{border:1px solid var(--amber);color:var(--amber);padding:4px 12px;border-radius:4px;
-  font-size:12px;font-weight:700;letter-spacing:2px;margin-left:14px;white-space:nowrap}
-.clear-badge.up{animation:gpulse .9s}
-@keyframes gpulse{0%{box-shadow:0 0 0 rgba(255,176,0,0)}50%{box-shadow:0 0 20px rgba(255,176,0,.9)}100%{box-shadow:0 0 0 rgba(255,176,0,0)}}
-.classified{display:none!important}
-/* ---------- UNLOCK POPUP ---------- */
-.hack-popup{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
-.hack-popup.show{display:flex;animation:fadein .25s}
-@keyframes fadein{from{opacity:0}to{opacity:1}}
-.hack-popup-box{border:1px solid var(--green);background:#020604;padding:30px 32px;max-width:680px;width:100%;
-  text-align:center;box-shadow:0 0 40px rgba(0,255,65,.25);border-radius:6px;max-height:88vh;display:flex;flex-direction:column}
-.hp-content{text-align:left;overflow-y:auto;margin:6px 0 16px;flex:1;min-height:0}
-.hp-content .skills{grid-template-columns:repeat(2,1fr)}
-@media(max-width:720px){.hp-content .skills{grid-template-columns:1fr}}
-.hp-title{color:var(--amber);letter-spacing:3px;font-weight:800;margin-bottom:18px}
-.hp-bar{height:14px;border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-bottom:14px;background:#000}
-.hp-fill{height:100%;width:0;background:repeating-linear-gradient(45deg,var(--green),var(--green) 8px,#00b33c 8px,#00b33c 16px);transition:width .15s}
-.hp-status{color:var(--green);font-size:14px;margin-bottom:10px;min-height:20px}
 
 /* ================= ULTRA PRO v4 ================= */
 :root{--font-d:'Space Grotesk',sans-serif;--font-m:'JetBrains Mono',monospace}
@@ -274,12 +255,6 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   transition:transform .3s,border-color .3s,box-shadow .3s}
 .c-card:hover{transform:translateY(-6px) scale(1.02);border-color:var(--green);box-shadow:0 0 38px rgba(0,255,65,.22)}
-.hack-popup-box{background:rgba(3,11,6,.94);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
-  border:1px solid rgba(0,255,65,.42);border-radius:20px;
-  box-shadow:0 34px 100px rgba(0,0,0,.7),0 0 70px rgba(0,255,65,.16);
-  animation:popupin .38s cubic-bezier(.22,1,.36,1)}
-@keyframes popupin{from{transform:scale(.9) translateY(16px);opacity:0}to{transform:none;opacity:1}}
-.hp-title{font-family:var(--font-d);font-size:21px;letter-spacing:1px}
 .digit{width:60px;height:70px;font-size:32px;border-radius:14px;background:rgba(0,255,65,.05);
   border:1px solid rgba(0,255,65,.32);transition:border-color .25s,box-shadow .25s,transform .2s}
 .digit:focus{border-color:var(--green);box-shadow:0 0 20px rgba(0,255,65,.5);transform:scale(1.07);outline:none}
@@ -300,10 +275,7 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
 
 <div class="content">
 <nav>
-  <div style="display:flex;align-items:center">
-    <a class="logo" href="#top">irfaaan:~$<span class="blink">_</span></a>
-    <span class="clear-badge" id="clear-badge">LVL 0</span>
-  </div>
+  <a class="logo" href="#top">irfaaan:~$<span class="blink">_</span></a>
   <div class="nav-links">
     <a href="#about">about</a>
     <a href="#skills">skills</a>
@@ -318,11 +290,11 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
   <div class="badge"><span class="dot"></span>AVAILABLE FOR WORK</div>
   <div class="prompt-line" id="typed-prompt"></div>
   <h1 class="glitch">MUHAMMAD IRFAN</h1>
-  <div class="sub">// Clearance Protocol: ACTIVE 🔒</div>
-  <p class="desc">Four clearance levels. One terminal. Zero boring resumes.<br>
-     Infiltrate the mainframe to decrypt the full portfolio.</p>
+  <div class="sub">// Full-Stack Laravel Developer</div>
+  <p class="desc">I build fast backends, slick frontends & real-time apps.<br>
+     Laravel • Vue.js • Inertia.js • Node.js • Python — AI-assisted development.</p>
   <div class="btn-row">
-    <a class="btn" href="#iterm" id="start-mission-btn">./start_mission</a>
+    <a class="btn" href="#iterm">./enter_terminal</a>
   </div>
   <div class="stats">
     <div class="stat"><div class="num" data-count="2">0</div><div class="lbl">years_experience</div></div>
@@ -330,10 +302,10 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
     <div class="stat"><div class="num" data-count="12">0</div><div class="lbl">technologies</div></div>
     <div class="stat"><div class="num" data-count="99">0</div><div class="lbl">caffeine_level%</div></div>
   </div>
-  <div class="scroll-hint">▼ scroll to decrypt ▼</div>
+  <div class="scroll-hint">▼ scroll ▼</div>
 </header>
 
-<section id="about" class="reveal classified">
+<section id="about" class="reveal">
   <div class="sec-head"><div class="cmd">$ cat about.txt</div><h2>whoami</h2></div>
   <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">irfaaan@dev: ~/about</span></div>
   <div class="term-body">
@@ -343,7 +315,7 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
   </div></div>
 </section>
 
-<section id="skills" class="reveal classified">
+<section id="skills" class="reveal">
   <div class="sec-head"><div class="cmd">$ ./scan_skills --deep</div><h2>arsenal</h2></div>
   <div class="skill-grid">
     <div class="skill-cat"><h3>backend</h3>
@@ -373,7 +345,7 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
   </div>
 </section>
 
-<section id="projects" class="reveal classified">
+<section id="projects" class="reveal">
   <div class="sec-head"><div class="cmd">$ ls ~/projects --deployed</div><h2>missions</h2></div>
   <div class="proj-grid">
     <div class="card"><h3>🛒 Mall of Karor</h3><p>Online superstore system — ordering, COD, rider flow, admin panel. Full-stack build from spec to deploy.</p><div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Blade</span></div></div>
@@ -394,13 +366,13 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
   </div></div>
 </section>
 
-<section id="game" class="reveal classified">
+<section id="game" class="reveal">
   <div class="sec-head"><div class="cmd">$ ./vault_decoder --target=VAULT-07</div><h2>vault_decoder</h2></div>
   <div class="game-wrap" id="decoder-inner">
     <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">vault_decoder.exe</span></div>
       <div class="term-body"><div id="game-log"></div></div></div>
     <div class="game-ctl">
-      <p>🎯 <b>MISSION 3:</b> crack the <b style="color:var(--green)">4-digit</b> vault code — <b style="color:var(--amber)">10 attempts</b>.<br>Feedback: <span style="color:var(--green)">✔ exact</span> · <span style="color:var(--amber)">~ exists, wrong spot</span> · <span style="color:var(--red)">✘ not in code</span><br>💡 2 fails = intercepted intel · 💻 cheater? terminal mein <b>breach</b> likho! 😏</p>
+      <p>🎯 Crack the <b style="color:var(--green)">4-digit</b> vault code — <b style="color:var(--amber)">10 attempts</b>.<br>Feedback: <span style="color:var(--green)">✔ exact</span> · <span style="color:var(--amber)">~ exists, wrong spot</span> · <span style="color:var(--red)">✘ not in code</span><br>💡 2 fails = intercepted intel · 💻 cheater? terminal mein <b>breach</b> likho! 😏</p>
       <div class="digits">
         <input class="digit" maxlength="1" inputmode="numeric">
         <input class="digit" maxlength="1" inputmode="numeric">
@@ -414,7 +386,7 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
   </div>
 </section>
 
-<section id="contact" class="reveal classified">
+<section id="contact" class="reveal">
   <div class="sec-head"><div class="cmd">$ ./open_channel --secure</div><h2>contact</h2></div>
   <div class="contact-grid">
     <a class="c-card" href="mailto:muhammadirfan421@gmail.com"><div class="icon">📧</div><h3>email</h3><p>muhammadirfan421@gmail.com</p></a>
@@ -429,19 +401,6 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
   <div><span class="g">irfaaan:~$</span> © 2026 Muhammad Irfan — all systems operational_</div>
   <div style="margin-top:6px">built with 💚, caffeine & clean code · no firewalls were harmed</div>
 </footer>
-
-<!-- unlock popup -->
-<div class="hack-popup" id="hack-popup">
-  <div class="hack-popup-box">
-    <div class="hp-title" id="hp-title">SECURE DECRYPTION</div>
-    <div id="hp-decrypt">
-      <div class="hp-bar"><div class="hp-fill" id="hp-fill"></div></div>
-      <div class="hp-status" id="hp-status"></div>
-    </div>
-    <div class="hp-content" id="hp-content"></div>
-    <button class="btn" id="hp-close" style="display:none">✕ CLOSE</button>
-  </div>
-</div>
 
 <script>
 /* ===== MATRIX RAIN ===== */
@@ -468,9 +427,10 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
   const lines=[
     '> establishing secure connection ......... OK',
     '> loading profile: irfaaan ................ OK',
-    '> clearance protocol .................... ARMED',
-    '> [!] portfolio sections: CLASSIFIED',
-    '> type "mission" in the terminal to begin_'
+    '> verifying skills [laravel, vue, node] ... OK',
+    '> caffeine levels ......................... CRITICAL',
+    '',
+    '> ACCESS GRANTED_'
   ];
   const box=document.getElementById('boot-text'),boot=document.getElementById('boot');
   let li=0,ci=0,out='';
@@ -515,92 +475,29 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
   document.querySelectorAll('.reveal,.hero').forEach(el=>io.observe(el));
 })();
 
-/* ===== INTERACTIVE TERMINAL + CLEARANCE PROTOCOL ===== */
+/* ===== INTERACTIVE TERMINAL ===== */
 (function(){
   const out=document.getElementById('iterm-out'),cmd=document.getElementById('iterm-cmd');
   const P='<span class="in">guest@irfaaan:~$</span> ';
-  window.__clearance=0;
   function print(html){out.innerHTML+=html+'\n';out.parentElement.scrollTop=out.parentElement.scrollHeight;}
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-  let hacking=false,promptHandler=null;
+  let hacking=false;
 
-  function setClearance(n){
-    window.__clearance=n;
-    const b=document.getElementById('clear-badge');
-    if(b){b.textContent='LVL '+n;b.classList.remove('up');void b.offsetWidth;b.classList.add('up');}
-  }
-  window.__setClearance=setClearance;
-
-  function revealSection(id){const s=document.getElementById(id);if(s)s.classList.remove('classified');}
-
-  const decoderNode=document.getElementById('decoder-inner');
-  const decoderHome=document.getElementById('game');
-  function parkDecoder(){
-    if(decoderNode&&decoderHome&&decoderNode.parentElement!==decoderHome)decoderHome.appendChild(decoderNode);
-  }
-  function popupEls(){
-    return {
-      pop:document.getElementById('hack-popup'),
-      title:document.getElementById('hp-title'),
-      dec:document.getElementById('hp-decrypt'),
-      fill:document.getElementById('hp-fill'),
-      status:document.getElementById('hp-status'),
-      content:document.getElementById('hp-content'),
-      close:document.getElementById('hp-close')
-    };
-  }
-  function openPopup(){popupEls().pop.classList.add('show');}
-  function closePopup(){popupEls().pop.classList.remove('show');}
-
-  /* decrypt animation -> then show section content INSIDE the popup */
-  function showContentPopup(secId,secName){
-    parkDecoder();
-    const {pop,title,dec,fill,status,content,close}=popupEls();
-    const src=document.getElementById(secId);
-    const html=src?src.innerHTML:'';
-    title.textContent='SECURE DECRYPTION';
-    dec.style.display='block';content.innerHTML='';close.style.display='none';
-    fill.style.width='0%';status.textContent='[+] decrypting '+secId+'.sys ...';
-    openPopup();
-    let p=0;
-    const iv=setInterval(()=>{
-      p+=Math.floor(Math.random()*16)+7;
-      if(p>=100){p=100;clearInterval(iv);finish();}
-      fill.style.width=p+'%';
-      status.textContent='[+] decrypting '+secId+'.sys ... '+p+'%';
-    },150);
-    function finish(){
-      dec.style.display='none';
-      title.innerHTML='🔓 <b style="color:var(--green)">'+secName+'</b> UNLOCKED';
-      content.innerHTML=html;
-      content.scrollTop=0;
-      content.querySelectorAll('.fill').forEach((f,i)=>{setTimeout(()=>{f.style.width=f.dataset.w+'%'},160+i*140);});
-      close.style.display='inline-block';close.textContent='✕ CLOSE';
-      close.onclick=closePopup;
+  const flag=cc=>cc?String.fromCodePoint(...[...cc.toUpperCase()].map(c=>127397+c.charCodeAt(0))):'';
+  async function geo(){
+    const apis=['https://ipapi.co/json/','https://ipwho.is/'];
+    for(const u of apis){
+      try{
+        const r=await fetch(u);
+        if(!r.ok)continue;
+        const j=await r.json();
+        const ip=j.ip||j.query, country=j.country_name||j.country,
+              cc=j.country_code||j.countryCode, city=j.city;
+        if(ip&&country)return{ip,country,cc,city};
+      }catch(e){}
     }
+    return null;
   }
-
-  /* vault decoder tool inside the popup */
-  function showDecoderPopup(){
-    const {title,dec,content,close}=popupEls();
-    title.textContent='⌨️ VAULT DECODER';
-    dec.style.display='none';content.innerHTML='';
-    if(decoderNode)content.appendChild(decoderNode);
-    close.style.display='inline-block';close.textContent='✕ CLOSE';
-    close.onclick=closePopup;
-    openPopup();
-    const first=content.querySelector('.digit');
-    if(first)setTimeout(()=>first.focus(),300);
-  }
-
-  function grantLevel(n,secId,secName){
-    setClearance(n);
-    print('<span class="ok">[+] ═══════════════════════</span>');
-    print('<span class="ok">[+]&nbsp;&nbsp;CLEARANCE LEVEL '+n+' GRANTED</span>');
-    print('<span class="ok">[+] ═══════════════════════</span>');
-    if(secId)showContentPopup(secId,secName||secId.toUpperCase());
-  }
-  window.__grantLevel=grantLevel;
 
   function targetBox(){
     print('┌─ TARGET ────────────────────────┐');
@@ -610,179 +507,62 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
     print('└─────────────────────────────────┘');
   }
 
-  async function missionBreach(){
-    if(hacking){print('<span class="warn">[!] operation already running...</span>');return;}
-    hacking=true;cmd.disabled=true;
-    print('<span class="ok">> ═══ BLACKHAT MODULE: BREACH ═══</span>');await sleep(400);
-    targetBox();await sleep(500);
-    print('[*] select infiltration vector:');await sleep(300);
-    print('&nbsp;&nbsp;[1] spear-phishing&nbsp;&nbsp;&nbsp;[2] zero-day&nbsp;&nbsp;&nbsp;[3] insider');await sleep(200);
-    print('> vector (1-3):');
-    hacking=false;cmd.disabled=false;cmd.focus();
-    promptHandler=vectorStep;
-  }
-  async function vectorStep(raw){
-    hacking=true;cmd.disabled=true;
-    const names={'1':'spear-phishing','2':'zero-day','3':'insider'};
-    print('[*] vector: <span class="ok">'+(names[raw.trim()]||'brute-force')+'</span> — deploying...');await sleep(700);
-    print('[*] press <span class="ok">ENTER</span> to inject payload');
-    hacking=false;cmd.disabled=false;cmd.focus();
-    promptHandler=injectStep;
-  }
-  async function injectStep(){
-    hacking=true;cmd.disabled=true;
-    const bar=document.createElement('div');out.appendChild(bar);
-    for(let p=0;p<=100;p+=20){
-      bar.innerHTML='[*] injecting ... ['+'█'.repeat(p/20)+'░'.repeat(5-p/20)+'] '+p+'%';
-      out.parentElement.scrollTop=out.parentElement.scrollHeight;
-      await sleep(320);
-    }
-    print('[*] firewall layer 1 ......... <span class="ok">BYPASSED</span>');await sleep(450);
-    print('[*] final layer active. type <span class="warn">\'override\'</span> to break it:');
-    hacking=false;cmd.disabled=false;cmd.focus();
-    promptHandler=askOverride;
-  }
-  async function askOverride(raw){
-    if(raw.trim().toLowerCase()==='override'){
-      hacking=true;cmd.disabled=true;
-      print('[*] override accepted ......... <span class="ok">ROOT</span>');await sleep(500);
-      grantLevel(1,'about','ABOUT');
-      hacking=false;cmd.disabled=false;cmd.focus();
-    }else{
-      print('<span class="err">[!] access denied.</span> <span class="warn">the word is \'override\':</span>');
-      promptHandler=askOverride;
-    }
-  }
-  async function askQuiz(raw){
-    if(raw.trim().toLowerCase()==='static'){
-      print('[*] correct. <span class="ok">the vault respects knowledge.</span>');await sleep(400);
-      grantLevel(2,'skills','SKILLS');
-    }else{
-      print('<span class="err">[!] wrong.</span> <span class="warn">hint: did you ever type "new DB()"? think :: vs -></span>');
-      print('> answer:');
-      promptHandler=askQuiz;
-    }
-  }
-  async function askMagic(raw){
-    if(raw.trim().toLowerCase()==='hire'){
-      print('[*] ...the developer smiles.');await sleep(500);
-      grantLevel(4,'contact','CONTACT');
-      print('<span class="ok">★ ALL MISSIONS COMPLETE — welcome, insider ★</span>');
-    }else{
-      print('<span class="warn">[!] not quite. hint: what do you want to DO with this dev? (4 letters)</span>');
-      print('> magic word:');
-      promptHandler=askMagic;
-    }
-  }
-  function missionBrief(){
-    const c=window.__clearance;
-    if(c===0){
-      print('<span class="ok">> ═══ MISSION 1: FIRST BREACH ═══</span>');
-      print('> the portfolio is sealed. only this terminal is open.');
-      print('> type <b>breach</b> to infiltrate and earn CLEARANCE LEVEL 1.');
-    }else if(c===1){
-      print('<span class="ok">> ═══ MISSION 2: SECURITY QUESTION ═══</span>');
-      print('> the vault demands proof of knowledge.');
-      print('> question: in Laravel, is <b>DB::table()</b> static or object?');
-      print('> answer:');
-      promptHandler=askQuiz;
-    }else if(c===2){
-      print('<span class="ok">> ═══ MISSION 3: THE VAULT DECODER ═══</span>');
-      print('> opening vault decoder...');
-      print('> 10 attempts. play fair with logic... or cheat: close it & type <b>breach</b> 😏');
-      showDecoderPopup();
-    }else if(c===3){
-      print('<span class="ok">> ═══ MISSION 4: FINAL HANDSHAKE ═══</span>');
-      print('> the developer is watching this terminal right now.');
-      print('> prove you\'re human. type the magic word:');
-      print('> (hint: 4 letters — what do you want to do with this dev?)');
-      promptHandler=askMagic;
-    }else{
-      print('<span class="ok">★ ALL MISSIONS COMPLETE — full access granted. welcome, insider.</span>');
-    }
-  }
-  function showStatus(){
-    const c=window.__clearance;
-    const secs=['about','skills','projects','contact'];
-    print('> CLEARANCE: <span class="warn">LEVEL '+c+' / 4</span>');
-    print('> decrypted: '+(c?secs.slice(0,c).join(', '):'<i>none yet</i>'));
-    if(c<4)print('> next: type <b>mission</b>');else print('> <span class="ok">all systems open. well played.</span>');
-  }
-  async function quickBreach(){
-    if(hacking){print('<span class="warn">[!] operation already running...</span>');return;}
+  async function runBreach(){
+    if(hacking){print('<span class="warn">[!] breach already running...</span>');return;}
     hacking=true;cmd.disabled=true;
     const code=window.__breachCode||['?','?','?','?'];
-    print('<span class="ok">> insider protocol: extracting vault code...</span>');await sleep(600);
+    print('<span class="ok">> launching blackhat module: BREACH</span>');await sleep(450);
     targetBox();await sleep(500);
-    const bar=document.createElement('div');out.appendChild(bar);
-    for(let p=0;p<=100;p+=25){
-      bar.innerHTML='[*] tapping VAULT-07 memory bus ['+'█'.repeat(p/25)+'░'.repeat(4-p/25)+'] '+p+'%';
-      out.parentElement.scrollTop=out.parentElement.scrollHeight;
-      await sleep(300);
+    print('[*] handshake ................ <span class="ok">ESTABLISHED</span>');await sleep(550);
+    print('[*] injecting shellcode 0x3F2A9C ... <span class="ok">OK</span>');await sleep(650);
+    print('[*] escalating privileges ..... <span class="ok">ROOT</span>');await sleep(650);
+    print('[*] dumping memory sectors:');await sleep(350);
+    for(let i=0;i<4;i++){
+      const d=[];for(let j=0;j<8;j++)d.push(('0'+Math.floor(Math.random()*256).toString(16)).slice(-2).toUpperCase());
+      print('&nbsp;&nbsp;&nbsp;&nbsp;0x0'+i+'FF: '+d.join(' '));await sleep(240);
     }
+    const bar=document.createElement('div');out.appendChild(bar);
+    for(let p=0;p<=100;p+=10){
+      bar.innerHTML='[*] brute-forcing keyspace [0000-9999] ['+'█'.repeat(p/10)+'░'.repeat(10-p/10)+'] '+p+'%';
+      out.parentElement.scrollTop=out.parentElement.scrollHeight;
+      await sleep(280);
+    }
+    print('[*] firewall layer 1 ......... <span class="ok">BYPASSED</span>');await sleep(450);
+    print('[*] firewall layer 2 ......... <span class="ok">BYPASSED</span>');await sleep(450);
     print('<span class="ok">[+] ═══════════════════════</span>');
-    print('<span class="ok">[+]&nbsp;&nbsp;CODE: [ '+code.join(' ')+' ]</span>');
+    print('<span class="ok">[+]&nbsp;&nbsp;CODE CRACKED: [ '+code.join(' ')+' ]</span>');
     print('<span class="ok">[+] ═══════════════════════</span>');
     print('<span class="warn">[*] feed it to the VAULT DECODER below 😉</span>');
     hacking=false;cmd.disabled=false;cmd.focus();
   }
 
   const CMDS={
-    help:'<span class="ok">commands:</span> mission · breach · status · about · skills · projects · contact · whoami · date · hack · sudo · clear',
+    help:'<span class="ok">commands:</span> about · skills · projects · experience · contact · whoami · <b>breach</b> · date · hack · sudo · clear',
     about:'Laravel developer, ~2 yrs. I ship backends, admin panels, APIs & real-time apps.',
     skills:'Laravel · PHP · Vue.js · Inertia.js · Node.js · Python · WebSockets · MySQL · PostgreSQL · Linux · Git · Docker',
     projects:'🛒 Mall of Karor · 🎪 Event Platform (Nafisol) · ⚙️ Admin panels (Alright Tech) · 🤖 AlfaBot',
     experience:'~2 years full-stack — backend systems, admin panels, event platform, e-commerce flows.',
     contact:'📧 muhammadirfan421@gmail.com · 🐙 github.com/irfaaan · 💼 linkedin.com/in/irf4n',
-    whoami:'guest — so close to insider 😉',
+    whoami:'guest — future insider 😉',
     date:new Date().toString(),
     hack:'<span class="warn">[!] nice try. the real op is the "breach" command 😏</span>',
     sudo:'<span class="err">permission denied: guest is not in the sudoers file 😏</span>'
   };
-  print('<span class="ok">connected to irfaaan.dev — portfolio SEALED. type "mission" to begin. (abort cancels a prompt)</span>');
+  print('<span class="ok">connected to irfaaan.dev</span>');
+  geo().then(g=>{
+    if(g)print('[*] visitor_ip: <span class="ok">'+g.ip+'</span> · location: <span class="warn">'+(g.city?g.city+', ':'')+g.country+'</span> '+flag(g.cc));
+    else print('<span class="warn">[*] visitor: ghost mode — ip unresolved</span>');
+    print('<span class="ok">type "help" · insiders type "breach" 😏</span>');
+  });
   cmd.addEventListener('keydown',e=>{
     if(e.key!=='Enter')return;
-    const raw=cmd.value.trim();
-    if(promptHandler){
-      const h=promptHandler;promptHandler=null;
-      print(P+raw.replace(/</g,'&lt;'));
-      cmd.value='';
-      if(raw.toLowerCase()==='abort'){print('[*] mission aborted. type "mission" to retry.');return;}
-      h(raw);
-      return;
-    }
-    const c=raw.toLowerCase();
+    const raw=cmd.value.trim(),c=raw.toLowerCase();
     print(P+raw.replace(/</g,'&lt;'));
-    if(c==='breach'){
-      cmd.value='';
-      const cl=window.__clearance||0;
-      if(cl===0)missionBreach();
-      else if(cl===2)quickBreach();
-      else print('<span class="warn">[!] no target at this clearance. type "mission" to continue the sequence.</span>');
-      return;
-    }
-    if(c==='mission'){cmd.value='';missionBrief();return;}
-    if(c==='status'){cmd.value='';showStatus();return;}
-    if(c==='recruiter'){cmd.value='';['about','skills','game','projects','contact'].forEach(revealSection);setClearance(4);print('<span class="ok">[+] recruiter clearance verified — ALL sectors decrypted. welcome 🤝</span>');return;}
+    if(c==='breach'){cmd.value='';runBreach();return;}
     if(c==='clear'){out.innerHTML='';}
     else if(CMDS[c]){print(CMDS[c]);}
     else if(c){print('<span class="err">command not found: '+c.replace(/</g,'&lt')+' — try "help"</span>');}
     cmd.value='';
-  });
-
-  /* popup backdrop dismiss */
-  const hpop=document.getElementById('hack-popup');
-  if(hpop)hpop.addEventListener('click',e=>{if(e.target===hpop)hpop.classList.remove('show');});
-
-  /* hero buttons */
-  const smb=document.getElementById('start-mission-btn');
-  if(smb)smb.addEventListener('click',()=>{
-    setTimeout(()=>{
-      const inp=document.getElementById('iterm-cmd');
-      if(!inp)return;
-      inp.focus();inp.value='mission';
-      inp.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true}));
-    },800);
   });
 })();
 
@@ -811,17 +591,8 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
     }).join(' ');
     gprint('> ['+g.join(' ')+'] → '+res, left===0?'miss':'');
     if(g.join('')===code.join('')){
-      const cl=window.__clearance||0;
-      if(cl===2){
-        window.__grantLevel(3,'projects','PROJECTS');
-        gprint('> 🎉 VAULT CRACKED!','hit');
-        gprint('> [+] CLEARANCE LEVEL 3 GRANTED — PROJECTS incoming...','info');
-      }else if(cl>2){
-        gprint('> 🎉 code cracked again. smooth.','hit');
-      }else{
-        gprint('> 🎉 code cracked! impressive...','hit');
-        gprint('> [!] but the vault demands ORDER — type "mission" in the terminal first','warn');
-      }
+      gprint('> 🎉 ACCESS GRANTED! vault breached in '+(10-left)+' tries!','hit');
+      gprint('> ...hacker detected: you should hire this dev 😎','info');
       left=0;
     }else{
       fails++;
