@@ -1,0 +1,121 @@
+- branch: weekly
+  date: '2020-07-17'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/bomb-weekly/fw-vendor_bomb_miui_BOMB_20.7.16_e3b8f598c0_10.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/bomb-weekly/fw-vendor_bomb_miui_BOMB_20.7.16_e3b8f598c0_10.0.zip/download
+  filename: fw-vendor_bomb_miui_BOMB_20.7.16_e3b8f598c0_10.0.zip
+  region: China
+  size: 676.1 MB
+  versions:
+    android: '10.0'
+    miui: 20.7.16
+- branch: weekly
+  date: '2020-07-23'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/bomb-weekly/fw-vendor_bomb_miui_BOMB_20.7.23_8ddaf66b49_10.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/bomb-weekly/fw-vendor_bomb_miui_BOMB_20.7.23_8ddaf66b49_10.0.zip/download
+  filename: fw-vendor_bomb_miui_BOMB_20.7.23_8ddaf66b49_10.0.zip
+  region: China
+  size: 675.7 MB
+  versions:
+    android: '10.0'
+    miui: 20.7.23
+- branch: weekly
+  date: '2020-07-30'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/bomb-weekly/fw-vendor_bomb_miui_BOMB_20.7.30_c50f4b9e59_10.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/bomb-weekly/fw-vendor_bomb_miui_BOMB_20.7.30_c50f4b9e59_10.0.zip/download
+  filename: fw-vendor_bomb_miui_BOMB_20.7.30_c50f4b9e59_10.0.zip
+  region: China
+  size: 678.9 MB
+  versions:
+    android: '10.0'
+    miui: 20.7.30
+- branch: weekly
+  date: '2020-08-06'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/bomb-weekly/fw-vendor_bomb_miui_BOMB_20.8.6_72da83ea86_10.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/bomb-weekly/fw-vendor_bomb_miui_BOMB_20.8.6_72da83ea86_10.0.zip/download
+  filename: fw-vendor_bomb_miui_BOMB_20.8.6_72da83ea86_10.0.zip
+  region: China
+  size: 681.9 MB
+  versions:
+    android: '10.0'
+    miui: 20.8.6
+- branch: weekly
+  date: '2020-09-03'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/bomb-weekly/fw-vendor_bomb_miui_BOMB_20.9.3_954ae4c170_10.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/bomb-weekly/fw-vendor_bomb_miui_BOMB_20.9.3_954ae4c170_10.0.zip/download
+  filename: fw-vendor_bomb_miui_BOMB_20.9.3_954ae4c170_10.0.zip
+  region: China
+  size: 670.9 MB
+  versions:
+    android: '10.0'
+    miui: 20.9.3
+- branch: stable
+  date: '2020-05-27'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/bomb-stable/fw-vendor_bomb_miui_BOMB_V11.0.1.0.QJLCNXM_833c58c19a_10.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/bomb-stable/fw-vendor_bomb_miui_BOMB_V11.0.1.0.QJLCNXM_833c58c19a_10.0.zip/download
+  filename: fw-vendor_bomb_miui_BOMB_V11.0.1.0.QJLCNXM_833c58c19a_10.0.zip
+  region: China
+  size: 642.5 MB
+  versions:
+    android: '10.0'
+    miui: V11.0.1.0.QJLCNXM
+- branch: stable
+  date: '2020-06-04'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/bomb-stable/fw-vendor_bomb_miui_BOMB_V11.0.2.0.QJLCNXM_82eed40fe8_10.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/bomb-stable/fw-vendor_bomb_miui_BOMB_V11.0.2.0.QJLCNXM_82eed40fe8_10.0.zip/download
+  filename: fw-vendor_bomb_miui_BOMB_V11.0.2.0.QJLCNXM_82eed40fe8_10.0.zip
+  region: China
+  size: 644.3 MB
+  versions:
+    android: '10.0'
+    miui: V11.0.2.0.QJLCNXM
+- branch: stable
+  date: '2020-06-05'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/bomb-stable/fw-vendor_bomb_miui_BOMB_V11.0.3.0.QJLCNXM_ac26c85fee_10.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/bomb-stable/fw-vendor_bomb_miui_BOMB_V11.0.3.0.QJLCNXM_ac26c85fee_10.0.zip/download
+  filename: fw-vendor_bomb_miui_BOMB_V11.0.3.0.QJLCNXM_ac26c85fee_10.0.zip
+  region: China
+  size: 644.3 MB
+  versions:
+    android: '10.0'
+    miui: V11.0.3.0.QJLCNXM
+- branch: stable
+  date: '2020-06-30'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/bomb-stable/fw-vendor_bomb_miui_BOMB_V11.0.5.0.QJLCNXM_f5fe92b98f_10.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/bomb-stable/fw-vendor_bomb_miui_BOMB_V11.0.5.0.QJLCNXM_f5fe92b98f_10.0.zip/download
+  filename: fw-vendor_bomb_miui_BOMB_V11.0.5.0.QJLCNXM_f5fe92b98f_10.0.zip
+  region: China
+  size: 653.8 MB
+  versions:
+    android: '10.0'
+    miui: V11.0.5.0.QJLCNXM
+- branch: stable
+  date: '2020-07-22'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/bomb-stable/fw-vendor_bomb_miui_BOMB_V12.0.2.0.QJLCNXM_bc62150baa_10.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/bomb-stable/fw-vendor_bomb_miui_BOMB_V12.0.2.0.QJLCNXM_bc62150baa_10.0.zip/download
+  filename: fw-vendor_bomb_miui_BOMB_V12.0.2.0.QJLCNXM_bc62150baa_10.0.zip
+  region: China
+  size: 643.0 MB
+  versions:
+    android: '10.0'
+    miui: V12.0.2.0.QJLCNXM
+- branch: stable
+  date: '2020-08-20'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/bomb-stable/fw-vendor_bomb_miui_BOMB_V12.0.5.0.QJLCNXM_01d72d5661_10.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/bomb-stable/fw-vendor_bomb_miui_BOMB_V12.0.5.0.QJLCNXM_01d72d5661_10.0.zip/download
+  filename: fw-vendor_bomb_miui_BOMB_V12.0.5.0.QJLCNXM_01d72d5661_10.0.zip
+  region: China
+  size: 643.0 MB
+  versions:
+    android: '10.0'
+    miui: V12.0.5.0.QJLCNXM

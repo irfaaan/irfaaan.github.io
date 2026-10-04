@@ -1,0 +1,190 @@
+- branch: stable
+  date: '2024-04-26'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-26.04.2024/fw_topaz_miui_TOPAZEEAGlobal_OS1.0.9.0.UMGEUXM_4065380f8c_14.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/OS1/topaz/fw_topaz_miui_TOPAZEEAGlobal_OS1.0.9.0.UMGEUXM_4065380f8c_14.0.zip
+  filename: fw_topaz_miui_TOPAZEEAGlobal_OS1.0.9.0.UMGEUXM_4065380f8c_14.0.zip
+  region: Europe
+  versions:
+    android: '14.0'
+    miui: OS1.0.9.0.UMGEUXM
+- branch: stable
+  date: '2023-07-24'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-24.07.2023/fw_topaz_miui_TOPAZEEAGlobal_V14.0.10.0.TMGEUXM_7673a8c890_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/topaz/fw_topaz_miui_TOPAZEEAGlobal_V14.0.10.0.TMGEUXM_7673a8c890_13.0.zip
+  filename: fw_topaz_miui_TOPAZEEAGlobal_V14.0.10.0.TMGEUXM_7673a8c890_13.0.zip
+  region: Europe
+  versions:
+    android: '13.0'
+    miui: V14.0.10.0.TMGEUXM
+- branch: stable
+  date: '2023-07-23'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-23.07.2023/fw_topaz_miui_TOPAZGlobal_V14.0.5.0.TMGMIXM_fe6ea14cd3_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/topaz/fw_topaz_miui_TOPAZGlobal_V14.0.5.0.TMGMIXM_fe6ea14cd3_13.0.zip
+  filename: fw_topaz_miui_TOPAZGlobal_V14.0.5.0.TMGMIXM_fe6ea14cd3_13.0.zip
+  region: Global
+  versions:
+    android: '13.0'
+    miui: V14.0.5.0.TMGMIXM
+- branch: stable
+  date: '2023-11-22'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-22.11.2023/fw_topaz_miui_TOPAZGlobal_V14.0.8.0.TMGMIXM_64c17677ed_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/topaz/fw_topaz_miui_TOPAZGlobal_V14.0.8.0.TMGMIXM_64c17677ed_13.0.zip
+  filename: fw_topaz_miui_TOPAZGlobal_V14.0.8.0.TMGMIXM_64c17677ed_13.0.zip
+  region: Global
+  versions:
+    android: '13.0'
+    miui: V14.0.8.0.TMGMIXM
+- branch: stable
+  date: '2024-01-22'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-22.01.2024/fw_topaz_miui_TOPAZEEAGlobal_OS1.0.2.0.UMGEUXM_8f6a8b7267_14.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/OS1/topaz/fw_topaz_miui_TOPAZEEAGlobal_OS1.0.2.0.UMGEUXM_8f6a8b7267_14.0.zip
+  filename: fw_topaz_miui_TOPAZEEAGlobal_OS1.0.2.0.UMGEUXM_8f6a8b7267_14.0.zip
+  region: Europe
+  versions:
+    android: '14.0'
+    miui: OS1.0.2.0.UMGEUXM
+- branch: stable
+  date: '2023-05-19'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-19.05.2023/fw_topaz_miui_TOPAZGlobal_V14.0.3.0.TMGMIXM_50d540e4de_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/topaz/fw_topaz_miui_TOPAZGlobal_V14.0.3.0.TMGMIXM_50d540e4de_13.0.zip
+  filename: fw_topaz_miui_TOPAZGlobal_V14.0.3.0.TMGMIXM_50d540e4de_13.0.zip
+  region: Global
+  versions:
+    android: '13.0'
+    miui: V14.0.3.0.TMGMIXM
+- branch: stable
+  date: '2023-09-18'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-18.09.2023/fw_topaz_miui_TOPAZGlobal_V14.0.7.0.TMGMIXM_4e148ecf3f_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/topaz/fw_topaz_miui_TOPAZGlobal_V14.0.7.0.TMGMIXM_4e148ecf3f_13.0.zip
+  filename: fw_topaz_miui_TOPAZGlobal_V14.0.7.0.TMGMIXM_4e148ecf3f_13.0.zip
+  region: Global
+  versions:
+    android: '13.0'
+    miui: V14.0.7.0.TMGMIXM
+- branch: stable
+  date: '2023-04-18'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-18.04.2023/fw_topaz_miui_TOPAZGlobal_V14.0.2.0.TMGMIXM_69d8c8488e_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/topaz/fw_topaz_miui_TOPAZGlobal_V14.0.2.0.TMGMIXM_69d8c8488e_13.0.zip
+  filename: fw_topaz_miui_TOPAZGlobal_V14.0.2.0.TMGMIXM_69d8c8488e_13.0.zip
+  region: Global
+  versions:
+    android: '13.0'
+    miui: V14.0.2.0.TMGMIXM
+- branch: stable
+  date: '2024-02-18'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-18.02.2024/fw_topaz_miui_TOPAZGlobal_OS1.0.4.0.UMGMIXM_a5ad88643c_14.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/OS1/topaz/fw_topaz_miui_TOPAZGlobal_OS1.0.4.0.UMGMIXM_a5ad88643c_14.0.zip
+  filename: fw_topaz_miui_TOPAZGlobal_OS1.0.4.0.UMGMIXM_a5ad88643c_14.0.zip
+  region: Global
+  versions:
+    android: '14.0'
+    miui: OS1.0.4.0.UMGMIXM
+- branch: stable
+  date: '2024-04-17'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-17.04.2024/fw_topaz_miui_TOPAZEEAGlobal_OS1.0.7.0.UMGEUXM_5b32c81f19_14.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/OS1/topaz/fw_topaz_miui_TOPAZEEAGlobal_OS1.0.7.0.UMGEUXM_5b32c81f19_14.0.zip
+  filename: fw_topaz_miui_TOPAZEEAGlobal_OS1.0.7.0.UMGEUXM_5b32c81f19_14.0.zip
+  region: Europe
+  versions:
+    android: '14.0'
+    miui: OS1.0.7.0.UMGEUXM
+- branch: stable
+  date: '2023-09-14'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-14.09.2023/fw_topaz_miui_TOPAZEEAGlobal_V14.0.11.0.TMGEUXM_43e4ee28c6_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/topaz/fw_topaz_miui_TOPAZEEAGlobal_V14.0.11.0.TMGEUXM_43e4ee28c6_13.0.zip
+  filename: fw_topaz_miui_TOPAZEEAGlobal_V14.0.11.0.TMGEUXM_43e4ee28c6_13.0.zip
+  region: Europe
+  versions:
+    android: '13.0'
+    miui: V14.0.11.0.TMGEUXM
+- branch: stable
+  date: '2024-01-12'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-12.01.2024/fw_topaz_miui_TOPAZGlobal_OS1.0.2.0.UMGMIXM_0d2645dd48_14.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/OS1/topaz/fw_topaz_miui_TOPAZGlobal_OS1.0.2.0.UMGMIXM_0d2645dd48_14.0.zip
+  filename: fw_topaz_miui_TOPAZGlobal_OS1.0.2.0.UMGMIXM_0d2645dd48_14.0.zip
+  region: Global
+  versions:
+    android: '14.0'
+    miui: OS1.0.2.0.UMGMIXM
+- branch: stable
+  date: '2023-06-10'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-11.06.2023/fw_topaz_miui_TOPAZEEAGlobal_V14.0.9.0.TMGEUXM_e6053ff3d4_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/topaz/fw_topaz_miui_TOPAZEEAGlobal_V14.0.9.0.TMGEUXM_e6053ff3d4_13.0.zip
+  filename: fw_topaz_miui_TOPAZEEAGlobal_V14.0.9.0.TMGEUXM_e6053ff3d4_13.0.zip
+  region: Europe
+  versions:
+    android: '13.0'
+    miui: V14.0.9.0.TMGEUXM
+- branch: stable
+  date: '2023-05-11'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-11.05.2023/fw_topaz_miui_TOPAZEEAGlobal_V14.0.7.0.TMGEUXM_7a3fcbf5d9_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/topaz/fw_topaz_miui_TOPAZEEAGlobal_V14.0.7.0.TMGEUXM_7a3fcbf5d9_13.0.zip
+  filename: fw_topaz_miui_TOPAZEEAGlobal_V14.0.7.0.TMGEUXM_7a3fcbf5d9_13.0.zip
+  region: Europe
+  versions:
+    android: '13.0'
+    miui: V14.0.7.0.TMGEUXM
+- branch: stable
+  date: '2024-03-11'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-11.03.2024/fw_topaz_miui_TOPAZEEAGlobal_OS1.0.6.0.UMGEUXM_dfadeededc_14.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/OS1/topaz/fw_topaz_miui_TOPAZEEAGlobal_OS1.0.6.0.UMGEUXM_dfadeededc_14.0.zip
+  filename: fw_topaz_miui_TOPAZEEAGlobal_OS1.0.6.0.UMGEUXM_dfadeededc_14.0.zip
+  region: Europe
+  versions:
+    android: '14.0'
+    miui: OS1.0.6.0.UMGEUXM
+- branch: stable
+  date: '2023-04-07'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-07.04.2023/fw_topaz_miui_TOPAZEEAGlobal_V14.0.2.0.TMGEUXM_e1fc034b56_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/topaz/fw_topaz_miui_TOPAZEEAGlobal_V14.0.2.0.TMGEUXM_e1fc034b56_13.0.zip
+  filename: fw_topaz_miui_TOPAZEEAGlobal_V14.0.2.0.TMGEUXM_e1fc034b56_13.0.zip
+  region: Europe
+  versions:
+    android: '13.0'
+    miui: V14.0.2.0.TMGEUXM
+- branch: stable
+  date: '2024-03-05'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-05.03.2024/fw_topaz_miui_TOPAZEEAGlobal_OS1.0.3.0.UMGEUXM_351da45d3b_14.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/OS1/topaz/fw_topaz_miui_TOPAZEEAGlobal_OS1.0.3.0.UMGEUXM_351da45d3b_14.0.zip
+  filename: fw_topaz_miui_TOPAZEEAGlobal_OS1.0.3.0.UMGEUXM_351da45d3b_14.0.zip
+  region: Europe
+  versions:
+    android: '14.0'
+    miui: OS1.0.3.0.UMGEUXM
+- branch: stable
+  date: '2023-12-04'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-04.12.2023/fw_topaz_miui_TOPAZEEAGlobal_V14.0.12.0.TMGEUXM_99ecb5b397_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/topaz/fw_topaz_miui_TOPAZEEAGlobal_V14.0.12.0.TMGEUXM_99ecb5b397_13.0.zip
+  filename: fw_topaz_miui_TOPAZEEAGlobal_V14.0.12.0.TMGEUXM_99ecb5b397_13.0.zip
+  region: Europe
+  versions:
+    android: '13.0'
+    miui: V14.0.12.0.TMGEUXM
+- branch: stable
+  date: '2023-04-04'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_topaz/releases/download/stable-04.04.2023/fw_topaz_miui_TOPAZGlobal_V14.0.1.0.TMGMIXM_8000f29ef0_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/topaz/fw_topaz_miui_TOPAZGlobal_V14.0.1.0.TMGMIXM_8000f29ef0_13.0.zip
+  filename: fw_topaz_miui_TOPAZGlobal_V14.0.1.0.TMGMIXM_8000f29ef0_13.0.zip
+  region: Global
+  versions:
+    android: '13.0'
+    miui: V14.0.1.0.TMGMIXM

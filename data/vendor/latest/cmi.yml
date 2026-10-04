@@ -1,0 +1,44 @@
+- branch: stable
+  date: '2020-10-01'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/cmi_global-stable/fw-vendor_cmi_miui_CMIGlobal_V12.1.2.0.RJAMIXM_ef34b27a92_11.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/cmi_global-stable/fw-vendor_cmi_miui_CMIGlobal_V12.1.2.0.RJAMIXM_ef34b27a92_11.0.zip/download
+  filename: fw-vendor_cmi_miui_CMIGlobal_V12.1.2.0.RJAMIXM_ef34b27a92_11.0.zip
+  region: Global
+  size: 1.5 GB
+  versions:
+    android: '11.0'
+    miui: V12.1.2.0.RJAMIXM
+- branch: stable
+  date: '2020-10-01'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/cmi-stable/fw-vendor_cmi_miui_CMI_V12.1.3.0.RJACNXM_c1ef0028e8_11.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/cmi-stable/fw-vendor_cmi_miui_CMI_V12.1.3.0.RJACNXM_c1ef0028e8_11.0.zip/download
+  filename: fw-vendor_cmi_miui_CMI_V12.1.3.0.RJACNXM_c1ef0028e8_11.0.zip
+  region: China
+  size: 1.3 GB
+  versions:
+    android: '11.0'
+    miui: V12.1.3.0.RJACNXM
+- branch: weekly
+  date: '2020-09-05'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/cmi-weekly/fw-vendor_cmi_miui_CMI_20.9.3_0735c3fb4f_11.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/cmi-weekly/fw-vendor_cmi_miui_CMI_20.9.3_0735c3fb4f_11.0.zip/download
+  filename: fw-vendor_cmi_miui_CMI_20.9.3_0735c3fb4f_11.0.zip
+  region: China
+  size: 1.3 GB
+  versions:
+    android: '11.0'
+    miui: 20.9.3
+- branch: stable
+  date: '2020-09-10'
+  downloads:
+    github: https://github.com/TryHardDood/mi-vendor-updater/releases/download/cmi_eea_global-stable/fw-vendor_cmi_miui_CMIEEAGlobal_V12.0.2.0.QJAEUXM_6310c179de_10.0.zip
+    sf: https://sourceforge.net/projects/xiaomi-vendor-updater-project/files/cmi_eea_global-stable/fw-vendor_cmi_miui_CMIEEAGlobal_V12.0.2.0.QJAEUXM_6310c179de_10.0.zip/download
+  filename: fw-vendor_cmi_miui_CMIEEAGlobal_V12.0.2.0.QJAEUXM_6310c179de_10.0.zip
+  region: Europe
+  size: 1.5 GB
+  versions:
+    android: '10.0'
+    miui: V12.0.2.0.QJAEUXM

@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>{{page.title}} | {{site.name}}</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	{%include meta.html%}
+
+	<link rel="stylesheet" href="/assets/css/main.css" />
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.dropotron.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/js-yaml.min.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<!-- Select2 -->
+	<link rel="stylesheet" href="/assets/css/select2.min.css" />
+	<script src="/assets/js/select2.min.js"></script>
+	{%include vli.html%}
+</head>
+
+<body class="is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			{%include header.html%}
+		</header>
+
+		<!-- Main -->
+		<section id="main">
+			<header>
+				<h2>{{page.title}}</h2>
+				{% if page.date %}<p style="font-size: 16px; margin-top: 0.2em;"><em style="color: #b3b3b3">Published on
+						{{ page.date | date: '%B %d, %Y' }}</em></p>{% endif %}
+				{% if page.description %}<p>{{page.description}}.</p>{% endif %}
+			</header>
+			<div class="dropdown-divider"></div>
+			<div class="container-fluid">
+				{%include ads.html%}
+				<br>
+				<div class="row justify-content-center">
+					<div class="col-10">
+						{{content}}
+					</div>
+					{%include vli_ad_160x600_1.html%}
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		{%include footer.html%}
+
+	</div>
+
+	<script src="/assets/js/main.js"></script>
+	{%include scripts.html%}
+</body>
+
+</html>

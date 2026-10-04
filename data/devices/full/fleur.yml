@@ -1,0 +1,360 @@
+- branch: stable
+  date: '2023-07-30'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-30.07.2023/fw_fleur_miui_FLEURGlobal_V14.0.4.0.TKEMIXM_aa22b26729_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/fleur/fw_fleur_miui_FLEURGlobal_V14.0.4.0.TKEMIXM_aa22b26729_13.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_V14.0.4.0.TKEMIXM_aa22b26729_13.0.zip
+  region: Global
+  versions:
+    android: '13.0'
+    miui: V14.0.4.0.TKEMIXM
+- branch: stable
+  date: '2022-07-28'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-28.07.2022/fw_fleur_miui_FLEURGlobal_V13.0.5.0.SKEMIXM_6e81c5650f_12.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURGlobal_V13.0.5.0.SKEMIXM_6e81c5650f_12.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_V13.0.5.0.SKEMIXM_6e81c5650f_12.0.zip
+  region: Global
+  versions:
+    android: '12.0'
+    miui: V13.0.5.0.SKEMIXM
+- branch: stable
+  date: '2024-03-28'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-28.03.2024/fw_fleur_miui_FLEUREEAGlobal_OS1.0.1.0.TKEEUXM_836659370c_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/OS1/fleur/fw_fleur_miui_FLEUREEAGlobal_OS1.0.1.0.TKEEUXM_836659370c_13.0.zip
+  filename: fw_fleur_miui_FLEUREEAGlobal_OS1.0.1.0.TKEEUXM_836659370c_13.0.zip
+  region: Europe
+  versions:
+    android: '13.0'
+    miui: OS1.0.1.0.TKEEUXM
+- branch: stable
+  date: '2022-03-28'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-28.03.2022/fw_fleur_miui_FLEUREEAGlobal_V13.0.5.0.RKEEUXM_c0c6c6c1bc_11.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEUREEAGlobal_V13.0.5.0.RKEEUXM_c0c6c6c1bc_11.0.zip
+  filename: fw_fleur_miui_FLEUREEAGlobal_V13.0.5.0.RKEEUXM_c0c6c6c1bc_11.0.zip
+  region: Europe
+  versions:
+    android: '11.0'
+    miui: V13.0.5.0.RKEEUXM
+- branch: stable
+  date: '2023-05-26'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-26.05.2023/fw_fleur_miui_FLEUREEAGlobal_V14.0.2.0.TKEEUXM_4a037bf6d4_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/fleur/fw_fleur_miui_FLEUREEAGlobal_V14.0.2.0.TKEEUXM_4a037bf6d4_13.0.zip
+  filename: fw_fleur_miui_FLEUREEAGlobal_V14.0.2.0.TKEEUXM_4a037bf6d4_13.0.zip
+  region: Europe
+  versions:
+    android: '13.0'
+    miui: V14.0.2.0.TKEEUXM
+- branch: stable
+  date: '2023-04-26'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-26.04.2023/fw_fleur_miui_FLEURGlobal_V13.0.9.0.SKEMIXM_1a71513d7d_12.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURGlobal_V13.0.9.0.SKEMIXM_1a71513d7d_12.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_V13.0.9.0.SKEMIXM_1a71513d7d_12.0.zip
+  region: Global
+  versions:
+    android: '12.0'
+    miui: V13.0.9.0.SKEMIXM
+- branch: stable
+  date: '2022-04-26'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-26.04.2022/fw_fleur_miui_FLEUREEAGlobal_V13.0.6.0.RKEEUXM_5f930e4d70_11.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEUREEAGlobal_V13.0.6.0.RKEEUXM_5f930e4d70_11.0.zip
+  filename: fw_fleur_miui_FLEUREEAGlobal_V13.0.6.0.RKEEUXM_5f930e4d70_11.0.zip
+  region: Europe
+  versions:
+    android: '11.0'
+    miui: V13.0.6.0.RKEEUXM
+- branch: stable
+  date: '2023-03-26'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-26.03.2023/fw_fleur_miui_FLEUREEAGlobal_V13.0.3.0.SKEEUXM_57b47e8037_12.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEUREEAGlobal_V13.0.3.0.SKEEUXM_57b47e8037_12.0.zip
+  filename: fw_fleur_miui_FLEUREEAGlobal_V13.0.3.0.SKEEUXM_57b47e8037_12.0.zip
+  region: Europe
+  versions:
+    android: '12.0'
+    miui: V13.0.3.0.SKEEUXM
+- branch: stable
+  date: '2022-07-25'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-25.07.2022/fw_fleur_miui_FLEURINGlobal_V13.0.5.0.RKEINXM_a9cbafb5b9_11.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURINGlobal_V13.0.5.0.RKEINXM_a9cbafb5b9_11.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_V13.0.5.0.RKEINXM_a9cbafb5b9_11.0.zip
+  region: India
+  versions:
+    android: '11.0'
+    miui: V13.0.5.0.RKEINXM
+- branch: stable
+  date: '2022-12-24'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-24.12.2022/fw_fleur_miui_FLEURGlobal_V13.0.7.0.SKEMIXM_2c4d856d6e_12.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURGlobal_V13.0.7.0.SKEMIXM_2c4d856d6e_12.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_V13.0.7.0.SKEMIXM_2c4d856d6e_12.0.zip
+  region: Global
+  versions:
+    android: '12.0'
+    miui: V13.0.7.0.SKEMIXM
+- branch: stable
+  date: '2022-05-24'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-24.05.2022/fw_fleur_miui_FLEURINGlobal_V13.0.4.0.RKEINXM_afb173fd97_11.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURINGlobal_V13.0.4.0.RKEINXM_afb173fd97_11.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_V13.0.4.0.RKEINXM_afb173fd97_11.0.zip
+  region: India
+  versions:
+    android: '11.0'
+    miui: V13.0.4.0.RKEINXM
+- branch: stable
+  date: '2022-04-24'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-24.04.2022/fw_fleur_miui_FLEURGlobal_V13.0.7.0.RKEMIXM_30020f3ca0_11.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURGlobal_V13.0.7.0.RKEMIXM_30020f3ca0_11.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_V13.0.7.0.RKEMIXM_30020f3ca0_11.0.zip
+  region: Global
+  versions:
+    android: '11.0'
+    miui: V13.0.7.0.RKEMIXM
+- branch: stable
+  date: '2023-02-20'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-20.02.2023/fw_fleur_miui_FLEURINGlobal_V13.0.4.0.SKEINXM_8ac73c29ea_12.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURINGlobal_V13.0.4.0.SKEINXM_8ac73c29ea_12.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_V13.0.4.0.SKEINXM_8ac73c29ea_12.0.zip
+  region: India
+  versions:
+    android: '12.0'
+    miui: V13.0.4.0.SKEINXM
+- branch: stable
+  date: '2022-09-19'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-19.09.2022/fw_fleur_miui_FLEURGlobal_V13.0.6.0.SKEMIXM_d32a407f53_12.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURGlobal_V13.0.6.0.SKEMIXM_d32a407f53_12.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_V13.0.6.0.SKEMIXM_d32a407f53_12.0.zip
+  region: Global
+  versions:
+    android: '12.0'
+    miui: V13.0.6.0.SKEMIXM
+- branch: stable
+  date: '2022-07-19'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-19.07.2022/fw_fleur_miui_FLEURGlobal_V13.0.10.0.RKEMIXM_8853bc0f31_11.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURGlobal_V13.0.10.0.RKEMIXM_8853bc0f31_11.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_V13.0.10.0.RKEMIXM_8853bc0f31_11.0.zip
+  region: Global
+  versions:
+    android: '11.0'
+    miui: V13.0.10.0.RKEMIXM
+- branch: stable
+  date: '2023-03-19'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-19.03.2023/fw_fleur_miui_FLEURGlobal_V13.0.8.0.SKEMIXM_9ab29758a9_12.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURGlobal_V13.0.8.0.SKEMIXM_9ab29758a9_12.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_V13.0.8.0.SKEMIXM_9ab29758a9_12.0.zip
+  region: Global
+  versions:
+    android: '12.0'
+    miui: V13.0.8.0.SKEMIXM
+- branch: stable
+  date: '2024-01-19'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-19.01.2024/fw_fleur_miui_FLEUREEAGlobal_V14.0.6.0.TKEEUXM_358becc25f_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/fleur/fw_fleur_miui_FLEUREEAGlobal_V14.0.6.0.TKEEUXM_358becc25f_13.0.zip
+  filename: fw_fleur_miui_FLEUREEAGlobal_V14.0.6.0.TKEEUXM_358becc25f_13.0.zip
+  region: Europe
+  versions:
+    android: '13.0'
+    miui: V14.0.6.0.TKEEUXM
+- branch: stable
+  date: '2022-02-15'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-15.02.2022/fw_fleur_miui_FLEURGlobal_V13.0.4.0.RKEMIXM_2b40dd0025_11.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURGlobal_V13.0.4.0.RKEMIXM_2b40dd0025_11.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_V13.0.4.0.RKEMIXM_2b40dd0025_11.0.zip
+  region: Global
+  versions:
+    android: '11.0'
+    miui: V13.0.4.0.RKEMIXM
+- branch: stable
+  date: '2023-07-14'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-14.07.2023/fw_fleur_miui_FLEUREEAGlobal_V14.0.4.0.TKEEUXM_2e7d43bae3_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/fleur/fw_fleur_miui_FLEUREEAGlobal_V14.0.4.0.TKEEUXM_2e7d43bae3_13.0.zip
+  filename: fw_fleur_miui_FLEUREEAGlobal_V14.0.4.0.TKEEUXM_2e7d43bae3_13.0.zip
+  region: Europe
+  versions:
+    android: '13.0'
+    miui: V14.0.4.0.TKEEUXM
+- branch: stable
+  date: '2023-05-14'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-14.05.2023/fw_fleur_miui_FLEURINGlobal_V13.0.5.0.SKEINXM_8d00f6ee55_12.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURINGlobal_V13.0.5.0.SKEINXM_8d00f6ee55_12.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_V13.0.5.0.SKEINXM_8d00f6ee55_12.0.zip
+  region: India
+  versions:
+    android: '12.0'
+    miui: V13.0.5.0.SKEINXM
+- branch: stable
+  date: '2022-09-13'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-13.09.2022/fw_fleur_miui_FLEURINGlobal_V13.0.2.0.SKEINXM_9cfa475249_12.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURINGlobal_V13.0.2.0.SKEINXM_9cfa475249_12.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_V13.0.2.0.SKEINXM_9cfa475249_12.0.zip
+  region: India
+  versions:
+    android: '12.0'
+    miui: V13.0.2.0.SKEINXM
+- branch: stable
+  date: '2023-10-12'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-12.10.2023/fw_fleur_miui_FLEUREEAGlobal_V14.0.5.0.TKEEUXM_25b24748bc_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/fleur/fw_fleur_miui_FLEUREEAGlobal_V14.0.5.0.TKEEUXM_25b24748bc_13.0.zip
+  filename: fw_fleur_miui_FLEUREEAGlobal_V14.0.5.0.TKEEUXM_25b24748bc_13.0.zip
+  region: Europe
+  versions:
+    android: '13.0'
+    miui: V14.0.5.0.TKEEUXM
+- branch: stable
+  date: '2024-01-12'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-12.01.2024/fw_fleur_miui_FLEURGlobal_V14.0.6.0.TKEMIXM_c12850e5f5_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/fleur/fw_fleur_miui_FLEURGlobal_V14.0.6.0.TKEMIXM_c12850e5f5_13.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_V14.0.6.0.TKEMIXM_c12850e5f5_13.0.zip
+  region: Global
+  versions:
+    android: '13.0'
+    miui: V14.0.6.0.TKEMIXM
+- branch: stable
+  date: '2024-01-12'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-12.01.2024/fw_fleur_miui_FLEURINGlobal_V14.0.6.0.TKEINXM_30003eb717_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/fleur/fw_fleur_miui_FLEURINGlobal_V14.0.6.0.TKEINXM_30003eb717_13.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_V14.0.6.0.TKEINXM_30003eb717_13.0.zip
+  region: India
+  versions:
+    android: '13.0'
+    miui: V14.0.6.0.TKEINXM
+- branch: stable
+  date: '2022-02-11'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-11.02.2022/fw_fleur_miui_FLEURINGlobal_V13.0.2.0.RKEINXM_afd26d0eb8_11.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURINGlobal_V13.0.2.0.RKEINXM_afd26d0eb8_11.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_V13.0.2.0.RKEINXM_afd26d0eb8_11.0.zip
+  region: India
+  versions:
+    android: '11.0'
+    miui: V13.0.2.0.RKEINXM
+- branch: stable
+  date: '2023-12-10'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-10.12.2023/fw_fleur_miui_FLEURINGlobal_V14.0.5.0.TKEINXM_c61b6380a5_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/fleur/fw_fleur_miui_FLEURINGlobal_V14.0.5.0.TKEINXM_c61b6380a5_13.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_V14.0.5.0.TKEINXM_c61b6380a5_13.0.zip
+  region: India
+  versions:
+    android: '13.0'
+    miui: V14.0.5.0.TKEINXM
+- branch: stable
+  date: '2022-11-10'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-10.11.2022/fw_fleur_miui_FLEUREEAGlobal_V13.0.10.0.RKEEUXM_e9ad09d751_11.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEUREEAGlobal_V13.0.10.0.RKEEUXM_e9ad09d751_11.0.zip
+  filename: fw_fleur_miui_FLEUREEAGlobal_V13.0.10.0.RKEEUXM_e9ad09d751_11.0.zip
+  region: Europe
+  versions:
+    android: '11.0'
+    miui: V13.0.10.0.RKEEUXM
+- branch: stable
+  date: '2023-10-10'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-10.10.2023/fw_fleur_miui_FLEURGlobal_V14.0.5.0.TKEMIXM_6e13241437_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/fleur/fw_fleur_miui_FLEURGlobal_V14.0.5.0.TKEMIXM_6e13241437_13.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_V14.0.5.0.TKEMIXM_6e13241437_13.0.zip
+  region: Global
+  versions:
+    android: '13.0'
+    miui: V14.0.5.0.TKEMIXM
+- branch: stable
+  date: '2022-03-10'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-10.03.2022/fw_fleur_miui_FLEURINGlobal_V13.0.3.0.RKEINXM_965c6abe20_11.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURINGlobal_V13.0.3.0.RKEINXM_965c6abe20_11.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_V13.0.3.0.RKEINXM_965c6abe20_11.0.zip
+  region: India
+  versions:
+    android: '11.0'
+    miui: V13.0.3.0.RKEINXM
+- branch: stable
+  date: '2022-12-08'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-08.12.2022/fw_fleur_miui_FLEURINGlobal_V13.0.3.0.SKEINXM_a6994af41a_12.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEURINGlobal_V13.0.3.0.SKEINXM_a6994af41a_12.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_V13.0.3.0.SKEINXM_a6994af41a_12.0.zip
+  region: India
+  versions:
+    android: '12.0'
+    miui: V13.0.3.0.SKEINXM
+- branch: stable
+  date: '2023-06-05'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-05.06.2023/fw_fleur_miui_FLEURGlobal_V14.0.3.0.TKEMIXM_2ff7566a60_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/fleur/fw_fleur_miui_FLEURGlobal_V14.0.3.0.TKEMIXM_2ff7566a60_13.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_V14.0.3.0.TKEMIXM_2ff7566a60_13.0.zip
+  region: Global
+  versions:
+    android: '13.0'
+    miui: V14.0.3.0.TKEMIXM
+- branch: stable
+  date: '2024-03-05'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-05.03.2024/fw_fleur_miui_FLEURGlobal_OS1.0.1.0.TKEMIXM_c5fa5ce2d9_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/OS1/fleur/fw_fleur_miui_FLEURGlobal_OS1.0.1.0.TKEMIXM_c5fa5ce2d9_13.0.zip
+  filename: fw_fleur_miui_FLEURGlobal_OS1.0.1.0.TKEMIXM_c5fa5ce2d9_13.0.zip
+  region: Global
+  versions:
+    android: '13.0'
+    miui: OS1.0.1.0.TKEMIXM
+- branch: stable
+  date: '2023-09-04'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-04.09.2023/fw_fleur_miui_FLEURINGlobal_V14.0.4.0.TKEINXM_afc380ab0b_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/fleur/fw_fleur_miui_FLEURINGlobal_V14.0.4.0.TKEINXM_afc380ab0b_13.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_V14.0.4.0.TKEINXM_afc380ab0b_13.0.zip
+  region: India
+  versions:
+    android: '13.0'
+    miui: V14.0.4.0.TKEINXM
+- branch: stable
+  date: '2023-07-02'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-02.07.2023/fw_fleur_miui_FLEURINGlobal_V14.0.3.0.TKEINXM_f30e9024ac_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V14/fleur/fw_fleur_miui_FLEURINGlobal_V14.0.3.0.TKEINXM_f30e9024ac_13.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_V14.0.3.0.TKEINXM_f30e9024ac_13.0.zip
+  region: India
+  versions:
+    android: '13.0'
+    miui: V14.0.3.0.TKEINXM
+- branch: stable
+  date: '2024-04-02'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-02.04.2024/fw_fleur_miui_FLEURINGlobal_OS1.0.2.0.TKEINXM_f8f80a48fb_13.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/OS1/fleur/fw_fleur_miui_FLEURINGlobal_OS1.0.2.0.TKEINXM_f8f80a48fb_13.0.zip
+  filename: fw_fleur_miui_FLEURINGlobal_OS1.0.2.0.TKEINXM_f8f80a48fb_13.0.zip
+  region: India
+  versions:
+    android: '13.0'
+    miui: OS1.0.2.0.TKEINXM
+- branch: stable
+  date: '2023-02-02'
+  downloads:
+    github: https://github.com/XiaomiFirmwareUpdaterReleases/firmware_xiaomi_fleur/releases/download/stable-02.02.2023/fw_fleur_miui_FLEUREEAGlobal_V13.0.2.0.SKEEUXM_b263906b79_12.0.zip
+    osdn: https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V13/fleur/fw_fleur_miui_FLEUREEAGlobal_V13.0.2.0.SKEEUXM_b263906b79_12.0.zip
+  filename: fw_fleur_miui_FLEUREEAGlobal_V13.0.2.0.SKEEUXM_b263906b79_12.0.zip
+  region: Europe
+  versions:
+    android: '12.0'
+    miui: V13.0.2.0.SKEEUXM
