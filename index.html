@@ -173,6 +173,21 @@ footer .g{color:var(--green)}
 
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
 .reveal.on{opacity:1;transform:none}
+
+/* ---------- CLEARANCE PROTOCOL ---------- */
+.clear-badge{border:1px solid var(--amber);color:var(--amber);padding:4px 12px;border-radius:4px;
+  font-size:12px;font-weight:700;letter-spacing:2px;margin-left:14px;white-space:nowrap}
+.clear-badge.up{animation:gpulse .9s}
+@keyframes gpulse{0%{box-shadow:0 0 0 rgba(255,176,0,0)}50%{box-shadow:0 0 20px rgba(255,176,0,.9)}100%{box-shadow:0 0 0 rgba(255,176,0,0)}}
+.locked .sec-content{display:none}
+.lock-panel{display:none;text-align:center;padding:64px 20px;border:1px dashed var(--border);
+  border-radius:8px;background:rgba(0,0,0,.45)}
+.locked .lock-panel{display:block}
+.lock-panel .big{font-size:46px;margin-bottom:12px}
+.lock-panel .cls{color:var(--red);letter-spacing:4px;font-weight:700}
+.lock-panel .lv{color:var(--amber);font-weight:800;letter-spacing:2px;margin:10px 0 6px}
+.lock-panel .sub{color:var(--muted);font-size:13px}
+.lock-panel .sub b{color:var(--green)}
 </style>
 </head>
 <body>
@@ -184,13 +199,16 @@ footer .g{color:var(--green)}
 
 <div class="content">
 <nav>
-  <a class="logo" href="#top">irfaaan:~$<span class="blink">_</span></a>
+  <div style="display:flex;align-items:center">
+    <a class="logo" href="#top">irfaaan:~$<span class="blink">_</span></a>
+    <span class="clear-badge" id="clear-badge">LVL 0</span>
+  </div>
   <div class="nav-links">
     <a href="#about">about</a>
     <a href="#skills">skills</a>
     <a href="#projects">projects</a>
     <a href="#iterm">terminal</a>
-    <a href="#game">breach</a>
+    <a href="#game">decoder</a>
     <a href="#contact">contact</a>
   </div>
 </nav>
@@ -198,12 +216,12 @@ footer .g{color:var(--green)}
 <header class="hero" id="top">
   <div class="prompt-line" id="typed-prompt"></div>
   <h1 class="glitch">MUHAMMAD IRFAN</h1>
-  <div class="sub">// Full-Stack Laravel Developer</div>
-  <p class="desc">I build fast backends, slick frontends & real-time apps.
-     Laravel • Vue.js • Inertia.js • Node.js • Python — powered by AI-assisted development.</p>
+  <div class="sub">// Clearance Protocol: ACTIVE 🔒</div>
+  <p class="desc">Four clearance levels. One terminal. Zero boring resumes.<br>
+     Infiltrate the mainframe to decrypt the full portfolio.</p>
   <div class="btn-row">
-    <a class="btn" href="#iterm">./enter_terminal</a>
-    <a class="btn alt" href="#game">./play_breach</a>
+    <a class="btn" href="#iterm" id="start-mission-btn">./start_mission</a>
+    <button class="btn alt" id="view-all-btn">recruiter? view_all</button>
   </div>
   <div class="stats">
     <div class="stat"><div class="num" data-count="2">0</div><div class="lbl">years_experience</div></div>
@@ -214,7 +232,7 @@ footer .g{color:var(--green)}
   <div class="scroll-hint">▼ scroll to decrypt ▼</div>
 </header>
 
-<section id="about" class="reveal">
+<section id="about" class="reveal" data-level="1">
   <div class="sec-head"><div class="cmd">$ cat about.txt</div><h2>whoami</h2></div>
   <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">irfaaan@dev: ~/about</span></div>
   <div class="term-body">
@@ -224,7 +242,7 @@ footer .g{color:var(--green)}
   </div></div>
 </section>
 
-<section id="skills" class="reveal">
+<section id="skills" class="reveal" data-level="2">
   <div class="sec-head"><div class="cmd">$ ./scan_skills --deep</div><h2>arsenal</h2></div>
   <div class="skill-grid">
     <div class="skill-cat"><h3>backend</h3>
@@ -254,7 +272,7 @@ footer .g{color:var(--green)}
   </div>
 </section>
 
-<section id="projects" class="reveal">
+<section id="projects" class="reveal" data-level="3">
   <div class="sec-head"><div class="cmd">$ ls ~/projects --deployed</div><h2>missions</h2></div>
   <div class="proj-grid">
     <div class="card"><h3>🛒 Mall of Karor</h3><p>Online superstore system — ordering, COD, rider flow, admin panel. Full-stack build from spec to deploy.</p><div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Blade</span></div></div>
@@ -276,12 +294,12 @@ footer .g{color:var(--green)}
 </section>
 
 <section id="game" class="reveal">
-  <div class="sec-head"><div class="cmd">$ ./breach --target=firewall</div><h2>breach_protocol</h2></div>
+  <div class="sec-head"><div class="cmd">$ ./vault_decoder --target=VAULT-07</div><h2>vault_decoder</h2></div>
   <div class="game-wrap">
-    <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">firewall_breach.exe</span></div>
+    <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">vault_decoder.exe</span></div>
       <div class="term-body"><div id="game-log"></div></div></div>
     <div class="game-ctl">
-      <p>🎯 Crack the <b style="color:var(--green)">4-digit</b> firewall code. You get <b style="color:var(--amber)">10 attempts</b>.<br>Feedback per digit: <span style="color:var(--green)">✔ exact</span> · <span style="color:var(--amber)">~ exists, wrong spot</span> · <span style="color:var(--red)">✘ not in code</span><br>💡 <b>2 failed attempts</b> = intercepted intel (free hint!)<br>💻 Cheater? Terminal mein <b>breach</b> likho! 😏</p>
+      <p>🎯 <b>MISSION 3:</b> crack the <b style="color:var(--green)">4-digit</b> vault code — <b style="color:var(--amber)">10 attempts</b>.<br>Feedback: <span style="color:var(--green)">✔ exact</span> · <span style="color:var(--amber)">~ exists, wrong spot</span> · <span style="color:var(--red)">✘ not in code</span><br>💡 2 fails = intercepted intel · 💻 cheater? terminal mein <b>breach</b> likho! 😏</p>
       <div class="digits">
         <input class="digit" maxlength="1" inputmode="numeric">
         <input class="digit" maxlength="1" inputmode="numeric">
@@ -295,7 +313,7 @@ footer .g{color:var(--green)}
   </div>
 </section>
 
-<section id="contact" class="reveal">
+<section id="contact" class="reveal" data-level="4">
   <div class="sec-head"><div class="cmd">$ ./open_channel --secure</div><h2>contact</h2></div>
   <div class="contact-grid">
     <a class="c-card" href="mailto:muhammadirfan421@gmail.com"><div class="icon">📧</div><h3>email</h3><p>muhammadirfan421@gmail.com</p></a>
@@ -336,10 +354,9 @@ footer .g{color:var(--green)}
   const lines=[
     '> establishing secure connection ......... OK',
     '> loading profile: irfaaan ................ OK',
-    '> verifying skills [laravel, vue, node] ... OK',
-    '> caffeine levels ......................... CRITICAL',
-    '',
-    '> ACCESS GRANTED_'
+    '> clearance protocol .................... ARMED',
+    '> [!] portfolio sections: CLASSIFIED',
+    '> type "mission" in the terminal to begin_'
   ];
   const box=document.getElementById('boot-text'),boot=document.getElementById('boot');
   let li=0,ci=0,out='';
@@ -384,66 +401,225 @@ footer .g{color:var(--green)}
   document.querySelectorAll('.reveal,.hero').forEach(el=>io.observe(el));
 })();
 
-/* ===== INTERACTIVE TERMINAL ===== */
+/* ===== INTERACTIVE TERMINAL + CLEARANCE PROTOCOL ===== */
 (function(){
   const out=document.getElementById('iterm-out'),cmd=document.getElementById('iterm-cmd');
   const P='<span class="in">guest@irfaaan:~$</span> ';
+  window.__clearance=0;
   function print(html){out.innerHTML+=html+'\n';out.parentElement.scrollTop=out.parentElement.scrollHeight;}
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-  const rh=()=>'0x'+Array.from({length:6},()=>'0123456789ABCDEF'[Math.floor(Math.random()*16)]).join('');
-  let hacking=false;
-  async function runBreach(){
-    if(hacking){print('<span class="warn">[!] breach already running...</span>');return;}
+  let hacking=false,promptHandler=null;
+
+  function setClearance(n){
+    window.__clearance=n;
+    const b=document.getElementById('clear-badge');
+    if(b){b.textContent='LVL '+n;b.classList.remove('up');void b.offsetWidth;b.classList.add('up');}
+    document.querySelectorAll('section[data-level]').forEach(s=>{
+      if(+s.dataset.level<=n)s.classList.remove('locked');
+    });
+  }
+  window.__setClearance=setClearance;
+  window.__unlockAll=function(){
+    setClearance(4);
+    print('<span class="ok">[+] recruiter mode: ALL sections decrypted. enjoy the tour ☕</span>');
+  };
+
+  function grantLevel(n,sec){
+    setClearance(n);
+    print('<span class="ok">[+] ═══════════════════════</span>');
+    print('<span class="ok">[+]&nbsp;&nbsp;CLEARANCE LEVEL '+n+' GRANTED</span>');
+    if(sec)print('<span class="ok">[+]&nbsp;&nbsp;'+sec+' decrypted — scroll up to view 👆</span>');
+    print('<span class="ok">[+] ═══════════════════════</span>');
+  }
+
+  function targetBox(){
+    print('┌─ TARGET ────────────────────────┐');
+    print('│&nbsp;&nbsp;IRFAAAN SECURE MAINFRAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│');
+    print('│&nbsp;&nbsp;node .... VAULT-07&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│');
+    print('│&nbsp;&nbsp;security  OMEGA-LEVEL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│');
+    print('└─────────────────────────────────┘');
+  }
+
+  async function missionBreach(){
+    if(hacking){print('<span class="warn">[!] operation already running...</span>');return;}
     hacking=true;cmd.disabled=true;
-    const code=window.__breachCode||['?','?','?','?'];
-    const ip='192.168.66.'+(10+Math.floor(Math.random()*200));
-    print('<span class="ok">> launching blackhat module: BREACH</span>');await sleep(450);
-    print('[*] target acquired: '+ip+':443');await sleep(550);
-    print('[*] handshake ................ <span class="ok">ESTABLISHED</span>');await sleep(550);
-    print('[*] injecting shellcode '+rh()+' ... <span class="ok">OK</span>');await sleep(650);
-    print('[*] escalating privileges ..... <span class="ok">ROOT</span>');await sleep(650);
-    print('[*] dumping memory sectors:');await sleep(350);
-    for(let i=0;i<4;i++){
-      const d=[];for(let j=0;j<8;j++)d.push(('0'+Math.floor(Math.random()*256).toString(16)).slice(-2).toUpperCase());
-      print('&nbsp;&nbsp;&nbsp;&nbsp;0x0'+i+'FF: '+d.join(' '));await sleep(240);
-    }
+    print('<span class="ok">> ═══ BLACKHAT MODULE: BREACH ═══</span>');await sleep(400);
+    targetBox();await sleep(500);
+    print('[*] select infiltration vector:');await sleep(300);
+    print('&nbsp;&nbsp;[1] spear-phishing&nbsp;&nbsp;&nbsp;[2] zero-day&nbsp;&nbsp;&nbsp;[3] insider');await sleep(200);
+    print('> vector (1-3):');
+    hacking=false;cmd.disabled=false;cmd.focus();
+    promptHandler=vectorStep;
+  }
+  async function vectorStep(raw){
+    hacking=true;cmd.disabled=true;
+    const names={'1':'spear-phishing','2':'zero-day','3':'insider'};
+    print('[*] vector: <span class="ok">'+(names[raw.trim()]||'brute-force')+'</span> — deploying...');await sleep(700);
+    print('[*] press <span class="ok">ENTER</span> to inject payload');
+    hacking=false;cmd.disabled=false;cmd.focus();
+    promptHandler=injectStep;
+  }
+  async function injectStep(){
+    hacking=true;cmd.disabled=true;
     const bar=document.createElement('div');out.appendChild(bar);
-    for(let p=0;p<=100;p+=10){
-      bar.innerHTML='[*] brute-forcing keyspace [0000-9999] ['+'█'.repeat(p/10)+'░'.repeat(10-p/10)+'] '+p+'%';
+    for(let p=0;p<=100;p+=20){
+      bar.innerHTML='[*] injecting ... ['+'█'.repeat(p/20)+'░'.repeat(5-p/20)+'] '+p+'%';
       out.parentElement.scrollTop=out.parentElement.scrollHeight;
-      await sleep(280);
+      await sleep(320);
     }
     print('[*] firewall layer 1 ......... <span class="ok">BYPASSED</span>');await sleep(450);
-    print('[*] firewall layer 2 ......... <span class="ok">BYPASSED</span>');await sleep(450);
+    print('[*] final layer active. type <span class="warn">\'override\'</span> to break it:');
+    hacking=false;cmd.disabled=false;cmd.focus();
+    promptHandler=askOverride;
+  }
+  async function askOverride(raw){
+    if(raw.trim().toLowerCase()==='override'){
+      hacking=true;cmd.disabled=true;
+      print('[*] override accepted ......... <span class="ok">ROOT</span>');await sleep(500);
+      grantLevel(1,'ABOUT');
+      hacking=false;cmd.disabled=false;cmd.focus();
+    }else{
+      print('<span class="err">[!] access denied.</span> <span class="warn">the word is \'override\':</span>');
+      promptHandler=askOverride;
+    }
+  }
+  async function askQuiz(raw){
+    if(raw.trim().toLowerCase()==='static'){
+      print('[*] correct. <span class="ok">the vault respects knowledge.</span>');await sleep(400);
+      grantLevel(2,'SKILLS');
+    }else{
+      print('<span class="err">[!] wrong.</span> <span class="warn">hint: did you ever type "new DB()"? think :: vs -></span>');
+      print('> answer:');
+      promptHandler=askQuiz;
+    }
+  }
+  async function askMagic(raw){
+    if(raw.trim().toLowerCase()==='hire'){
+      print('[*] ...the developer smiles.');await sleep(500);
+      grantLevel(4,'CONTACT');
+      print('<span class="ok">★ ALL MISSIONS COMPLETE — welcome, insider ★</span>');
+    }else{
+      print('<span class="warn">[!] not quite. hint: what do you want to DO with this dev? (4 letters)</span>');
+      print('> magic word:');
+      promptHandler=askMagic;
+    }
+  }
+  function missionBrief(){
+    const c=window.__clearance;
+    if(c===0){
+      print('<span class="ok">> ═══ MISSION 1: FIRST BREACH ═══</span>');
+      print('> the portfolio is sealed. only this terminal is open.');
+      print('> type <b>breach</b> to infiltrate and earn CLEARANCE LEVEL 1.');
+    }else if(c===1){
+      print('<span class="ok">> ═══ MISSION 2: SECURITY QUESTION ═══</span>');
+      print('> the vault demands proof of knowledge.');
+      print('> question: in Laravel, is <b>DB::table()</b> static or object?');
+      print('> answer:');
+      promptHandler=askQuiz;
+    }else if(c===2){
+      print('<span class="ok">> ═══ MISSION 3: THE VAULT DECODER ═══</span>');
+      print('> crack the 4-digit vault code in the VAULT DECODER below.');
+      print('> 10 attempts. play fair with logic... or cheat: type <b>breach</b> 😏');
+    }else if(c===3){
+      print('<span class="ok">> ═══ MISSION 4: FINAL HANDSHAKE ═══</span>');
+      print('> the developer is watching this terminal right now.');
+      print('> prove you\'re human. type the magic word:');
+      print('> (hint: 4 letters — what do you want to do with this dev?)');
+      promptHandler=askMagic;
+    }else{
+      print('<span class="ok">★ ALL MISSIONS COMPLETE — full access granted. welcome, insider.</span>');
+    }
+  }
+  function showStatus(){
+    const c=window.__clearance;
+    const secs=['about','skills','projects','contact'];
+    print('> CLEARANCE: <span class="warn">LEVEL '+c+' / 4</span>');
+    print('> decrypted: '+(c?secs.slice(0,c).join(', '):'<i>none yet</i>'));
+    if(c<4)print('> next: type <b>mission</b>');else print('> <span class="ok">all systems open. well played.</span>');
+  }
+  async function quickBreach(){
+    if(hacking){print('<span class="warn">[!] operation already running...</span>');return;}
+    hacking=true;cmd.disabled=true;
+    const code=window.__breachCode||['?','?','?','?'];
+    print('<span class="ok">> insider protocol: extracting vault code...</span>');await sleep(600);
+    targetBox();await sleep(500);
+    const bar=document.createElement('div');out.appendChild(bar);
+    for(let p=0;p<=100;p+=25){
+      bar.innerHTML='[*] tapping VAULT-07 memory bus ['+'█'.repeat(p/25)+'░'.repeat(4-p/25)+'] '+p+'%';
+      out.parentElement.scrollTop=out.parentElement.scrollHeight;
+      await sleep(300);
+    }
     print('<span class="ok">[+] ═══════════════════════</span>');
-    print('<span class="ok">[+]&nbsp;&nbsp;CODE CRACKED: [ '+code.join(' ')+' ]</span>');
+    print('<span class="ok">[+]&nbsp;&nbsp;CODE: [ '+code.join(' ')+' ]</span>');
     print('<span class="ok">[+] ═══════════════════════</span>');
-    print('<span class="warn">[*] use it in the BREACH game below 😉 — shhh, cheating!</span>');
+    print('<span class="warn">[*] feed it to the VAULT DECODER below 😉</span>');
     hacking=false;cmd.disabled=false;cmd.focus();
   }
+
   const CMDS={
-    help:'<span class="ok">commands:</span> about · skills · projects · experience · contact · whoami · <b>breach</b> · date · hack · sudo · clear',
+    help:'<span class="ok">commands:</span> mission · breach · status · about · skills · projects · contact · whoami · date · hack · sudo · clear',
     about:'Laravel developer, ~2 yrs. I ship backends, admin panels, APIs & real-time apps.',
     skills:'Laravel · PHP · Vue.js · Inertia.js · Node.js · Python · WebSockets · MySQL · PostgreSQL · Linux · Git · Docker',
     projects:'🛒 Mall of Karor · 🎪 Event Platform (Nafisol) · ⚙️ Admin panels (Alright Tech) · 🤖 AlfaBot',
     experience:'~2 years full-stack — backend systems, admin panels, event platform, e-commerce flows.',
     contact:'📧 muhammadirfan421@gmail.com · 🐙 github.com/irfaaan · 💼 linkedin.com/in/irf4n',
-    whoami:'guest — but you could be my next client 😉',
+    whoami:'guest — so close to insider 😉',
     date:new Date().toString(),
-    hack:'<span class="warn">[!] nice try. firewall intact. psst... try the "breach" command 😏</span>',
+    hack:'<span class="warn">[!] nice try. the real op is the "breach" command 😏</span>',
     sudo:'<span class="err">permission denied: guest is not in the sudoers file 😏</span>'
   };
-  print('<span class="ok">connected to irfaaan.dev — type "help"</span>');
+  print('<span class="ok">connected to irfaaan.dev — portfolio SEALED. type "mission" to begin. (abort cancels a prompt)</span>');
   cmd.addEventListener('keydown',e=>{
     if(e.key!=='Enter')return;
-    const raw=cmd.value.trim(),c=raw.toLowerCase();
+    const raw=cmd.value.trim();
+    if(promptHandler){
+      const h=promptHandler;promptHandler=null;
+      print(P+raw.replace(/</g,'&lt;'));
+      cmd.value='';
+      if(raw.toLowerCase()==='abort'){print('[*] mission aborted. type "mission" to retry.');return;}
+      h(raw);
+      return;
+    }
+    const c=raw.toLowerCase();
     print(P+raw.replace(/</g,'&lt;'));
-    if(c==='breach'){cmd.value='';runBreach();return;}
+    if(c==='breach'){cmd.value='';if((window.__clearance||0)===0)missionBreach();else quickBreach();return;}
+    if(c==='mission'){cmd.value='';missionBrief();return;}
+    if(c==='status'){cmd.value='';showStatus();return;}
     if(c==='clear'){out.innerHTML='';}
     else if(CMDS[c]){print(CMDS[c]);}
     else if(c){print('<span class="err">command not found: '+c.replace(/</g,'&lt')+' — try "help"</span>');}
     cmd.value='';
   });
+
+  /* lock panels for classified sections */
+  document.querySelectorAll('section[data-level]').forEach(s=>{
+    s.classList.add('locked');
+    const head=s.querySelector('.sec-head');
+    const panel=document.createElement('div');
+    panel.className='lock-panel';
+    panel.innerHTML='<div class="big">🔒</div><div class="cls">[CLASSIFIED]</div>'+
+      '<div class="lv">CLEARANCE LEVEL '+s.dataset.level+' REQUIRED</div>'+
+      '<div class="sub">complete <b>mission '+s.dataset.level+'</b> in the terminal to decrypt ↓</div>';
+    head.after(panel);
+    const content=document.createElement('div');
+    content.className='sec-content';
+    let n=panel.nextSibling;
+    while(n){const nx=n.nextSibling;content.appendChild(n);n=nx;}
+    s.appendChild(content);
+  });
+
+  /* hero buttons */
+  const smb=document.getElementById('start-mission-btn');
+  if(smb)smb.addEventListener('click',()=>{
+    setTimeout(()=>{
+      const inp=document.getElementById('iterm-cmd');
+      if(!inp)return;
+      inp.focus();inp.value='mission';
+      inp.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true}));
+    },800);
+  });
+  const vab=document.getElementById('view-all-btn');
+  if(vab)vab.addEventListener('click',()=>{if(window.__unlockAll)window.__unlockAll();});
 })();
 
 /* ===== BREACH GAME ===== */
@@ -456,7 +632,7 @@ footer .g{color:var(--green)}
     code=Array.from({length:4},()=>Math.floor(Math.random()*10));left=10;fails=0;hinted=[];
     window.__breachCode=code;
     digits.forEach(d=>d.value='');digits[0].focus();
-    if(!silent){log.innerHTML='';gprint('> firewall_breach.exe v2.2','info');gprint('> target locked. 4-digit code. 10 attempts. free intel after 2 fails.','info');}
+    if(!silent){log.innerHTML='';gprint('> vault_decoder.exe v3.0','info');gprint('> target locked. 4-digit code. 10 attempts. free intel after 2 fails.','info');}
     att.textContent='attempts_left: '+left;
   }
   function guess(){
@@ -471,8 +647,18 @@ footer .g{color:var(--green)}
     }).join(' ');
     gprint('> ['+g.join(' ')+'] → '+res, left===0?'miss':'');
     if(g.join('')===code.join('')){
-      gprint('> 🎉 ACCESS GRANTED! firewall breached in '+(10-left)+' tries!','hit');
-      gprint('> ...hacker detected: you should hire this dev 😎','info');left=0;
+      const cl=window.__clearance||0;
+      if(cl===2){
+        window.__setClearance(3);
+        gprint('> 🎉 VAULT CRACKED!','hit');
+        gprint('> [+] CLEARANCE LEVEL 3 GRANTED — PROJECTS decrypted! scroll up 👆','info');
+      }else if(cl>2){
+        gprint('> 🎉 code cracked again. smooth.','hit');
+      }else{
+        gprint('> 🎉 code cracked! impressive...','hit');
+        gprint('> [!] but the vault demands ORDER — type "mission" in the terminal first','warn');
+      }
+      left=0;
     }else{
       fails++;
       if(fails===2){
@@ -495,7 +681,7 @@ footer .g{color:var(--green)}
     d.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!d.value&&i>0)digits[i-1].focus();if(e.key==='Enter')guess();});
   });
   reset(true);
-  log.innerHTML='';gprint('> firewall_breach.exe v2.2','info');gprint('> target locked. crack the 4-digit code! free intel after 2 fails.','info');
+  log.innerHTML='';gprint('> vault_decoder.exe v3.0','info');gprint('> target locked. crack the 4-digit code! free intel after 2 fails.','info');
 })();
 </script>
 </body>
