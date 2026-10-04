@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>irfaaan:~$ — Muhammad Irfan | Laravel Developer</title>
+<meta name="description" content="Muhammad Irfan — Full-stack Laravel Developer. Laravel, Vue.js, Inertia.js, Node.js, Python, WebSockets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050705;
+  --bg2:#0a0f0a;
+  --green:#00ff41;
+  --green-dim:#00c832;
+  --green-faint:rgba(0,255,65,.12);
+  --amber:#ffb000;
+  --red:#ff3355;
+  --cyan:#00e5ff;
+  --text:#c9d4c9;
+  --muted:#6b7a6b;
+  --border:rgba(0,255,65,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'JetBrains Mono',monospace;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+::selection{background:var(--green);color:#000}
+#matrix{position:fixed;inset:0;z-index:0;opacity:.35;pointer-events:none}
+.scanlines{position:fixed;inset:0;z-index:50;pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px);}
+.vignette{position:fixed;inset:0;z-index:49;pointer-events:none;
+  background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.55) 100%);}
+.content{position:relative;z-index:2}
+
+/* ---------- BOOT ---------- */
+#boot{position:fixed;inset:0;background:#000;z-index:100;display:flex;
+  align-items:center;justify-content:center;cursor:pointer;transition:opacity .6s}
+#boot.done{opacity:0;pointer-events:none}
+#boot .box{width:min(600px,90vw);color:var(--green);font-size:14px;white-space:pre-wrap}
+#boot .cursor{display:inline-block;width:10px;height:18px;background:var(--green);
+  animation:blink 1s steps(1) infinite;vertical-align:-3px}
+@keyframes blink{50%{opacity:0}}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;
+  align-items:center;padding:14px 28px;background:rgba(5,7,5,.85);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.logo{color:var(--green);font-weight:800;font-size:16px;text-decoration:none}
+.logo .blink{animation:blink 1.2s steps(1) infinite}
+.nav-links{display:flex;gap:22px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:.2s}
+.nav-links a:hover{color:var(--green);text-shadow:0 0 8px var(--green)}
+.nav-links a::before{content:'> ';color:var(--green)}
+@media(max-width:720px){.nav-links{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;padding:120px 20px 60px;position:relative}
+.hero .prompt-line{color:var(--green);font-size:15px;margin-bottom:18px;min-height:24px}
+.glitch{font-size:clamp(38px,8vw,84px);font-weight:800;color:var(--green);letter-spacing:2px;
+  text-shadow:0 0 18px rgba(0,255,65,.6);position:relative;line-height:1.1}
+.hero .sub{color:var(--cyan);font-size:clamp(15px,2.5vw,22px);margin:18px 0 8px}
+.hero .desc{color:var(--muted);max-width:640px;font-size:14px;margin-bottom:34px}
+.btn-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.btn{padding:13px 30px;border:1px solid var(--green);color:var(--green);background:transparent;
+  font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;
+  transition:.25s;position:relative}
+.btn:hover{background:var(--green);color:#000;box-shadow:0 0 24px rgba(0,255,65,.7)}
+.btn.alt{border-color:var(--cyan);color:var(--cyan)}
+.btn.alt:hover{background:var(--cyan);box-shadow:0 0 24px rgba(0,229,255,.7)}
+.stats{display:flex;gap:44px;margin-top:56px;flex-wrap:wrap;justify-content:center}
+.stat{text-align:center}
+.stat .num{font-size:32px;font-weight:800;color:var(--green);text-shadow:0 0 12px rgba(0,255,65,.5)}
+.stat .lbl{font-size:12px;color:var(--muted);margin-top:4px}
+.scroll-hint{position:absolute;bottom:26px;color:var(--muted);font-size:12px;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+
+/* ---------- SECTIONS ---------- */
+section{padding:90px 20px;max-width:1080px;margin:0 auto}
+.sec-head{margin-bottom:44px}
+.sec-head .cmd{color:var(--muted);font-size:14px}
+.sec-head h2{color:var(--green);font-size:clamp(26px,4vw,38px);margin-top:8px;
+  text-shadow:0 0 14px rgba(0,255,65,.4)}
+.sec-head h2::before{content:'# ';color:var(--green-dim)}
+
+/* terminal window */
+.term{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  box-shadow:0 0 30px rgba(0,255,65,.08)}
+.term-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;
+  background:rgba(0,255,65,.06);border-bottom:1px solid var(--border)}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot.r{background:var(--red)}.dot.y{background:var(--amber)}.dot.g{background:var(--green)}
+.term-bar .t{margin-left:8px;font-size:12px;color:var(--muted)}
+.term-body{padding:22px;font-size:14px}
+.term-body .p{color:var(--green)}
+.term-body .o{color:var(--text);margin:4px 0 14px}
+
+/* skills */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.skill-cat{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:22px}
+.skill-cat h3{color:var(--cyan);font-size:15px;margin-bottom:16px}
+.skill-cat h3::before{content:'[ ';color:var(--green)}
+.skill-cat h3::after{content:' ]';color:var(--green)}
+.bar{margin-bottom:13px}
+.bar .row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px}
+.bar .row span:last-child{color:var(--green)}
+.track{height:8px;background:rgba(0,255,65,.1);border-radius:4px;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,var(--green-dim),var(--green));
+  border-radius:4px;box-shadow:0 0 10px rgba(0,255,65,.6);transition:width 1.4s ease}
+
+/* projects */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:24px;
+  transition:.25s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-6px);border-color:var(--green);
+  box-shadow:0 8px 30px rgba(0,255,65,.15)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--green),var(--cyan));opacity:0;transition:.25s}
+.card:hover::before{opacity:1}
+.card h3{color:var(--green);font-size:17px;margin-bottom:10px}
+.card p{font-size:13px;color:var(--muted);margin-bottom:14px;min-height:60px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:11px;color:var(--cyan);border:1px solid rgba(0,229,255,.35);
+  padding:3px 10px;border-radius:20px}
+
+/* interactive terminal */
+#iterm .term-body{min-height:340px;max-height:420px;overflow-y:auto}
+#iterm-out{white-space:pre-wrap;word-break:break-word}
+#iterm-out .in{color:var(--cyan)}
+#iterm-out .ok{color:var(--green)}
+#iterm-out .warn{color:var(--amber)}
+#iterm-out .err{color:var(--red)}
+.iterm-input{display:flex;align-items:center;gap:8px;margin-top:6px}
+.iterm-input .p{color:var(--green);white-space:nowrap}
+#iterm-cmd{flex:1;background:transparent;border:none;outline:none;color:var(--text);
+  font-family:inherit;font-size:14px;caret-color:var(--green)}
+
+/* game */
+.game-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:820px){.game-wrap{grid-template-columns:1fr}}
+#game-log{background:#000;border:1px solid var(--border);border-radius:8px;padding:18px;
+  height:300px;overflow-y:auto;font-size:13px;white-space:pre-wrap}
+#game-log .hit{color:var(--green)}
+#game-log .miss{color:var(--red)}
+#game-log .info{color:var(--cyan)}
+.game-ctl p{font-size:13px;color:var(--muted);margin-bottom:14px}
+.digits{display:flex;gap:10px;margin-bottom:16px}
+.digit{width:56px;height:64px;background:var(--bg2);border:1px solid var(--border);
+  border-radius:6px;color:var(--green);font-family:inherit;font-size:26px;font-weight:800;
+  text-align:center;outline:none}
+.digit:focus{border-color:var(--green);box-shadow:0 0 12px rgba(0,255,65,.4)}
+#attempts{color:var(--amber);font-size:13px;margin-top:12px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.c-card{display:block;background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  padding:26px 22px;text-decoration:none;transition:.25s;text-align:center}
+.c-card:hover{transform:translateY(-5px);border-color:var(--cyan);
+  box-shadow:0 8px 26px rgba(0,229,255,.15)}
+.c-card .icon{font-size:30px;margin-bottom:10px}
+.c-card h3{color:var(--green);font-size:15px;margin-bottom:6px}
+.c-card p{color:var(--muted);font-size:12px;word-break:break-all}
+
+footer{border-top:1px solid var(--border);padding:30px 20px;text-align:center;
+  color:var(--muted);font-size:12px;position:relative;z-index:2}
+footer .g{color:var(--green)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+.reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<canvas id="matrix"></canvas>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<div id="boot"><div class="box" id="boot-text"></div></div>
+
+<div class="content">
+<nav>
+  <a class="logo" href="#top">irfaaan:~$<span class="blink">_</span></a>
+  <div class="nav-links">
+    <a href="#about">about</a>
+    <a href="#skills">skills</a>
+    <a href="#projects">projects</a>
+    <a href="#iterm">terminal</a>
+    <a href="#game">breach</a>
+    <a href="#contact">contact</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="prompt-line" id="typed-prompt"></div>
+  <h1 class="glitch">MUHAMMAD IRFAN</h1>
+  <div class="sub">// Full-Stack Laravel Developer</div>
+  <p class="desc">I build fast backends, slick frontends & real-time apps.
+     Laravel • Vue.js • Inertia.js • Node.js • Python — powered by AI-assisted development.</p>
+  <div class="btn-row">
+    <a class="btn" href="#iterm">./enter_terminal</a>
+    <a class="btn alt" href="#game">./play_breach</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="num" data-count="2">0</div><div class="lbl">years_experience</div></div>
+    <div class="stat"><div class="num" data-count="15">0</div><div class="lbl">projects_shipped</div></div>
+    <div class="stat"><div class="num" data-count="12">0</div><div class="lbl">technologies</div></div>
+    <div class="stat"><div class="num" data-count="99">0</div><div class="lbl">caffeine_level%</div></div>
+  </div>
+  <div class="scroll-hint">▼ scroll to decrypt ▼</div>
+</header>
+
+<section id="about" class="reveal">
+  <div class="sec-head"><div class="cmd">$ cat about.txt</div><h2>whoami</h2></div>
+  <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">irfaaan@dev: ~/about</span></div>
+  <div class="term-body">
+    <div><span class="p">$</span> whoami</div><div class="o">muhammad_irfan — Laravel developer from Punjab, Pakistan</div>
+    <div><span class="p">$</span> cat mission.txt</div><div class="o">~2 years turning ideas into production apps. Backend systems, admin panels, APIs, real-time features. I work fast, learn faster — AI tools are part of my daily workflow, not a shortcut.</div>
+    <div><span class="p">$</span> ls strengths/</div><div class="o">problem_solver/ &nbsp; clean_code/ &nbsp; fast_learner/ &nbsp; ships_on_time/</div>
+  </div></div>
+</section>
+
+<section id="skills" class="reveal">
+  <div class="sec-head"><div class="cmd">$ ./scan_skills --deep</div><h2>arsenal</h2></div>
+  <div class="skill-grid">
+    <div class="skill-cat"><h3>backend</h3>
+      <div class="bar"><div class="row"><span>Laravel</span><span>90%</span></div><div class="track"><div class="fill" data-w="90"></div></div></div>
+      <div class="bar"><div class="row"><span>PHP</span><span>85%</span></div><div class="track"><div class="fill" data-w="85"></div></div></div>
+      <div class="bar"><div class="row"><span>Node.js</span><span>75%</span></div><div class="track"><div class="fill" data-w="75"></div></div></div>
+      <div class="bar"><div class="row"><span>Python</span><span>80%</span></div><div class="track"><div class="fill" data-w="80"></div></div></div>
+    </div>
+    <div class="skill-cat"><h3>frontend</h3>
+      <div class="bar"><div class="row"><span>Vue.js</span><span>80%</span></div><div class="track"><div class="fill" data-w="80"></div></div></div>
+      <div class="bar"><div class="row"><span>Inertia.js</span><span>78%</span></div><div class="track"><div class="fill" data-w="78"></div></div></div>
+      <div class="bar"><div class="row"><span>JavaScript</span><span>85%</span></div><div class="track"><div class="fill" data-w="85"></div></div></div>
+      <div class="bar"><div class="row"><span>jQuery</span><span>80%</span></div><div class="track"><div class="fill" data-w="80"></div></div></div>
+    </div>
+    <div class="skill-cat"><h3>data & realtime</h3>
+      <div class="bar"><div class="row"><span>MySQL</span><span>88%</span></div><div class="track"><div class="fill" data-w="88"></div></div></div>
+      <div class="bar"><div class="row"><span>PostgreSQL</span><span>82%</span></div><div class="track"><div class="fill" data-w="82"></div></div></div>
+      <div class="bar"><div class="row"><span>WebSockets</span><span>78%</span></div><div class="track"><div class="fill" data-w="78"></div></div></div>
+      <div class="bar"><div class="row"><span>REST APIs</span><span>88%</span></div><div class="track"><div class="fill" data-w="88"></div></div></div>
+    </div>
+    <div class="skill-cat"><h3>devops & x-factor</h3>
+      <div class="bar"><div class="row"><span>Linux / Ubuntu</span><span>85%</span></div><div class="track"><div class="fill" data-w="85"></div></div></div>
+      <div class="bar"><div class="row"><span>Git</span><span>88%</span></div><div class="track"><div class="fill" data-w="88"></div></div></div>
+      <div class="bar"><div class="row"><span>Docker</span><span>70%</span></div><div class="track"><div class="fill" data-w="70"></div></div></div>
+      <div class="bar"><div class="row"><span>AI-assisted dev</span><span>92%</span></div><div class="track"><div class="fill" data-w="92"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <div class="sec-head"><div class="cmd">$ ls ~/projects --deployed</div><h2>missions</h2></div>
+  <div class="proj-grid">
+    <div class="card"><h3>🛒 Mall of Karor</h3><p>Online superstore system — ordering, COD, rider flow, admin panel. Full-stack build from spec to deploy.</p><div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Blade</span></div></div>
+    <div class="card"><h3>🎪 Event Platform</h3><p>Event & venue management system for Nafisol — bookings, venues, admin workflows.</p><div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span></div></div>
+    <div class="card"><h3>⚙️ Admin Panels & APIs</h3><p>Backend systems at Alright Tech — optimized admin panels, data management, secure access flows.</p><div class="tags"><span class="tag">Laravel</span><span class="tag">PostgreSQL</span></div></div>
+    <div class="card"><h3>🤖 AlfaBot</h3><p>Python automation bot — plugins, async tasks, real-world scripting.</p><div class="tags"><span class="tag">Python</span></div></div>
+    <div class="card"><h3>⚡ Real-time Apps</h3><p>Live dashboards & notifications with WebSockets + Node — chat systems, live order tracking.</p><div class="tags"><span class="tag">WebSockets</span><span class="tag">Node.js</span><span class="tag">Vue.js</span></div></div>
+    <div class="card"><h3>🐙 Open Source</h3><p>Active on GitHub — contributions, tools & experiments across Python, JS and security.</p><div class="tags"><span class="tag">github.com/irfaaan</span></div></div>
+  </div>
+</section>
+
+<section id="iterm" class="reveal">
+  <div class="sec-head"><div class="cmd">$ ssh guest@irfaaan.dev</div><h2>live_terminal</h2></div>
+  <div class="term" id="iterm"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">guest@irfaaan.dev — try: help</span></div>
+  <div class="term-body">
+    <div id="iterm-out"></div>
+    <div class="iterm-input"><span class="p">guest@irfaaan:~$</span><input id="iterm-cmd" autocomplete="off" spellcheck="false" placeholder="type 'help'..."></div>
+  </div></div>
+</section>
+
+<section id="game" class="reveal">
+  <div class="sec-head"><div class="cmd">$ ./breach --target=firewall</div><h2>breach_protocol</h2></div>
+  <div class="game-wrap">
+    <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">firewall_breach.exe</span></div>
+      <div class="term-body"><div id="game-log"></div></div></div>
+    <div class="game-ctl">
+      <p>🎯 Crack the <b style="color:var(--green)">4-digit</b> firewall code. You get <b style="color:var(--amber)">10 attempts</b>.<br>Feedback per digit: <span style="color:var(--green)">✔ exact</span> · <span style="color:var(--amber)">~ exists, wrong spot</span> · <span style="color:var(--red)">✘ not in code</span></p>
+      <div class="digits">
+        <input class="digit" maxlength="1" inputmode="numeric">
+        <input class="digit" maxlength="1" inputmode="numeric">
+        <input class="digit" maxlength="1" inputmode="numeric">
+        <input class="digit" maxlength="1" inputmode="numeric">
+      </div>
+      <button class="btn" id="try-btn">./inject_payload</button>
+      <button class="btn alt" id="reset-btn" style="margin-left:10px">./reset</button>
+      <div id="attempts"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="sec-head"><div class="cmd">$ ./open_channel --secure</div><h2>contact</h2></div>
+  <div class="contact-grid">
+    <a class="c-card" href="mailto:muhammadirfan421@gmail.com"><div class="icon">📧</div><h3>email</h3><p>muhammadirfan421@gmail.com</p></a>
+    <a class="c-card" href="https://github.com/irfaaan" target="_blank" rel="noopener"><div class="icon">🐙</div><h3>github</h3><p>github.com/irfaaan</p></a>
+    <a class="c-card" href="https://linkedin.com/in/irf4n" target="_blank" rel="noopener"><div class="icon">💼</div><h3>linkedin</h3><p>linkedin.com/in/irf4n</p></a>
+    <a class="c-card" href="#top"><div class="icon">📍</div><h3>location</h3><p>Punjab, Pakistan · remote-friendly</p></a>
+  </div>
+</section>
+</div>
+
+<footer>
+  <div><span class="g">irfaaan:~$</span> © 2026 Muhammad Irfan — all systems operational_</div>
+  <div style="margin-top:6px">built with 💚, caffeine & clean code · no firewalls were harmed</div>
+</footer>
+
+<script>
+/* ===== MATRIX RAIN ===== */
+(function(){
+  const c=document.getElementById('matrix'),x=c.getContext('2d');
+  let w,h,cols,drops;
+  const chars='01アイファーン$#<>/\\|01';
+  function size(){w=c.width=innerWidth;h=c.height=innerHeight;cols=Math.floor(w/18);drops=Array(cols).fill(0).map(()=>Math.random()*-50);}
+  size();addEventListener('resize',size);
+  setInterval(()=>{
+    x.fillStyle='rgba(5,7,5,.12)';x.fillRect(0,0,w,h);
+    x.fillStyle='#00ff41';x.font='15px monospace';
+    for(let i=0;i<cols;i++){
+      const ch=chars[Math.floor(Math.random()*chars.length)];
+      x.fillText(ch,i*18,drops[i]*18);
+      if(drops[i]*18>h&&Math.random()>.975)drops[i]=0;
+      drops[i]++;
+    }
+  },66);
+})();
+
+/* ===== BOOT ===== */
+(function(){
+  const lines=[
+    '> establishing secure connection ......... OK',
+    '> loading profile: irfaaan ................ OK',
+    '> verifying skills [laravel, vue, node] ... OK',
+    '> caffeine levels ......................... CRITICAL',
+    '',
+    '> ACCESS GRANTED_'
+  ];
+  const box=document.getElementById('boot-text'),boot=document.getElementById('boot');
+  let li=0,ci=0,out='';
+  function tick(){
+    if(li>=lines.length){setTimeout(()=>boot.classList.add('done'),700);return;}
+    const line=lines[li];
+    if(ci<=line.length){out+=line[ci]||'';ci++;box.innerHTML=out.replace(/_$/,'')+'<span class="cursor"></span>';setTimeout(tick,line?14:300);}
+    else{out+='\n';li++;ci=0;setTimeout(tick,180);}
+  }
+  tick();
+  boot.addEventListener('click',()=>boot.classList.add('done'));
+  setTimeout(()=>boot.classList.add('done'),6000);
+})();
+
+/* ===== HERO TYPING ===== */
+(function(){
+  const el=document.getElementById('typed-prompt');
+  const seq=['$ whoami','> muhammad_irfan — laravel_developer','./hire_me --now'];
+  let s=0,c=0,del=false;
+  (function type(){
+    const cur=seq[s];
+    el.innerHTML='<span style="color:var(--green)">'+cur.slice(0,c)+'</span><span class="cursor" style="display:inline-block;width:9px;height:16px;background:var(--green);animation:blink 1s steps(1) infinite"></span>';
+    if(!del){c++;if(c>cur.length){del=true;return setTimeout(type,1600);}}
+    else{c--;if(c===0){del=false;s=(s+1)%seq.length;}}
+    setTimeout(type,del?28:70);
+  })();
+})();
+
+/* ===== REVEAL + BARS + COUNTERS ===== */
+(function(){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return;
+    e.target.classList.add('on');
+    e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');
+    e.target.querySelectorAll('.num').forEach(n=>{
+      const t=+n.dataset.count;let v=0;const st=setInterval(()=>{
+        v+=Math.ceil(t/40);if(v>=t){v=t;clearInterval(st);}n.textContent=v+(t===99?'':'');
+      },40);
+    });
+    io.unobserve(e.target);
+  }),{threshold:.15});
+  document.querySelectorAll('.reveal,.hero').forEach(el=>io.observe(el));
+})();
+
+/* ===== INTERACTIVE TERMINAL ===== */
+(function(){
+  const out=document.getElementById('iterm-out'),cmd=document.getElementById('iterm-cmd');
+  const P='<span class="in">guest@irfaaan:~$</span> ';
+  function print(html){out.innerHTML+=html+'\n';out.parentElement.scrollTop=out.parentElement.scrollHeight;}
+  const CMDS={
+    help:'<span class="ok">commands:</span> about · skills · projects · experience · contact · whoami · date · hack · sudo · clear',
+    about:'Laravel developer, ~2 yrs. I ship backends, admin panels, APIs & real-time apps.',
+    skills:'Laravel · PHP · Vue.js · Inertia.js · Node.js · Python · WebSockets · MySQL · PostgreSQL · Linux · Git · Docker',
+    projects:'🛒 Mall of Karor · 🎪 Event Platform (Nafisol) · ⚙️ Admin panels (Alright Tech) · 🤖 AlfaBot',
+    experience:'~2 years full-stack — backend systems, admin panels, event platform, e-commerce flows.',
+    contact:'📧 muhammadirfan421@gmail.com · 🐙 github.com/irfaaan · 💼 linkedin.com/in/irf4n',
+    whoami:'guest — but you could be my next client 😉',
+    date:new Date().toString(),
+    hack:'<span class="warn">[!] nice try. firewall intact. play ./breach below instead 😏</span>',
+    sudo:'<span class="err">permission denied: guest is not in the sudoers file 😏</span>'
+  };
+  print('<span class="ok">connected to irfaaan.dev — type "help"</span>');
+  cmd.addEventListener('keydown',e=>{
+    if(e.key!=='Enter')return;
+    const raw=cmd.value.trim(),c=raw.toLowerCase();
+    print(P+raw.replace(/</g,'&lt;'));
+    if(c==='clear'){out.innerHTML='';}
+    else if(CMDS[c]){print(CMDS[c]);}
+    else if(c){print('<span class="err">command not found: '+c.replace(/</g,'&lt')+' — try "help"</span>');}
+    cmd.value='';
+  });
+})();
+
+/* ===== BREACH GAME ===== */
+(function(){
+  const log=document.getElementById('game-log'),digits=[...document.querySelectorAll('.digit')],
+        att=document.getElementById('attempts');
+  let code,left;
+  function gprint(html,cls){const d=document.createElement('div');if(cls)d.className=cls;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function reset(silent){
+    code=Array.from({length:4},()=>Math.floor(Math.random()*10));left=10;
+    digits.forEach(d=>d.value='');digits[0].focus();
+    if(!silent){log.innerHTML='';gprint('> firewall_breach.exe v2.1','info');gprint('> target locked. 4-digit code. 10 attempts.','info');}
+    att.textContent='attempts_left: '+left;
+  }
+  function guess(){
+    if(left<=0)return;
+    const g=digits.map(d=>d.value);
+    if(g.some(v=>v===''||isNaN(v))){gprint('> enter 4 digits first!','miss');return;}
+    left--;
+    let res=g.map((v,i)=>{
+      if(+v===code[i])return '<span class="hit">✔</span>';
+      if(code.includes(+v))return '<span class="warn">~</span>';
+      return '<span class="miss">✘</span>';
+    }).join(' ');
+    gprint('> ['+g.join(' ')+'] → '+res, left===0?'miss':'');
+    if(g.join('')===code.join('')){
+      gprint('> 🎉 ACCESS GRANTED! firewall breached in '+(10-left)+' tries!','hit');
+      gprint('> ...hacker detected: you should hire this dev 😎','info');left=0;
+    }else if(left===0){
+      gprint('> 🔒 LOCKED OUT! code was ['+code.join(' ')+'] — ./reset to retry','miss');
+    }
+    att.textContent='attempts_left: '+left;
+    digits.forEach(d=>d.value='');digits[0].focus();
+  }
+  document.getElementById('try-btn').addEventListener('click',guess);
+  document.getElementById('reset-btn').addEventListener('click',()=>reset(false));
+  digits.forEach((d,i)=>{
+    d.addEventListener('input',()=>{d.value=d.value.replace(/\D/g,'').slice(0,1);if(d.value&&i<3)digits[i+1].focus();});
+    d.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!d.value&&i>0)digits[i-1].focus();if(e.key==='Enter')guess();});
+  });
+  reset(true);
+  log.innerHTML='';gprint('> firewall_breach.exe v2.1','info');gprint('> target locked. crack the 4-digit code!','info');
+})();
+</script>
+</body>
+</html>
