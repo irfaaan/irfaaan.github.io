@@ -281,7 +281,7 @@ footer .g{color:var(--green)}
     <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">firewall_breach.exe</span></div>
       <div class="term-body"><div id="game-log"></div></div></div>
     <div class="game-ctl">
-      <p>🎯 Crack the <b style="color:var(--green)">4-digit</b> firewall code. You get <b style="color:var(--amber)">10 attempts</b>.<br>Feedback per digit: <span style="color:var(--green)">✔ exact</span> · <span style="color:var(--amber)">~ exists, wrong spot</span> · <span style="color:var(--red)">✘ not in code</span></p>
+      <p>🎯 Crack the <b style="color:var(--green)">4-digit</b> firewall code. You get <b style="color:var(--amber)">10 attempts</b>.<br>Feedback per digit: <span style="color:var(--green)">✔ exact</span> · <span style="color:var(--amber)">~ exists, wrong spot</span> · <span style="color:var(--red)">✘ not in code</span><br>💡 <b>2 failed attempts</b> = intercepted intel (free hint!)</p>
       <div class="digits">
         <input class="digit" maxlength="1" inputmode="numeric">
         <input class="digit" maxlength="1" inputmode="numeric">
@@ -417,12 +417,12 @@ footer .g{color:var(--green)}
 (function(){
   const log=document.getElementById('game-log'),digits=[...document.querySelectorAll('.digit')],
         att=document.getElementById('attempts');
-  let code,left;
+  let code,left,fails,hinted;
   function gprint(html,cls){const d=document.createElement('div');if(cls)d.className=cls;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;}
   function reset(silent){
-    code=Array.from({length:4},()=>Math.floor(Math.random()*10));left=10;
+    code=Array.from({length:4},()=>Math.floor(Math.random()*10));left=10;fails=0;hinted=[];
     digits.forEach(d=>d.value='');digits[0].focus();
-    if(!silent){log.innerHTML='';gprint('> firewall_breach.exe v2.1','info');gprint('> target locked. 4-digit code. 10 attempts.','info');}
+    if(!silent){log.innerHTML='';gprint('> firewall_breach.exe v2.2','info');gprint('> target locked. 4-digit code. 10 attempts. free intel after 2 fails.','info');}
     att.textContent='attempts_left: '+left;
   }
   function guess(){
@@ -439,8 +439,17 @@ footer .g{color:var(--green)}
     if(g.join('')===code.join('')){
       gprint('> 🎉 ACCESS GRANTED! firewall breached in '+(10-left)+' tries!','hit');
       gprint('> ...hacker detected: you should hire this dev 😎','info');left=0;
-    }else if(left===0){
-      gprint('> 🔒 LOCKED OUT! code was ['+code.join(' ')+'] — ./reset to retry','miss');
+    }else{
+      fails++;
+      if(fails===2){
+        const avail=[0,1,2,3].filter(i=>hinted.indexOf(i)<0);
+        const p=avail[Math.floor(Math.random()*avail.length)];
+        hinted.push(p);
+        gprint('> 📡 INTERCEPTED INTEL — position '+(p+1)+' = '+code[p],'info');
+      }
+      if(left===0){
+        gprint('> 🔒 LOCKED OUT! code was ['+code.join(' ')+'] — ./reset to retry','miss');
+      }
     }
     att.textContent='attempts_left: '+left;
     digits.forEach(d=>d.value='');digits[0].focus();
@@ -452,7 +461,7 @@ footer .g{color:var(--green)}
     d.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!d.value&&i>0)digits[i-1].focus();if(e.key==='Enter')guess();});
   });
   reset(true);
-  log.innerHTML='';gprint('> firewall_breach.exe v2.1','info');gprint('> target locked. crack the 4-digit code!','info');
+  log.innerHTML='';gprint('> firewall_breach.exe v2.2','info');gprint('> target locked. crack the 4-digit code! free intel after 2 fails.','info');
 })();
 </script>
 </body>
