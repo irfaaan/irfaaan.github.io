@@ -184,14 +184,15 @@ footer .g{color:var(--green)}
 .hack-popup{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
 .hack-popup.show{display:flex;animation:fadein .25s}
 @keyframes fadein{from{opacity:0}to{opacity:1}}
-.hack-popup-box{border:1px solid var(--green);background:#020604;padding:34px 38px;max-width:440px;width:100%;
-  text-align:center;box-shadow:0 0 40px rgba(0,255,65,.25);border-radius:6px}
+.hack-popup-box{border:1px solid var(--green);background:#020604;padding:30px 32px;max-width:680px;width:100%;
+  text-align:center;box-shadow:0 0 40px rgba(0,255,65,.25);border-radius:6px;max-height:88vh;display:flex;flex-direction:column}
+.hp-content{text-align:left;overflow-y:auto;margin:6px 0 16px;flex:1;min-height:0}
+.hp-content .skills{grid-template-columns:repeat(2,1fr)}
+@media(max-width:720px){.hp-content .skills{grid-template-columns:1fr}}
 .hp-title{color:var(--amber);letter-spacing:3px;font-weight:800;margin-bottom:18px}
 .hp-bar{height:14px;border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-bottom:14px;background:#000}
 .hp-fill{height:100%;width:0;background:repeating-linear-gradient(45deg,var(--green),var(--green) 8px,#00b33c 8px,#00b33c 16px);transition:width .15s}
 .hp-status{color:var(--green);font-size:14px;margin-bottom:10px;min-height:20px}
-.hp-unlocked{color:#fff;font-size:18px;margin:12px 0 18px;letter-spacing:1px}
-.hp-unlocked b{color:var(--green)}
 </style>
 </head>
 <body>
@@ -298,7 +299,7 @@ footer .g{color:var(--green)}
 
 <section id="game" class="reveal classified">
   <div class="sec-head"><div class="cmd">$ ./vault_decoder --target=VAULT-07</div><h2>vault_decoder</h2></div>
-  <div class="game-wrap">
+  <div class="game-wrap" id="decoder-inner">
     <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">vault_decoder.exe</span></div>
       <div class="term-body"><div id="game-log"></div></div></div>
     <div class="game-ctl">
@@ -335,11 +336,13 @@ footer .g{color:var(--green)}
 <!-- unlock popup -->
 <div class="hack-popup" id="hack-popup">
   <div class="hack-popup-box">
-    <div class="hp-title">SECURE DECRYPTION</div>
-    <div class="hp-bar"><div class="hp-fill" id="hp-fill"></div></div>
-    <div class="hp-status" id="hp-status"></div>
-    <div class="hp-unlocked" id="hp-unlocked"></div>
-    <button class="btn" id="hp-view" style="display:none">▶ VIEW</button>
+    <div class="hp-title" id="hp-title">SECURE DECRYPTION</div>
+    <div id="hp-decrypt">
+      <div class="hp-bar"><div class="hp-fill" id="hp-fill"></div></div>
+      <div class="hp-status" id="hp-status"></div>
+    </div>
+    <div class="hp-content" id="hp-content"></div>
+    <button class="btn" id="hp-close" style="display:none">✕ CLOSE</button>
   </div>
 </div>
 
@@ -433,15 +436,35 @@ footer .g{color:var(--green)}
 
   function revealSection(id){const s=document.getElementById(id);if(s)s.classList.remove('classified');}
 
-  function showUnlockPopup(secId,secName,sub){
-    const pop=document.getElementById('hack-popup');
-    const fill=document.getElementById('hp-fill');
-    const status=document.getElementById('hp-status');
-    const unl=document.getElementById('hp-unlocked');
-    const view=document.getElementById('hp-view');
-    pop.classList.add('show');
-    unl.innerHTML='';view.style.display='none';fill.style.width='0%';
-    status.textContent='[+] decrypting '+secId+'.sys ...';
+  const decoderNode=document.getElementById('decoder-inner');
+  const decoderHome=document.getElementById('game');
+  function parkDecoder(){
+    if(decoderNode&&decoderHome&&decoderNode.parentElement!==decoderHome)decoderHome.appendChild(decoderNode);
+  }
+  function popupEls(){
+    return {
+      pop:document.getElementById('hack-popup'),
+      title:document.getElementById('hp-title'),
+      dec:document.getElementById('hp-decrypt'),
+      fill:document.getElementById('hp-fill'),
+      status:document.getElementById('hp-status'),
+      content:document.getElementById('hp-content'),
+      close:document.getElementById('hp-close')
+    };
+  }
+  function openPopup(){popupEls().pop.classList.add('show');}
+  function closePopup(){popupEls().pop.classList.remove('show');}
+
+  /* decrypt animation -> then show section content INSIDE the popup */
+  function showContentPopup(secId,secName){
+    parkDecoder();
+    const {pop,title,dec,fill,status,content,close}=popupEls();
+    const src=document.getElementById(secId);
+    const html=src?src.innerHTML:'';
+    title.textContent='SECURE DECRYPTION';
+    dec.style.display='block';content.innerHTML='';close.style.display='none';
+    fill.style.width='0%';status.textContent='[+] decrypting '+secId+'.sys ...';
+    openPopup();
     let p=0;
     const iv=setInterval(()=>{
       p+=Math.floor(Math.random()*16)+7;
@@ -450,12 +473,26 @@ footer .g{color:var(--green)}
       status.textContent='[+] decrypting '+secId+'.sys ... '+p+'%';
     },150);
     function finish(){
-      revealSection(secId);
-      status.innerHTML='<span class="ok">[+] ACCESS GRANTED</span>';
-      unl.innerHTML='🔓 <b>'+secName+'</b> UNLOCKED'+(sub?'<br><span style="color:var(--muted);font-size:13px">'+sub+'</span>':'');
-      view.style.display='inline-block';
-      view.onclick=()=>{pop.classList.remove('show');const s=document.getElementById(secId);if(s)s.scrollIntoView({behavior:'smooth'});};
+      dec.style.display='none';
+      title.innerHTML='🔓 <b style="color:var(--green)">'+secName+'</b> UNLOCKED';
+      content.innerHTML=html;
+      content.scrollTop=0;
+      close.style.display='inline-block';close.textContent='✕ CLOSE';
+      close.onclick=closePopup;
     }
+  }
+
+  /* vault decoder tool inside the popup */
+  function showDecoderPopup(){
+    const {title,dec,content,close}=popupEls();
+    title.textContent='⌨️ VAULT DECODER';
+    dec.style.display='none';content.innerHTML='';
+    if(decoderNode)content.appendChild(decoderNode);
+    close.style.display='inline-block';close.textContent='✕ CLOSE';
+    close.onclick=closePopup;
+    openPopup();
+    const first=content.querySelector('.digit');
+    if(first)setTimeout(()=>first.focus(),300);
   }
 
   function grantLevel(n,secId,secName){
@@ -463,7 +500,7 @@ footer .g{color:var(--green)}
     print('<span class="ok">[+] ═══════════════════════</span>');
     print('<span class="ok">[+]&nbsp;&nbsp;CLEARANCE LEVEL '+n+' GRANTED</span>');
     print('<span class="ok">[+] ═══════════════════════</span>');
-    if(secId)showUnlockPopup(secId,secName||secId.toUpperCase());
+    if(secId)showContentPopup(secId,secName||secId.toUpperCase());
   }
   window.__grantLevel=grantLevel;
 
@@ -553,10 +590,9 @@ footer .g{color:var(--green)}
       promptHandler=askQuiz;
     }else if(c===2){
       print('<span class="ok">> ═══ MISSION 3: THE VAULT DECODER ═══</span>');
-      print('> crack the 4-digit vault code in the VAULT DECODER below.');
-      print('> 10 attempts. play fair with logic... or cheat: type <b>breach</b> 😏');
-      const g=document.getElementById('game');
-      if(g&&g.classList.contains('classified'))showUnlockPopup('game','VAULT DECODER','new tool available');
+      print('> opening vault decoder...');
+      print('> 10 attempts. play fair with logic... or cheat: close it & type <b>breach</b> 😏');
+      showDecoderPopup();
     }else if(c===3){
       print('<span class="ok">> ═══ MISSION 4: FINAL HANDSHAKE ═══</span>');
       print('> the developer is watching this terminal right now.');
@@ -619,7 +655,14 @@ footer .g{color:var(--green)}
     }
     const c=raw.toLowerCase();
     print(P+raw.replace(/</g,'&lt;'));
-    if(c==='breach'){cmd.value='';if((window.__clearance||0)===0)missionBreach();else quickBreach();return;}
+    if(c==='breach'){
+      cmd.value='';
+      const cl=window.__clearance||0;
+      if(cl===0)missionBreach();
+      else if(cl===2)quickBreach();
+      else print('<span class="warn">[!] no target at this clearance. type "mission" to continue the sequence.</span>');
+      return;
+    }
     if(c==='mission'){cmd.value='';missionBrief();return;}
     if(c==='status'){cmd.value='';showStatus();return;}
     if(c==='recruiter'){cmd.value='';['about','skills','game','projects','contact'].forEach(revealSection);setClearance(4);print('<span class="ok">[+] recruiter clearance verified — ALL sectors decrypted. welcome 🤝</span>');return;}
@@ -674,7 +717,7 @@ footer .g{color:var(--green)}
       if(cl===2){
         window.__grantLevel(3,'projects','PROJECTS');
         gprint('> 🎉 VAULT CRACKED!','hit');
-        gprint('> [+] CLEARANCE LEVEL 3 GRANTED — PROJECTS decrypted! scroll up 👆','info');
+        gprint('> [+] CLEARANCE LEVEL 3 GRANTED — PROJECTS incoming...','info');
       }else if(cl>2){
         gprint('> 🎉 code cracked again. smooth.','hit');
       }else{
