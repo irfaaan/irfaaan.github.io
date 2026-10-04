@@ -144,21 +144,6 @@ section{padding:90px 20px;max-width:1080px;margin:0 auto}
 #iterm-cmd{flex:1;background:transparent;border:none;outline:none;color:var(--text);
   font-family:inherit;font-size:14px;caret-color:var(--green)}
 
-/* game */
-.game-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-@media(max-width:820px){.game-wrap{grid-template-columns:1fr}}
-#game-log{background:#000;border:1px solid var(--border);border-radius:8px;padding:18px;
-  height:300px;overflow-y:auto;font-size:13px;white-space:pre-wrap}
-#game-log .hit{color:var(--green)}
-#game-log .miss{color:var(--red)}
-#game-log .info{color:var(--cyan)}
-.game-ctl p{font-size:13px;color:var(--muted);margin-bottom:14px}
-.digits{display:flex;gap:10px;margin-bottom:16px}
-.digit{width:56px;height:64px;background:var(--bg2);border:1px solid var(--border);
-  border-radius:6px;color:var(--green);font-family:inherit;font-size:26px;font-weight:800;
-  text-align:center;outline:none}
-.digit:focus{border-color:var(--green);box-shadow:0 0 12px rgba(0,255,65,.4)}
-#attempts{color:var(--amber);font-size:13px;margin-top:12px}
 
 /* contact */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
@@ -255,9 +240,6 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   transition:transform .3s,border-color .3s,box-shadow .3s}
 .c-card:hover{transform:translateY(-6px) scale(1.02);border-color:var(--green);box-shadow:0 0 38px rgba(0,255,65,.22)}
-.digit{width:60px;height:70px;font-size:32px;border-radius:14px;background:rgba(0,255,65,.05);
-  border:1px solid rgba(0,255,65,.32);transition:border-color .25s,box-shadow .25s,transform .2s}
-.digit:focus{border-color:var(--green);box-shadow:0 0 20px rgba(0,255,65,.5);transform:scale(1.07);outline:none}
 .boot{border:1px solid rgba(0,255,65,.22);border-radius:12px;box-shadow:0 0 34px rgba(0,255,65,.09)}
 ::-webkit-scrollbar{width:9px}
 ::-webkit-scrollbar-track{background:#020403}
@@ -281,7 +263,6 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
     <a href="#skills">skills</a>
     <a href="#projects">projects</a>
     <a href="#iterm">terminal</a>
-    <a href="#game">decoder</a>
     <a href="#contact">contact</a>
   </div>
 </nav>
@@ -366,25 +347,7 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
   </div></div>
 </section>
 
-<section id="game" class="reveal">
-  <div class="sec-head"><div class="cmd">$ ./vault_decoder --target=VAULT-07</div><h2>vault_decoder</h2></div>
-  <div class="game-wrap" id="decoder-inner">
-    <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">vault_decoder.exe</span></div>
-      <div class="term-body"><div id="game-log"></div></div></div>
-    <div class="game-ctl">
-      <p>🎯 Crack the <b style="color:var(--green)">4-digit</b> vault code — <b style="color:var(--amber)">10 attempts</b>.<br>Feedback: <span style="color:var(--green)">✔ exact</span> · <span style="color:var(--amber)">~ exists, wrong spot</span> · <span style="color:var(--red)">✘ not in code</span><br>💡 2 fails = intercepted intel · 💻 cheater? terminal mein <b>breach</b> likho! 😏</p>
-      <div class="digits">
-        <input class="digit" maxlength="1" inputmode="numeric">
-        <input class="digit" maxlength="1" inputmode="numeric">
-        <input class="digit" maxlength="1" inputmode="numeric">
-        <input class="digit" maxlength="1" inputmode="numeric">
-      </div>
-      <button class="btn" id="try-btn">./inject_payload</button>
-      <button class="btn alt" id="reset-btn" style="margin-left:10px">./reset</button>
-      <div id="attempts"></div>
-    </div>
-  </div>
-</section>
+
 
 <section id="contact" class="reveal">
   <div class="sec-head"><div class="cmd">$ ./open_channel --secure</div><h2>contact</h2></div>
@@ -499,45 +462,8 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
     return null;
   }
 
-  function targetBox(){
-    print('┌─ TARGET ────────────────────────┐');
-    print('│&nbsp;&nbsp;IRFAAAN SECURE MAINFRAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│');
-    print('│&nbsp;&nbsp;node .... VAULT-07&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│');
-    print('│&nbsp;&nbsp;security  OMEGA-LEVEL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│');
-    print('└─────────────────────────────────┘');
-  }
-
-  async function runBreach(){
-    if(hacking){print('<span class="warn">[!] breach already running...</span>');return;}
-    hacking=true;cmd.disabled=true;
-    const code=window.__breachCode||['?','?','?','?'];
-    print('<span class="ok">> launching blackhat module: BREACH</span>');await sleep(450);
-    targetBox();await sleep(500);
-    print('[*] handshake ................ <span class="ok">ESTABLISHED</span>');await sleep(550);
-    print('[*] injecting shellcode 0x3F2A9C ... <span class="ok">OK</span>');await sleep(650);
-    print('[*] escalating privileges ..... <span class="ok">ROOT</span>');await sleep(650);
-    print('[*] dumping memory sectors:');await sleep(350);
-    for(let i=0;i<4;i++){
-      const d=[];for(let j=0;j<8;j++)d.push(('0'+Math.floor(Math.random()*256).toString(16)).slice(-2).toUpperCase());
-      print('&nbsp;&nbsp;&nbsp;&nbsp;0x0'+i+'FF: '+d.join(' '));await sleep(240);
-    }
-    const bar=document.createElement('div');out.appendChild(bar);
-    for(let p=0;p<=100;p+=10){
-      bar.innerHTML='[*] brute-forcing keyspace [0000-9999] ['+'█'.repeat(p/10)+'░'.repeat(10-p/10)+'] '+p+'%';
-      out.parentElement.scrollTop=out.parentElement.scrollHeight;
-      await sleep(280);
-    }
-    print('[*] firewall layer 1 ......... <span class="ok">BYPASSED</span>');await sleep(450);
-    print('[*] firewall layer 2 ......... <span class="ok">BYPASSED</span>');await sleep(450);
-    print('<span class="ok">[+] ═══════════════════════</span>');
-    print('<span class="ok">[+]&nbsp;&nbsp;CODE CRACKED: [ '+code.join(' ')+' ]</span>');
-    print('<span class="ok">[+] ═══════════════════════</span>');
-    print('<span class="warn">[*] feed it to the VAULT DECODER below 😉</span>');
-    hacking=false;cmd.disabled=false;cmd.focus();
-  }
-
   const CMDS={
-    help:'<span class="ok">commands:</span> about · skills · projects · experience · contact · whoami · <b>breach</b> · date · hack · sudo · clear',
+    help:'<span class="ok">commands:</span> about · skills · projects · experience · contact · whoami · date · hack · sudo · clear',
     about:'Laravel developer, ~2 yrs. I ship backends, admin panels, APIs & real-time apps.',
     skills:'Laravel · PHP · Vue.js · Inertia.js · Node.js · Python · WebSockets · MySQL · PostgreSQL · Linux · Git · Docker',
     projects:'🛒 Mall of Karor · 🎪 Event Platform (Nafisol) · ⚙️ Admin panels (Alright Tech) · 🤖 AlfaBot',
@@ -545,20 +471,19 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
     contact:'📧 muhammadirfan421@gmail.com · 🐙 github.com/irfaaan · 💼 linkedin.com/in/irf4n',
     whoami:'guest — future insider 😉',
     date:new Date().toString(),
-    hack:'<span class="warn">[!] nice try. the real op is the "breach" command 😏</span>',
+    hack:'<span class="warn">[!] nice try. firewall intact 😏</span>',
     sudo:'<span class="err">permission denied: guest is not in the sudoers file 😏</span>'
   };
   print('<span class="ok">connected to irfaaan.dev</span>');
   geo().then(g=>{
     if(g)print('[*] visitor_ip: <span class="ok">'+g.ip+'</span> · location: <span class="warn">'+(g.city?g.city+', ':'')+g.country+'</span> '+flag(g.cc));
     else print('<span class="warn">[*] visitor: ghost mode — ip unresolved</span>');
-    print('<span class="ok">type "help" · insiders type "breach" 😏</span>');
+    print('<span class="ok">type "help" to explore</span>');
   });
   cmd.addEventListener('keydown',e=>{
     if(e.key!=='Enter')return;
     const raw=cmd.value.trim(),c=raw.toLowerCase();
     print(P+raw.replace(/</g,'&lt;'));
-    if(c==='breach'){cmd.value='';runBreach();return;}
     if(c==='clear'){out.innerHTML='';}
     else if(CMDS[c]){print(CMDS[c]);}
     else if(c){print('<span class="err">command not found: '+c.replace(/</g,'&lt')+' — try "help"</span>');}
@@ -566,58 +491,6 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
   });
 })();
 
-/* ===== BREACH GAME ===== */
-(function(){
-  const log=document.getElementById('game-log'),digits=[...document.querySelectorAll('.digit')],
-        att=document.getElementById('attempts');
-  let code,left,fails,hinted;
-  function gprint(html,cls){const d=document.createElement('div');if(cls)d.className=cls;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;}
-  function reset(silent){
-    code=Array.from({length:4},()=>Math.floor(Math.random()*10));left=10;fails=0;hinted=[];
-    window.__breachCode=code;
-    digits.forEach(d=>d.value='');digits[0].focus();
-    if(!silent){log.innerHTML='';gprint('> vault_decoder.exe v3.0','info');gprint('> target locked. 4-digit code. 10 attempts. free intel after 2 fails.','info');}
-    att.textContent='attempts_left: '+left;
-  }
-  function guess(){
-    if(left<=0)return;
-    const g=digits.map(d=>d.value);
-    if(g.some(v=>v===''||isNaN(v))){gprint('> enter 4 digits first!','miss');return;}
-    left--;
-    let res=g.map((v,i)=>{
-      if(+v===code[i])return '<span class="hit">✔</span>';
-      if(code.includes(+v))return '<span class="warn">~</span>';
-      return '<span class="miss">✘</span>';
-    }).join(' ');
-    gprint('> ['+g.join(' ')+'] → '+res, left===0?'miss':'');
-    if(g.join('')===code.join('')){
-      gprint('> 🎉 ACCESS GRANTED! vault breached in '+(10-left)+' tries!','hit');
-      gprint('> ...hacker detected: you should hire this dev 😎','info');
-      left=0;
-    }else{
-      fails++;
-      if(fails===2){
-        const avail=[0,1,2,3].filter(i=>hinted.indexOf(i)<0);
-        const p=avail[Math.floor(Math.random()*avail.length)];
-        hinted.push(p);
-        gprint('> 📡 INTERCEPTED INTEL — position '+(p+1)+' = '+code[p],'info');
-      }
-      if(left===0){
-        gprint('> 🔒 LOCKED OUT! code was ['+code.join(' ')+'] — ./reset to retry','miss');
-      }
-    }
-    att.textContent='attempts_left: '+left;
-    digits.forEach(d=>d.value='');digits[0].focus();
-  }
-  document.getElementById('try-btn').addEventListener('click',guess);
-  document.getElementById('reset-btn').addEventListener('click',()=>reset(false));
-  digits.forEach((d,i)=>{
-    d.addEventListener('input',()=>{d.value=d.value.replace(/\D/g,'').slice(0,1);if(d.value&&i<3)digits[i+1].focus();});
-    d.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!d.value&&i>0)digits[i-1].focus();if(e.key==='Enter')guess();});
-  });
-  reset(true);
-  log.innerHTML='';gprint('> vault_decoder.exe v3.0','info');gprint('> target locked. crack the 4-digit code! free intel after 2 fails.','info');
-})();
 </script>
 </body>
 </html>
