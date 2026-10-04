@@ -281,7 +281,7 @@ footer .g{color:var(--green)}
     <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">firewall_breach.exe</span></div>
       <div class="term-body"><div id="game-log"></div></div></div>
     <div class="game-ctl">
-      <p>🎯 Crack the <b style="color:var(--green)">4-digit</b> firewall code. You get <b style="color:var(--amber)">10 attempts</b>.<br>Feedback per digit: <span style="color:var(--green)">✔ exact</span> · <span style="color:var(--amber)">~ exists, wrong spot</span> · <span style="color:var(--red)">✘ not in code</span><br>💡 <b>2 failed attempts</b> = intercepted intel (free hint!)</p>
+      <p>🎯 Crack the <b style="color:var(--green)">4-digit</b> firewall code. You get <b style="color:var(--amber)">10 attempts</b>.<br>Feedback per digit: <span style="color:var(--green)">✔ exact</span> · <span style="color:var(--amber)">~ exists, wrong spot</span> · <span style="color:var(--red)">✘ not in code</span><br>💡 <b>2 failed attempts</b> = intercepted intel (free hint!)<br>💻 Cheater? Terminal mein <b>breach</b> likho! 😏</p>
       <div class="digits">
         <input class="digit" maxlength="1" inputmode="numeric">
         <input class="digit" maxlength="1" inputmode="numeric">
@@ -389,8 +389,40 @@ footer .g{color:var(--green)}
   const out=document.getElementById('iterm-out'),cmd=document.getElementById('iterm-cmd');
   const P='<span class="in">guest@irfaaan:~$</span> ';
   function print(html){out.innerHTML+=html+'\n';out.parentElement.scrollTop=out.parentElement.scrollHeight;}
+  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+  const rh=()=>'0x'+Array.from({length:6},()=>'0123456789ABCDEF'[Math.floor(Math.random()*16)]).join('');
+  let hacking=false;
+  async function runBreach(){
+    if(hacking){print('<span class="warn">[!] breach already running...</span>');return;}
+    hacking=true;cmd.disabled=true;
+    const code=window.__breachCode||['?','?','?','?'];
+    const ip='192.168.66.'+(10+Math.floor(Math.random()*200));
+    print('<span class="ok">> launching blackhat module: BREACH</span>');await sleep(450);
+    print('[*] target acquired: '+ip+':443');await sleep(550);
+    print('[*] handshake ................ <span class="ok">ESTABLISHED</span>');await sleep(550);
+    print('[*] injecting shellcode '+rh()+' ... <span class="ok">OK</span>');await sleep(650);
+    print('[*] escalating privileges ..... <span class="ok">ROOT</span>');await sleep(650);
+    print('[*] dumping memory sectors:');await sleep(350);
+    for(let i=0;i<4;i++){
+      const d=[];for(let j=0;j<8;j++)d.push(('0'+Math.floor(Math.random()*256).toString(16)).slice(-2).toUpperCase());
+      print('&nbsp;&nbsp;&nbsp;&nbsp;0x0'+i+'FF: '+d.join(' '));await sleep(240);
+    }
+    const bar=document.createElement('div');out.appendChild(bar);
+    for(let p=0;p<=100;p+=10){
+      bar.innerHTML='[*] brute-forcing keyspace [0000-9999] ['+'█'.repeat(p/10)+'░'.repeat(10-p/10)+'] '+p+'%';
+      out.parentElement.scrollTop=out.parentElement.scrollHeight;
+      await sleep(280);
+    }
+    print('[*] firewall layer 1 ......... <span class="ok">BYPASSED</span>');await sleep(450);
+    print('[*] firewall layer 2 ......... <span class="ok">BYPASSED</span>');await sleep(450);
+    print('<span class="ok">[+] ═══════════════════════</span>');
+    print('<span class="ok">[+]&nbsp;&nbsp;CODE CRACKED: [ '+code.join(' ')+' ]</span>');
+    print('<span class="ok">[+] ═══════════════════════</span>');
+    print('<span class="warn">[*] use it in the BREACH game below 😉 — shhh, cheating!</span>');
+    hacking=false;cmd.disabled=false;cmd.focus();
+  }
   const CMDS={
-    help:'<span class="ok">commands:</span> about · skills · projects · experience · contact · whoami · date · hack · sudo · clear',
+    help:'<span class="ok">commands:</span> about · skills · projects · experience · contact · whoami · <b>breach</b> · date · hack · sudo · clear',
     about:'Laravel developer, ~2 yrs. I ship backends, admin panels, APIs & real-time apps.',
     skills:'Laravel · PHP · Vue.js · Inertia.js · Node.js · Python · WebSockets · MySQL · PostgreSQL · Linux · Git · Docker',
     projects:'🛒 Mall of Karor · 🎪 Event Platform (Nafisol) · ⚙️ Admin panels (Alright Tech) · 🤖 AlfaBot',
@@ -398,7 +430,7 @@ footer .g{color:var(--green)}
     contact:'📧 muhammadirfan421@gmail.com · 🐙 github.com/irfaaan · 💼 linkedin.com/in/irf4n',
     whoami:'guest — but you could be my next client 😉',
     date:new Date().toString(),
-    hack:'<span class="warn">[!] nice try. firewall intact. play ./breach below instead 😏</span>',
+    hack:'<span class="warn">[!] nice try. firewall intact. psst... try the "breach" command 😏</span>',
     sudo:'<span class="err">permission denied: guest is not in the sudoers file 😏</span>'
   };
   print('<span class="ok">connected to irfaaan.dev — type "help"</span>');
@@ -406,6 +438,7 @@ footer .g{color:var(--green)}
     if(e.key!=='Enter')return;
     const raw=cmd.value.trim(),c=raw.toLowerCase();
     print(P+raw.replace(/</g,'&lt;'));
+    if(c==='breach'){cmd.value='';runBreach();return;}
     if(c==='clear'){out.innerHTML='';}
     else if(CMDS[c]){print(CMDS[c]);}
     else if(c){print('<span class="err">command not found: '+c.replace(/</g,'&lt')+' — try "help"</span>');}
@@ -421,6 +454,7 @@ footer .g{color:var(--green)}
   function gprint(html,cls){const d=document.createElement('div');if(cls)d.className=cls;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;}
   function reset(silent){
     code=Array.from({length:4},()=>Math.floor(Math.random()*10));left=10;fails=0;hinted=[];
+    window.__breachCode=code;
     digits.forEach(d=>d.value='');digits[0].focus();
     if(!silent){log.innerHTML='';gprint('> firewall_breach.exe v2.2','info');gprint('> target locked. 4-digit code. 10 attempts. free intel after 2 fails.','info');}
     att.textContent='attempts_left: '+left;
