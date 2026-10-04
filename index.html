@@ -98,28 +98,24 @@ nav.scrolled{border-bottom-color:var(--border);background:rgba(8,8,13,.85)}
 /* hero visual */
 .hero-visual{position:relative;display:flex;justify-content:center}
 .clock-showcase{position:relative;display:flex;flex-direction:column;align-items:center}
-.clock-ring{width:300px;height:300px;border-radius:50%;padding:6px;
-  background:conic-gradient(from 120deg,#6366f1,#a855f7,#22d3ee,#6366f1);
-  box-shadow:0 0 80px rgba(99,102,241,.35)}
-.clock-face{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#1b1b2b,#0b0b13 72%);
-  position:relative;display:flex;align-items:center;justify-content:center}
-.clock-svg{width:88%;height:88%}
-.mk{stroke:rgba(255,255,255,.28);stroke-width:2;stroke-linecap:round}
-.mk.major{stroke:#a5b4fc;stroke-width:4}
-.hand{stroke-linecap:round;transform-origin:100px 100px}
-.hand.hr{stroke:#fff;stroke-width:7}
-.hand.min{stroke:#c7d2fe;stroke-width:4.5}
-.hand.sec{stroke:#22d3ee;stroke-width:2}
-.pin{fill:#a855f7}
-.clock-brand{position:absolute;top:31%;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:5px;color:var(--muted);font-weight:600}
+.greek-clock{width:320px;height:320px;filter:drop-shadow(0 18px 50px rgba(212,175,55,.28))}
+.clock-svg{width:100%;height:100%}
+.key{fill:none;stroke:#4a2f0c;stroke-width:3;stroke-linecap:square}
+.tick{stroke:#8a744d;stroke-width:1.5;stroke-linecap:round}
+.tick.major{stroke:#4a3a1e;stroke-width:3}
+.numeral{font-family:Georgia,'Times New Roman',serif;font-size:23px;font-weight:700;fill:#4a3a1e;text-anchor:middle;dominant-baseline:central}
+.hand{fill:#3a2b10;transform-origin:160px 160px}
+.hand.sec{stroke:#9c3a1e;stroke-width:2.5;stroke-linecap:round;fill:none}
+.brand{font-family:Georgia,serif;font-size:13px;letter-spacing:6px;fill:#6b5320;font-weight:700}
 .pendulum-wrap{height:170px;display:flex;justify-content:center;margin-top:-6px}
-.pendulum{width:4px;height:128px;border-radius:4px;transform-origin:top center;
-  background:linear-gradient(180deg,#c7d2fe,#6366f1);animation:swing 2.2s ease-in-out infinite;position:relative}
-.pendulum .bob{position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);width:56px;height:56px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#c4b5fd,#7c3aed 62%,#2e1065);
-  box-shadow:0 0 34px rgba(139,92,247,.55),inset 0 0 12px rgba(0,0,0,.4)}
+.pendulum{width:5px;height:128px;border-radius:4px;transform-origin:top center;
+  background:linear-gradient(180deg,#e8c76a,#8a5a17);animation:swing 2.2s ease-in-out infinite;position:relative}
+.pendulum .bob{position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);width:60px;height:60px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#f4dc96,#b57e22 58%,#6b4210);
+  border:2px solid #4a2f0c;
+  box-shadow:0 0 34px rgba(212,175,55,.45),inset 0 0 14px rgba(0,0,0,.4)}
 @keyframes swing{0%,100%{transform:rotate(13deg)}50%{transform:rotate(-13deg)}}
-@media(max-width:900px){.clock-ring{width:230px;height:230px}.pendulum-wrap{height:140px}.pendulum{height:100px}}
+@media(max-width:900px){.greek-clock{width:250px;height:250px}.pendulum-wrap{height:140px}.pendulum{height:100px}}
 .float-chip{position:absolute;background:rgba(13,13,21,.9);border:1px solid var(--border2);border-radius:14px;
   padding:12px 18px;font-size:13px;font-weight:600;backdrop-filter:blur(10px);box-shadow:0 14px 40px rgba(0,0,0,.5);
   display:flex;align-items:center;gap:9px;animation:floaty 5s ease-in-out infinite}
@@ -268,16 +264,32 @@ footer{border-top:1px solid var(--border);padding:38px 0;position:relative;z-ind
   </div>
   <div class="hero-visual reveal d1">
     <div class="clock-showcase">
-      <div class="clock-ring"><div class="clock-face">
-        <svg class="clock-svg" viewBox="0 0 200 200">
-          <g id="markers"></g>
-          <line id="hr-hand" x1="100" y1="100" x2="100" y2="60" class="hand hr"/>
-          <line id="min-hand" x1="100" y1="100" x2="100" y2="40" class="hand min"/>
-          <line id="sec-hand" x1="100" y1="110" x2="100" y2="32" class="hand sec"/>
-          <circle cx="100" cy="100" r="6" class="pin"/>
+      <div class="greek-clock">
+        <svg class="clock-svg" viewBox="0 0 320 320">
+          <defs>
+            <radialGradient id="bronze" cx="35%" cy="30%" r="85%">
+              <stop offset="0%" stop-color="#f4dc96"/><stop offset="45%" stop-color="#c9962e"/>
+              <stop offset="78%" stop-color="#8a5a17"/><stop offset="100%" stop-color="#5c3a0e"/>
+            </radialGradient>
+            <radialGradient id="marble" cx="42%" cy="36%" r="78%">
+              <stop offset="0%" stop-color="#faf6e9"/><stop offset="60%" stop-color="#ece1c6"/>
+              <stop offset="100%" stop-color="#d3c49c"/>
+            </radialGradient>
+          </defs>
+          <circle cx="160" cy="160" r="158" fill="url(#bronze)"/>
+          <circle cx="160" cy="160" r="158" fill="none" stroke="#3d2708" stroke-width="2"/>
+          <g id="greekkey"></g>
+          <circle cx="160" cy="160" r="128" fill="url(#marble)" stroke="#5c3a0e" stroke-width="3"/>
+          <circle cx="160" cy="160" r="121" fill="none" stroke="#b3924d" stroke-width="1"/>
+          <g id="ticks"></g>
+          <g id="numerals"></g>
+          <path id="hr-hand" d="M160,172 L153,174 L157,98 L160,86 L163,98 L167,174 Z" class="hand"/>
+          <path id="min-hand" d="M160,172 L156,174 L158.5,64 L160,52 L161.5,64 L164,174 Z" class="hand"/>
+          <line id="sec-hand" x1="160" y1="184" x2="160" y2="58" class="hand sec"/>
+          <circle cx="160" cy="160" r="9" fill="url(#bronze)" stroke="#3d2708" stroke-width="2"/>
+          <text x="160" y="210" text-anchor="middle" class="brand">IRFAN</text>
         </svg>
-        <div class="clock-brand">IRFAN</div>
-      </div></div>
+      </div>
       <div class="pendulum-wrap"><div class="pendulum"><div class="bob"></div></div></div>
       <div class="float-chip fc1"><span class="e">⚡</span>Fast APIs</div>
       <div class="float-chip fc2"><span class="e">🛡️</span>Secure Code</div>
@@ -429,29 +441,66 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 /* footer year */
 document.getElementById('yr').textContent=new Date().getFullYear();
 
-/* pendulum clock — real time */
+/* greek pendulum clock — real time */
 (function(){
   const svgNS='http://www.w3.org/2000/svg';
-  const mg=document.getElementById('markers');
-  if(!mg)return;
-  for(let i=0;i<12;i++){
-    const a=i*30*Math.PI/180;
-    const l=document.createElementNS(svgNS,'line');
-    l.setAttribute('x1',100+76*Math.sin(a));l.setAttribute('y1',100-76*Math.cos(a));
-    l.setAttribute('x2',100+87*Math.sin(a));l.setAttribute('y2',100-87*Math.cos(a));
-    l.setAttribute('class',i%3===0?'mk major':'mk');
-    mg.appendChild(l);
+  const CX=160, CY=160;
+
+  /* greek key (meander) band around the bezel */
+  const key=document.getElementById('greekkey');
+  if(key){
+    const N=44, R=144;
+    for(let i=0;i<N;i++){
+      const a=i*360/N, rad=a*Math.PI/180;
+      const g=document.createElementNS(svgNS,'g');
+      g.setAttribute('transform','translate('+(CX+R*Math.cos(rad)).toFixed(1)+','+(CY+R*Math.sin(rad)).toFixed(1)+') rotate('+(a+90).toFixed(1)+')');
+      const p=document.createElementNS(svgNS,'path');
+      p.setAttribute('d','M-8,8 H8 V-8 H-2 V2 H4');
+      p.setAttribute('class','key');
+      g.appendChild(p);key.appendChild(g);
+    }
   }
+
+  /* minute track */
+  const ticks=document.getElementById('ticks');
+  if(ticks){
+    for(let i=0;i<60;i++){
+      const a=i*6*Math.PI/180, major=i%5===0;
+      const r1=major?113:118, r2=124;
+      const l=document.createElementNS(svgNS,'line');
+      l.setAttribute('x1',CX+r1*Math.sin(a));l.setAttribute('y1',CY-r1*Math.cos(a));
+      l.setAttribute('x2',CX+r2*Math.sin(a));l.setAttribute('y2',CY-r2*Math.cos(a));
+      l.setAttribute('class',major?'tick major':'tick');
+      ticks.appendChild(l);
+    }
+  }
+
+  /* roman numerals (clockmaker's IIII) */
+  const numerals=document.getElementById('numerals');
+  if(numerals){
+    const RN=['XII','I','II','III','IIII','V','VI','VII','VIII','IX','X','XI'];
+    for(let i=0;i<12;i++){
+      const a=i*30*Math.PI/180;
+      const t=document.createElementNS(svgNS,'text');
+      t.setAttribute('x',CX+98*Math.sin(a));t.setAttribute('y',CY-98*Math.cos(a));
+      t.setAttribute('class','numeral');t.textContent=RN[i];
+      numerals.appendChild(t);
+    }
+  }
+
+  /* live hands */
   const hr=document.getElementById('hr-hand'),min=document.getElementById('min-hand'),sec=document.getElementById('sec-hand');
-  function tick(){
-    const n=new Date();
-    const s=n.getSeconds()+n.getMilliseconds()/1000;
-    const m=n.getMinutes()+s/60, h=(n.getHours()%12)+m/60;
-    sec.style.transform='rotate('+(s*6)+'deg)';
-    min.style.transform='rotate('+(m*6)+'deg)';
-    hr.style.transform='rotate('+(h*30)+'deg)';
+  if(hr&&min&&sec){
+    function tick(){
+      const n=new Date();
+      const s=n.getSeconds()+n.getMilliseconds()/1000;
+      const m=n.getMinutes()+s/60, h=(n.getHours()%12)+m/60;
+      sec.style.transform='rotate('+(s*6)+'deg)';
+      min.style.transform='rotate('+(m*6)+'deg)';
+      hr.style.transform='rotate('+(h*30)+'deg)';
+    }
+    setInterval(tick,50);tick();
   }
-  setInterval(tick,50);tick();
 })();
 </script>
 </body>
