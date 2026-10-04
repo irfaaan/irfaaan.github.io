@@ -1,8 +1,0 @@
-# useless local jekyll output
-_site/
-Gemfile.lock
-.sass-cache
-.jekyll-metadata
-*.idea
-.tool-versions
-.rtx.toml

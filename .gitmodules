@@ -1,3 +1,0 @@
-[submodule "data_generator/database"]
-	path = data_generator/database
-	url = https://github.com/XiaomiFirmwareUpdater/database.git
