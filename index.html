@@ -339,7 +339,7 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
 </section>
 
 <section id="iterm" class="reveal">
-  <div class="sec-head"><div class="cmd">$ ssh guest@irfaaan.dev</div><h2>live_terminal</h2></div>
+  <div class="sec-head"><div class="cmd" id="ssh-cmd">$ ssh guest@irfaaan.dev</div><h2>live_terminal</h2></div>
   <div class="term" id="iterm"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">guest@irfaaan.dev — try: help</span></div>
   <div class="term-body">
     <div id="iterm-out"></div>
@@ -441,7 +441,12 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
 /* ===== INTERACTIVE TERMINAL ===== */
 (function(){
   const out=document.getElementById('iterm-out'),cmd=document.getElementById('iterm-cmd');
-  const P='<span class="in">guest@irfaaan:~$</span> ';
+  const HOST=location.hostname||'irfaaan.dev';
+  const P='<span class="in">guest@'+HOST.split('.')[0]+':~$</span> ';
+  const tb=document.querySelector('#iterm .t');
+  if(tb)tb.textContent='guest@'+HOST+' — try: help';
+  const sc=document.getElementById('ssh-cmd');
+  if(sc)sc.textContent='$ ssh guest@'+HOST;
   function print(html){out.innerHTML+=html+'\n';out.parentElement.scrollTop=out.parentElement.scrollHeight;}
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
   let hacking=false;
@@ -474,7 +479,7 @@ h2{font-family:var(--font-d);font-size:clamp(30px,4.5vw,46px);letter-spacing:-1p
     hack:'<span class="warn">[!] nice try. firewall intact 😏</span>',
     sudo:'<span class="err">permission denied: guest is not in the sudoers file 😏</span>'
   };
-  print('<span class="ok">connected to irfaaan.dev</span>');
+  print('<span class="ok">connected to '+HOST+'</span>');
   geo().then(g=>{
     if(g)print('[*] visitor_ip: <span class="ok">'+g.ip+'</span> · location: <span class="warn">'+(g.city?g.city+', ':'')+g.country+'</span> '+flag(g.cc));
     else print('<span class="warn">[*] visitor: ghost mode — ip unresolved</span>');
