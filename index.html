@@ -113,7 +113,10 @@ nav.scrolled{border-bottom-color:var(--border);background:rgba(8,8,13,.85)}
 .tick{stroke:#8a744d;stroke-width:1.5;stroke-linecap:round}
 .tick.major{stroke:#4a3a1e;stroke-width:3}
 .numeral{font-family:Georgia,'Times New Roman',serif;font-size:23px;font-weight:700;fill:#4a3a1e;text-anchor:middle;dominant-baseline:central}
-.hand{fill:#3a2b10;transform-origin:160px 160px}
+.hand{fill:#3a2b10;stroke:#c9962e;stroke-width:.8;transform-origin:160px 160px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
+.handg{transform-origin:160px 160px}
+.sectip{fill:#9c3a1e;stroke:#f4dc96;stroke-width:1}
+.rivet{fill:#4a2f0c;stroke:#f4dc96;stroke-width:1}
 .hand.sec{stroke:#9c3a1e;stroke-width:2.5;stroke-linecap:round;fill:none}
 .brand{font-family:Georgia,serif;font-size:13px;letter-spacing:6px;fill:#6b5320;font-weight:700}
 .pendulum-wrap{height:170px;display:flex;justify-content:center;margin-top:-6px}
@@ -123,13 +126,14 @@ nav.scrolled{border-bottom-color:var(--border);background:rgba(8,8,13,.85)}
   background:radial-gradient(circle at 35% 30%,#f4dc96,#b57e22 58%,#6b4210);
   border:2px solid #4a2f0c;
   box-shadow:0 0 34px rgba(212,175,55,.45),inset 0 0 14px rgba(0,0,0,.4)}
+.pendulum .bob::after{content:'';position:absolute;inset:11px;border-radius:50%;border:2px solid rgba(74,47,12,.55)}
 @keyframes swing{0%,100%{transform:rotate(13deg)}50%{transform:rotate(-13deg)}}
 @media(max-width:900px){.greek-clock{width:250px;height:250px}.pendulum-wrap{height:140px}.pendulum{height:100px}.zodiac-wrap{width:320px;height:320px}.halo{width:370px;height:370px}}
 .float-chip{position:absolute;background:rgba(13,13,21,.9);border:1px solid var(--border2);border-radius:14px;
   padding:12px 18px;font-size:13px;font-weight:600;backdrop-filter:blur(10px);box-shadow:0 14px 40px rgba(0,0,0,.5);
   display:flex;align-items:center;gap:9px;animation:floaty 5s ease-in-out infinite}
 .float-chip .e{font-size:17px}
-.fc1{top:6%;left:-4%}.fc2{bottom:14%;right:-6%;animation-delay:1.4s}.fc3{bottom:-4%;left:12%;animation-delay:2.6s}
+.fc1{top:2%;left:-13%}.fc2{bottom:20%;right:-15%;animation-delay:1.4s}.fc3{bottom:2%;left:-9%;animation-delay:2.6s}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
 
 /* sections */
@@ -224,7 +228,7 @@ footer{border-top:1px solid var(--border);padding:38px 0;position:relative;z-ind
   .hero .desc{margin:0 auto 38px}.btn-row,.socials{justify-content:center}
   .hero-stats{margin:56px auto 0}.eyebrow{margin-bottom:24px}
   .hero-visual{order:-1}
-  .fc1{left:0}.fc2{right:0}
+  .fc1{left:-2%}.fc2{right:-4%}.fc3{left:0}
   .about-grid{grid-template-columns:1fr}
   .skills-grid{grid-template-columns:1fr 1fr}
   .proj-grid{grid-template-columns:1fr}
@@ -302,14 +306,23 @@ footer{border-top:1px solid var(--border);padding:38px 0;position:relative;z-ind
           <circle cx="160" cy="160" r="158" fill="url(#bronze)"/>
           <circle cx="160" cy="160" r="158" fill="none" stroke="#3d2708" stroke-width="2"/>
           <g id="greekkey"></g>
+          <g id="rivets">
+            <circle cx="256.2" cy="63.8" r="4.5" class="rivet"/><circle cx="256.2" cy="256.2" r="4.5" class="rivet"/>
+            <circle cx="63.8" cy="256.2" r="4.5" class="rivet"/><circle cx="63.8" cy="63.8" r="4.5" class="rivet"/>
+          </g>
           <circle cx="160" cy="160" r="128" fill="url(#marble)" stroke="#5c3a0e" stroke-width="3"/>
           <circle cx="160" cy="160" r="121" fill="none" stroke="#b3924d" stroke-width="1"/>
           <g id="ticks"></g>
           <g id="numerals"></g>
           <path id="hr-hand" d="M160,172 L153,174 L157,98 L160,86 L163,98 L167,174 Z" class="hand"/>
           <path id="min-hand" d="M160,172 L156,174 L158.5,64 L160,52 L161.5,64 L164,174 Z" class="hand"/>
-          <line id="sec-hand" x1="160" y1="184" x2="160" y2="58" class="hand sec"/>
+          <g id="sec-hand" class="handg"><line x1="160" y1="184" x2="160" y2="58" class="hand sec"/><circle cx="160" cy="58" r="5" class="sectip"/></g>
           <circle cx="160" cy="160" r="9" fill="url(#bronze)" stroke="#3d2708" stroke-width="2"/>
+          <clipPath id="faceclip"><circle cx="160" cy="160" r="126"/></clipPath>
+          <g clip-path="url(#faceclip)">
+            <ellipse cx="108" cy="86" rx="95" ry="42" fill="#ffffff" opacity="0.09" transform="rotate(-24 108 86)"/>
+            <ellipse cx="218" cy="248" rx="70" ry="26" fill="#ffffff" opacity="0.05" transform="rotate(-24 218 248)"/>
+          </g>
           <text x="160" y="210" text-anchor="middle" class="brand">IRFAN</text>
         </svg>
       </div>
