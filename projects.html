@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects — Muhammad Irfan</title>
+<meta name="description" content="Selected projects by Muhammad Irfan — Full-Stack Laravel Developer." />
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0b0b12; color: #e8e8ef; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.6; }
+  a { color: #a78bfa; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 24px 18px 64px; }
+  header { margin-bottom: 8px; }
+  header a { text-decoration: none; font-weight: 600; }
+  h1 { font-size: 2rem; margin: 12px 0 4px; }
+  .sub { color: #9a9aad; margin: 0 0 32px; }
+  .card { background: #14141f; border: 1px solid #26263a; border-radius: 16px; padding: 22px; margin-bottom: 28px; }
+  .card h2 { margin: 0 0 6px; font-size: 1.4rem; }
+  .badge { display: inline-block; font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; margin-bottom: 12px; }
+  .live { background: #14532d; color: #bbf7d0; }
+  .prod { background: #1e3a5f; color: #bfdbfe; }
+  .planned { background: #7c2d12; color: #ffedd5; }
+  .show { background: #3b0764; color: #e9d5ff; }
+  .card img { width: 100%; height: auto; border-radius: 12px; border: 1px solid #26263a; display: block; }
+  .cap { color: #9a9aad; font-size: 0.85rem; margin: 8px 0 14px; }
+  .tags { margin: 14px 0; }
+  .tags span { display: inline-block; background: #23233a; border: 1px solid #33334d; border-radius: 999px; padding: 2px 10px; font-size: 0.82rem; margin: 0 6px 6px 0; }
+  .btn { display: inline-block; background: #7c6cf0; color: #fff; text-decoration: none; font-weight: 700; padding: 9px 18px; border-radius: 10px; margin-top: 6px; }
+  .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .gallery figure { margin: 0; }
+  .gallery figcaption { color: #9a9aad; font-size: 0.82rem; margin-top: 6px; }
+  .orange { border-color: #7c2d12; }
+  .orange h2 { color: #fb923c; }
+  .orange .btn { background: #ea580c; }
+  @media (max-width: 600px) { .gallery { grid-template-columns: 1fr; } h1 { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><a href="./">← Back to home</a></header>
+  <h1>Projects</h1>
+  <p class="sub">Selected work by Muhammad Irfan — Full-Stack Laravel Developer. Real screenshots where a product is live; clearly labelled previews where a client system cannot be shown publicly.</p>
+
+  <section class="card" id="gmc-pro">
+    <span class="badge live">Live Product</span>
+    <h2>GMC PRO — Live Gold Analysis</h2>
+    <img src="showcase/gmc-pro.png" alt="GMC PRO live gold chart" loading="lazy" />
+    <p class="cap">Real screenshot of the live product (market closed on the weekend when captured).</p>
+    <p>My own live product: a full-screen XAU/USD analysis platform with around 80 tools, a verdict engine, Wick Liquidity zones, Today Levels, Week Analyze and Entry Bell alerts. Python backend on OANDA data, running live.</p>
+    <div class="tags"><span>Python</span><span>OANDA</span><span>Real-time</span></div>
+    <a class="btn" href="https://goldchart.duckdns.org">Open live product →</a>
+    <p class="cap">Repository is private — live site link only.</p>
+  </section>
+
+  <section class="card" id="my-events">
+    <span class="badge prod">Production</span>
+    <h2>My Events — Nafisol</h2>
+    <img src="showcase/mockup-my-events.jpg" alt="My Events restaurant booking preview" loading="lazy" />
+    <p>Restaurant website built at Nafisol: dining table booking with live table availability and reservations by date, time and guests, running in production.</p>
+    <div class="tags"><span>Laravel</span><span>jQuery</span><span>MySQL</span></div>
+    <a class="btn" href="https://github.com/irfaaan">GitHub →</a>
+  </section>
+
+  <section class="card" id="soccer">
+    <span class="badge prod">Production</span>
+    <h2>Soccer Platform</h2>
+    <img src="showcase/mockup-soccer.jpg" alt="Soccer platform preview" loading="lazy" />
+    <p>Sports platform backend at Alright Tech: matches, teams, live data endpoints and admin tooling, running in production.</p>
+    <div class="tags"><span>Laravel</span><span>REST API</span><span>Vue.js</span></div>
+    <a class="btn" href="https://github.com/irfaaan">GitHub →</a>
+  </section>
+
+  <section class="card" id="martial">
+    <span class="badge prod">Production</span>
+    <h2>Martial App Backend</h2>
+    <img src="showcase/mockup-martial.jpg" alt="Martial app backend preview" loading="lazy" />
+    <p>Fitness app backend at Alright Tech: training programs, user progress tracking, push notifications and admin panel.</p>
+    <div class="tags"><span>Laravel</span><span>FCM</span><span>MySQL</span></div>
+    <a class="btn" href="https://github.com/irfaaan">GitHub →</a>
+  </section>
+
+  <section class="card" id="better-horizon">
+    <span class="badge prod">Production</span>
+    <h2>Better Horizon</h2>
+    <img src="showcase/mockup-better-horizon.jpg" alt="Better Horizon preview" loading="lazy" />
+    <p>Multi-service platform backend at Alright Tech with modular architecture, role-based admin and API integrations.</p>
+    <div class="tags"><span>Laravel</span><span>Inertia</span><span>PostgreSQL</span></div>
+    <a class="btn" href="https://github.com/irfaaan">GitHub →</a>
+  </section>
+
+  <section class="card orange" id="mall-of-karor">
+    <span class="badge planned">Planned</span>
+    <h2>Mall of Karor — Superstore OS</h2>
+    <p>Planned 25-module online superstore system: customer and rider apps, admin panel, REST API spec, DB schema and phased build plan. Architecture scope only — build has not started yet. The screens below are the app's design screens.</p>
+    <div class="gallery">
+      <figure><img src="showcase/mok-home.webp" alt="Mall of Karor home screen" loading="lazy" /><figcaption>Home — categories and deals</figcaption></figure>
+      <figure><img src="showcase/mok-login.webp" alt="Mall of Karor OTP login screen" loading="lazy" /><figcaption>Login with mobile OTP</figcaption></figure>
+      <figure><img src="showcase/mok-product.webp" alt="Mall of Karor product screen" loading="lazy" /><figcaption>Product page with sizes</figcaption></figure>
+      <figure><img src="showcase/mok-cart.webp" alt="Mall of Karor cart screen" loading="lazy" /><figcaption>Cart and bill summary</figcaption></figure>
+      <figure><img src="showcase/mok-checkout.webp" alt="Mall of Karor checkout screen" loading="lazy" /><figcaption>Checkout — Cash on Delivery</figcaption></figure>
+      <figure><img src="showcase/mok-track.webp" alt="Mall of Karor track order screen" loading="lazy" /><figcaption>Track order with rider</figcaption></figure>
+      <figure><img src="showcase/mok-rider.webp" alt="Mall of Karor rider app screen" loading="lazy" /><figcaption>Rider app — delivery requests</figcaption></figure>
+    </div>
+    <div class="tags"><span>System Design</span><span>Planning</span></div>
+  </section>
+
+  <section class="card" id="portfolio">
+    <span class="badge show">Showcase</span>
+    <h2>This Portfolio</h2>
+    <img src="showcase/portfolio-hero.png" alt="Portfolio homepage" loading="lazy" />
+    <p class="cap">Real screenshot of this site's homepage.</p>
+    <p>This very site — Vue 3 + GSAP with a celestial Greek astrolabe clock, built and deployed via GitHub Pages.</p>
+    <div class="tags"><span>Vue 3</span><span>GSAP</span><span>Vite</span></div>
+    <a class="btn" href="https://github.com/irfaaan">GitHub →</a>
+  </section>
+
+  <p class="sub"><a href="./">← Back to home</a></p>
+</div>
+</body>
+</html>
