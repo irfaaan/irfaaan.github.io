@@ -50,6 +50,11 @@
   .skill-top span:last-child { color: #94a3b8; }
   .bar { background: #1e293b; border-radius: 999px; height: 8px; overflow: hidden; margin-top: 4px; }
   .bar i { display: block; height: 100%; background: #38bdf8; border-radius: 999px; }
+  .bar i { width: var(--w); transform-origin: left; animation: growBar 1.2s ease .2s both; }
+  @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @supports (animation-timeline: view()) {
+    .bar i { animation: growBar linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+  }
   footer { border-top: 1px solid #1e293b; padding: 24px 0 40px; color: #64748b; font-size: 0.9rem; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
   header { animation: fadeUp .7s ease both; }
@@ -92,10 +97,10 @@
     <h2>About</h2>
     <p class="sub">Full-stack developer with 2+ years of production Laravel work — mostly backends and admin panels.</p>
     <div class="grid">
-      <div class="card"><div class="card-body"><h3>Backend</h3><div class="skill"><div class="skill-top"><span>Laravel / PHP</span><span>92%</span></div><div class="bar"><i style="width:92%"></i></div></div><div class="skill"><div class="skill-top"><span>REST APIs</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div><div class="skill"><div class="skill-top"><span>MySQL / PostgreSQL</span><span>86%</span></div><div class="bar"><i style="width:86%"></i></div></div></div></div>
-      <div class="card"><div class="card-body"><h3>Frontend</h3><div class="skill"><div class="skill-top"><span>Vue.js / Inertia</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div><div class="skill"><div class="skill-top"><span>JavaScript / jQuery</span><span>88%</span></div><div class="bar"><i style="width:88%"></i></div></div><div class="skill"><div class="skill-top"><span>HTML / CSS</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div></div></div>
-      <div class="card"><div class="card-body"><h3>Realtime &amp; More</h3><div class="skill"><div class="skill-top"><span>WebSockets</span><span>82%</span></div><div class="bar"><i style="width:82%"></i></div></div><div class="skill"><div class="skill-top"><span>Node.js</span><span>78%</span></div><div class="bar"><i style="width:78%"></i></div></div><div class="skill"><div class="skill-top"><span>Python</span><span>72%</span></div><div class="bar"><i style="width:72%"></i></div></div></div></div>
-      <div class="card"><div class="card-body"><h3>DevOps</h3><div class="skill"><div class="skill-top"><span>Linux / Ubuntu</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div><div class="skill"><div class="skill-top"><span>Apache / Nginx</span><span>80%</span></div><div class="bar"><i style="width:80%"></i></div></div><div class="skill"><div class="skill-top"><span>Git / GitHub</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div></div></div>
+      <div class="card"><div class="card-body"><h3>Backend</h3><div class="skill"><div class="skill-top"><span>Laravel / PHP</span><span>92%</span></div><div class="bar"><i style="--w:92%"></i></div></div><div class="skill"><div class="skill-top"><span>REST APIs</span><span>90%</span></div><div class="bar"><i style="--w:90%"></i></div></div><div class="skill"><div class="skill-top"><span>MySQL / PostgreSQL</span><span>86%</span></div><div class="bar"><i style="--w:86%"></i></div></div></div></div>
+      <div class="card"><div class="card-body"><h3>Frontend</h3><div class="skill"><div class="skill-top"><span>Vue.js / Inertia</span><span>85%</span></div><div class="bar"><i style="--w:85%"></i></div></div><div class="skill"><div class="skill-top"><span>JavaScript / jQuery</span><span>88%</span></div><div class="bar"><i style="--w:88%"></i></div></div><div class="skill"><div class="skill-top"><span>HTML / CSS</span><span>90%</span></div><div class="bar"><i style="--w:90%"></i></div></div></div></div>
+      <div class="card"><div class="card-body"><h3>Realtime &amp; More</h3><div class="skill"><div class="skill-top"><span>WebSockets</span><span>82%</span></div><div class="bar"><i style="--w:82%"></i></div></div><div class="skill"><div class="skill-top"><span>Node.js</span><span>78%</span></div><div class="bar"><i style="--w:78%"></i></div></div><div class="skill"><div class="skill-top"><span>Python</span><span>72%</span></div><div class="bar"><i style="--w:72%"></i></div></div></div></div>
+      <div class="card"><div class="card-body"><h3>DevOps</h3><div class="skill"><div class="skill-top"><span>Linux / Ubuntu</span><span>85%</span></div><div class="bar"><i style="--w:85%"></i></div></div><div class="skill"><div class="skill-top"><span>Apache / Nginx</span><span>80%</span></div><div class="bar"><i style="--w:80%"></i></div></div><div class="skill"><div class="skill-top"><span>Git / GitHub</span><span>90%</span></div><div class="bar"><i style="--w:90%"></i></div></div></div></div>
     </div>
   </section>
 
