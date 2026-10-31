@@ -14,6 +14,7 @@
   header a { text-decoration: none; font-weight: 600; }
   .card { background: #14141f; border: 1px solid #26263a; border-radius: 16px; padding: 22px; margin-bottom: 28px; overflow: hidden; }
   .card h2 { margin: 0 0 6px; font-size: 1.4rem; }
+  .card h3 { margin: 22px 0 6px; font-size: 1.05rem; }
   .badge { display: inline-block; font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; margin-bottom: 12px; }
   .prod { background: #1e3a5f; color: #bfdbfe; }
   .planned { background: #7c2d12; color: #ffedd5; }
@@ -49,8 +50,7 @@
   <section class="card orange">
     <span class="badge planned">Planned</span>
     <h2>Mall of Karor — Superstore OS</h2>
-    <p>Planned 25-module online superstore system: customer and rider apps, admin panel, REST API spec, DB schema and phased build plan. Architecture scope only — build has not started yet. The screens below are the app's design screens.</p>
-<ul><li>25 modules planned</li><li>Customer app and rider app</li><li>Admin panel</li><li>REST API spec and database schema</li><li>Phased build plan</li></ul>    <div class="gallery">
+<p>Planned 25-module online superstore system for Karor — a full grocery superstore: customers order from an app, riders deliver, and an admin panel runs the operation. Architecture scope only — build has not started yet. The screens below are the app's design screens.</p><h3>What I planned</h3><ul><li>Planned 25 modules covering the whole operation: customer app, rider app, admin panel, and supporting systems.</li><li>Designed the customer journey end to end: browse categories and deals, OTP login, product pages, cart, Cash on Delivery checkout, and live order tracking.</li><li>Designed the rider flow: delivery requests and order handling in the rider app.</li><li>Defined the REST API spec and database schema the build will follow.</li><li>Defined a phased build plan: what gets built first, and what follows.</li></ul><h3>How I planned it</h3><ul><li>The plan follows the order lifecycle (browse → order → pay → track → deliver), with modules, APIs, and tables derived from each stage.</li><li>API spec and schema documented before any code, so the build has a fixed contract to follow.</li><li>Phased approach: a working core first, additional modules after.</li></ul>    <div class="gallery">
       <figure><img src="../showcase/mok-home.webp" alt="Mall of Karor home screen" loading="lazy" /><figcaption>Home — categories and deals</figcaption></figure>
       <figure><img src="../showcase/mok-login.webp" alt="Mall of Karor OTP login screen" loading="lazy" /><figcaption>Login with mobile OTP</figcaption></figure>
       <figure><img src="../showcase/mok-product.webp" alt="Mall of Karor product screen" loading="lazy" /><figcaption>Product page with sizes</figcaption></figure>
