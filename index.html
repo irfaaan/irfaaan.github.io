@@ -44,6 +44,12 @@
   .tl-item p { color: #cbd5e1; margin: 0; }
   .skill-group h3 { margin-top: 0; }
   .skill-group p { color: #cbd5e1; margin: 0; }
+  .btn-primary { display: inline-block; background: #0284c7; color: #fff; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; }
+  .skill { margin: 12px 0; }
+  .skill-top { display: flex; justify-content: space-between; font-size: 0.95rem; }
+  .skill-top span:last-child { color: #94a3b8; }
+  .bar { background: #1e293b; border-radius: 999px; height: 8px; overflow: hidden; margin-top: 4px; }
+  .bar i { display: block; height: 100%; background: #38bdf8; border-radius: 999px; }
   footer { border-top: 1px solid #1e293b; padding: 24px 0 40px; color: #64748b; font-size: 0.9rem; }
   @media (max-width: 600px) {
     .wrap { padding: 16px; }
@@ -64,16 +70,17 @@
     <h1>Muhammad Irfan</h1>
     <p class="tagline">Full-Stack Laravel Developer</p>
     <span class="badge">Available for new opportunities</span>
+    <p style="margin: 20px 0 0;"><a class="btn-primary" href="Muhammad-Irfan-CV.pdf" download>Download CV ↓</a></p>
   </header>
 
   <section id="about">
     <h2>About</h2>
     <p class="sub">Full-stack developer with 2+ years of production Laravel work — mostly backends and admin panels.</p>
     <div class="grid">
-      <div class="card"><div class="card-body skill-group"><h3>Backend</h3><p>Laravel / PHP, REST APIs, MySQL / PostgreSQL</p></div></div>
-      <div class="card"><div class="card-body skill-group"><h3>Frontend</h3><p>Vue.js / Inertia, JavaScript / jQuery, HTML / CSS</p></div></div>
-      <div class="card"><div class="card-body skill-group"><h3>Realtime &amp; More</h3><p>WebSockets, Node.js, Python</p></div></div>
-      <div class="card"><div class="card-body skill-group"><h3>DevOps</h3><p>Linux / Ubuntu, Apache / Nginx, Git / GitHub</p></div></div>
+      <div class="card"><div class="card-body"><h3>Backend</h3><div class="skill"><div class="skill-top"><span>Laravel / PHP</span><span>92%</span></div><div class="bar"><i style="width:92%"></i></div></div><div class="skill"><div class="skill-top"><span>REST APIs</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div><div class="skill"><div class="skill-top"><span>MySQL / PostgreSQL</span><span>86%</span></div><div class="bar"><i style="width:86%"></i></div></div></div></div>
+      <div class="card"><div class="card-body"><h3>Frontend</h3><div class="skill"><div class="skill-top"><span>Vue.js / Inertia</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div><div class="skill"><div class="skill-top"><span>JavaScript / jQuery</span><span>88%</span></div><div class="bar"><i style="width:88%"></i></div></div><div class="skill"><div class="skill-top"><span>HTML / CSS</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div></div></div>
+      <div class="card"><div class="card-body"><h3>Realtime &amp; More</h3><div class="skill"><div class="skill-top"><span>WebSockets</span><span>82%</span></div><div class="bar"><i style="width:82%"></i></div></div><div class="skill"><div class="skill-top"><span>Node.js</span><span>78%</span></div><div class="bar"><i style="width:78%"></i></div></div><div class="skill"><div class="skill-top"><span>Python</span><span>72%</span></div><div class="bar"><i style="width:72%"></i></div></div></div></div>
+      <div class="card"><div class="card-body"><h3>DevOps</h3><div class="skill"><div class="skill-top"><span>Linux / Ubuntu</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div><div class="skill"><div class="skill-top"><span>Apache / Nginx</span><span>80%</span></div><div class="bar"><i style="width:80%"></i></div></div><div class="skill"><div class="skill-top"><span>Git / GitHub</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div></div></div>
     </div>
   </section>
 
@@ -183,6 +190,7 @@
     <p class="sub">I'm currently open to full-time roles, remote work and freelance projects.</p>
     <p><a class="btn" href="https://github.com/irfaaan" target="_blank" rel="noopener">github.com/irfaaan ↗</a></p>
     <p><a class="btn" href="https://irfaaan.github.io">irfaaan.github.io</a></p>
+    <p><a class="btn-primary" href="Muhammad-Irfan-CV.pdf" download>Download CV ↓</a></p>
   </section>
 
   <footer>© Muhammad Irfan</footer>
