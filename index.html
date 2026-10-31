@@ -61,26 +61,69 @@
   .skill.in-view .bar i { transform: scaleX(1); }
   footer { border-top: 1px solid #1e293b; padding: 24px 0 40px; color: #64748b; font-size: 0.9rem; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-  header { animation: fadeUp .7s ease both; }
+  header h1 { animation: fadeUp .7s ease both; }
+  header .tagline { animation: fadeUp .7s ease .1s both; }
+  header .badge { animation: fadeUp .7s ease .2s both; }
+  header .btn-primary { animation: fadeUp .7s ease .3s both; }
   .card { transition: transform .25s ease, box-shadow .25s ease; }
   .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.35); }
+  .card .btn { transition: transform .25s ease; }
+  .card:hover .btn { transform: translateX(4px); }
   .card img { transition: transform .4s ease; }
   .card:hover img { transform: scale(1.03); }
-  .btn-primary { transition: background .2s ease; }
+  .btn-primary { transition: background .2s ease, transform .1s ease; }
+  .btn-primary:active { transform: scale(.97); }
   .btn-primary:hover { background: #0369a1; }
   nav a { transition: color .2s ease; }
+  nav a:not(.brand):not(.btn-primary) { position: relative; }
+  nav a:not(.brand):not(.btn-primary)::after { content: ""; position: absolute; left: 0; bottom: -4px; height: 2px; width: 100%; background: #38bdf8; transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+  nav a:not(.brand):not(.btn-primary):hover::after { transform: scaleX(1); }
   @supports (animation-timeline: view()) {
     section h2 { animation: fadeUp linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
   }
+  .theme-toggle { background: transparent; border: 1px solid #334155; color: #e2e8f0; border-radius: 999px; padding: 6px 12px; cursor: pointer; font-size: 1rem; line-height: 1; }
+  html.light body { background: #f1f5f9; color: #0f172a; }
+  html.light a { color: #0284c7; }
+  html.light nav { background: rgba(255, 255, 255, .92); border-bottom-color: #e2e8f0; }
+  html.light nav a { color: #475569; }
+  html.light nav a:hover { color: #0f172a; }
+  html.light nav .brand { color: #0f172a; }
+  html.light section { border-top-color: #e2e8f0; }
+  html.light .sub { color: #475569; }
+  html.light .card { background: #ffffff; border-color: #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  html.light .card:hover { box-shadow: 0 12px 30px rgba(0,0,0,.12); }
+  html.light .card-body p { color: #334155; }
+  html.light .tl-item { background: #ffffff; border-color: #e2e8f0; }
+  html.light .tl-item .when { color: #b45309; }
+  html.light .tl-item .co { color: #64748b; }
+  html.light .tl-item p { color: #334155; }
+  html.light .skill-top span:last-child { color: #64748b; }
+  html.light .bar { background: #e2e8f0; }
+  html.light .badge { background: #dcfce7; color: #166534; border-color: #86efac; }
+  html.light .pill.live { background: #ffedd5; color: #9a3412; }
+  html.light .pill.prod { background: #dbeafe; color: #1e40af; }
+  html.light .pill.planned { background: #fef3c7; color: #92400e; }
+  html.light .pill.show { background: #e2e8f0; color: #334155; }
+  html.light .tags span { background: #f1f5f9; color: #334155; }
+  html.light .card img { background: #e2e8f0; }
+  html.light footer { border-top-color: #e2e8f0; color: #64748b; }
+  html.light .theme-toggle { border-color: #cbd5e1; color: #334155; }
   @media (max-width: 600px) {
     .wrap { padding: 16px; }
     header { padding: 32px 0 16px; }
     section { padding: 24px 0; }
   }
 </style>
+<script>
+try {
+  var t = localStorage.getItem('theme');
+  if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  if (t === 'light') document.documentElement.classList.add('light');
+} catch (e) {}
+</script>
 </head>
 <body>
 <div class="wrap">
@@ -91,6 +134,7 @@
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
     <a class="btn-primary" href="Muhammad-Irfan-CV.pdf" download>Download CV</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark and light mode">☀️</button>
   </nav>
   <header>
     <h1>Muhammad Irfan</h1>
@@ -228,10 +272,37 @@
   document.documentElement.classList.add('js');
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+        var num = e.target.querySelector('.skill-top span:last-child');
+        if (num) {
+          var target = parseInt(num.textContent, 10);
+          var start = null;
+          (function step(ts) {
+            if (!start) start = ts;
+            var p = Math.min((ts - start) / 1000, 1);
+            num.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + '%';
+            if (p < 1) requestAnimationFrame(step);
+          })(performance.now());
+        }
+      }
     });
   }, { threshold: 0.4 });
   document.querySelectorAll('.skill').forEach(function (el) { io.observe(el); });
+})();
+</script>
+<script>
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  function sync() { btn.textContent = document.documentElement.classList.contains('light') ? '🌙' : '☀️'; }
+  btn.addEventListener('click', function () {
+    var light = document.documentElement.classList.toggle('light');
+    try { localStorage.setItem('theme', light ? 'light' : 'dark'); } catch (e) {}
+    sync();
+  });
+  sync();
 })();
 </script>
 </body>

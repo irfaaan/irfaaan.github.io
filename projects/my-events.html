@@ -41,12 +41,36 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
   }
+  .card img { animation: fadeIn .7s ease; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  header { display: flex; justify-content: space-between; align-items: center; }
+  .theme-toggle { background: transparent; border: 1px solid #94a3b8; color: #e8e8ef; border-radius: 999px; padding: 6px 12px; cursor: pointer; font-size: 1rem; line-height: 1; }
+  html.light body { background: #f8fafc; color: #0f172a; }
+  html.light a { color: #7c3aed; }
+  html.light .card { background: #ffffff; border-color: #e2e8f0; }
+  html.light .card:hover { box-shadow: 0 14px 32px rgba(0,0,0,.12); }
+  html.light .card li { color: #475569; }
+  html.light .tags span { background: #f1f5f9; border-color: #e2e8f0; color: #334155; }
+  html.light .card img { border-color: #e2e8f0; }
+  html.light .gallery figcaption { color: #64748b; }
+  html.light .orange h2 { color: #c2410c; }
+  html.light .prod { background: #dbeafe; color: #1e40af; }
+  html.light .planned { background: #ffedd5; color: #9a3412; }
+  html.light footer { border-top-color: #e2e8f0; color: #64748b; }
+  html.light .theme-toggle { border-color: #cbd5e1; color: #334155; }
   @media (max-width: 600px) { .gallery { grid-template-columns: 1fr; } }
 </style>
+<script>
+try {
+  var t = localStorage.getItem('theme');
+  if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  if (t === 'light') document.documentElement.classList.add('light');
+} catch (e) {}
+</script>
 </head>
 <body>
 <div class="wrap">
-  <header><a href="../#projects">← Back to projects</a></header>
+  <header><a href="../#projects">← Back to projects</a><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark and light mode">☀️</button></header>
   <section class="card">
     <span class="badge prod">Production</span>
     <h2>My Events — Nafisol</h2>
@@ -55,5 +79,18 @@
   </section>
   <footer>© Muhammad Irfan</footer>
 </div>
+<script>
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  function sync() { btn.textContent = document.documentElement.classList.contains('light') ? '🌙' : '☀️'; }
+  btn.addEventListener('click', function () {
+    var light = document.documentElement.classList.toggle('light');
+    try { localStorage.setItem('theme', light ? 'light' : 'dark'); } catch (e) {}
+    sync();
+  });
+  sync();
+})();
+</script>
 </body>
 </html>
